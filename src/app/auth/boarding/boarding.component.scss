@@ -1,0 +1,17 @@
+.boarding-page{
+    height: 100vh;
+    margin: 0;
+
+    .steps{
+        margin-top: 30px;
+        display: flex;
+        margin-left: 5px;
+        .step-1,.step-2,.step-3{
+           height: 8px;
+           width: 8px;
+           margin-right: 12px;
+           border-radius: 4px;
+           background-color: #b6b3b3;
+        }
+    }
+}

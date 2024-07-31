@@ -1,10 +1,16 @@
-
-<div class="surface-card p-4 shadow-2 border-round w-full lg:w-4 mx-auto">
+<div class="surface-card p-4 shadow-2 border-round w-full lg:w-4 mx-auto login-page">
     <div class="text-center mb-5">
-        <img src="assets/images/logo.png" alt="Image" height="50" class="mb-3">
-        <div class="text-900 text-3xl font-medium mb-3">Disa</div>
-        <span class="text-600 font-medium line-height-3">Login via Password</span>
-        <a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer">Login OTP</a>
+        <img src="assets/images/logo.png" alt="Image" height="80" class="mb-3">
+        <div class="text-900 text-3xl font-medium my-3">Disa</div>
+        <div class="flex justify-content-between align-items-center">
+            <span class="text-600 font-medium line-height-3">Login via Password</span>
+        <div class="flex align-items-center">
+            <span>
+                <p-inputSwitch [(ngModel)]="checked" />
+            </span>
+            <a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer">Login via OTP</a>
+        </div>
+        </div>
     </div>
 
     <div>
@@ -21,6 +27,8 @@
             <a class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer">Forgot password?</a>
         </div>
 
-        <button pButton pRipple label="Sign In" icon="pi pi-user" class="w-full"></button>
+        <div class="flex justify-content-center">
+            <button pButton pRipple label="Login" (click)="router.navigate(['/verify'])"  icon="pi pi-user" class="w-full"></button>
+        </div>
     </div>
 </div>

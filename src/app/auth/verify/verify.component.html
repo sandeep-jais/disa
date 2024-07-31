@@ -1,1 +1,22 @@
-<p>verify works!</p>
+<div class="surface-card p-4 shadow-2 border-round w-full lg:w-4 mx-auto verify-page">
+    <div class="text-center mb-5">
+        <img src="assets/images/logo.png" alt="Image" height="80" class="mb-3">
+        <div class="text-900 text-3xl font-medium my-3">Disa</div>
+        <div class="flex justify-content-between align-items-center">
+            <span class="text-600 font-normal line-height-3 px-4">
+                Submit the 4 digit code you got on your provided number
+            </span>
+        </div>
+    </div>
+    <div>
+        <div class="flex justify-content-center my-5">
+            <p-inputOtp [(ngModel)]="otp" [integerOnly]="true" />
+        </div>
+        <button pButton pRipple label="Verify" (click)="router.navigate(['/boarding'])"  icon="pi pi-user" class="w-full"></button>
+    </div>
+    <div class="flex justify-content-center mt-5">
+        <a class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer">
+            Didn’t receive OTP? Resend
+        </a>
+    </div>
+</div>
