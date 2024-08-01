@@ -5,8 +5,8 @@ import { VerifyComponent } from './auth/verify/verify.component';
 import { BoardingComponent } from './auth/boarding/boarding.component';
 
 export const routes: Routes = [
-    { path: '', component: HomeComponent },
-    { path: 'login', component: LoginComponent },
+    { path: 'home', component: HomeComponent },
+    { path: '', component: LoginComponent },
     { path: 'verify', component: VerifyComponent },
     { path: 'boarding', component: BoardingComponent },
 ];

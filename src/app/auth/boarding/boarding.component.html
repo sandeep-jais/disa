@@ -1,23 +1,69 @@
 <div class="surface-card shadow-2 border-round w-full lg:w-4 mx-auto boarding-page">
     <div class="card border-none shadow-none flex justify-content-center">
-        <p-card header="Find pharmacy near you" subheader="" styleClass="shadow-none">
-            <ng-template pTemplate="header">
-                <img alt="Card" class="px-3" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
-            </ng-template>
-            <p>
-                It's is to find pharmacy that is near to your location with just one tap.
-            </p>
-            <div class="steps">
-                <div class="step-1"></div>
-                <div class="step-2"></div>
-                <div class="step-3"></div>
-            </div>
-            <ng-template pTemplate="footer">
-                <div class="flex gap-3 align-items-center mt-1">
-                    <p-button label="Get Started" severity="success" class="w-full" styleClass="w-6" />
-                    <span>skip</span>
+        @switch (step) {
+           @case (1) {
+            <p-card header="Find pharmacy near you" subheader="" styleClass="shadow-none">
+                <ng-template pTemplate="header">
+                    <img alt="Card" class="px-3" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
+                </ng-template>
+                <p>
+                    It's is to find pharmacy that is near to your location with just one tap.
+                </p>
+                <div class="steps">
+                    <div class="step-1 bg-primary"></div>
+                    <div class="step-2"></div>
+                    <div class="step-3"></div>
                 </div>
-            </ng-template>
-        </p-card>
+                <ng-template pTemplate="footer">
+                    <div class="flex gap-3 align-items-center mt-1">
+                        <p-button label="Get Started" severity="success" (click)="changeStep()" class="w-full" styleClass="w-6" />
+                        <span  class="cursor-pointer" (click)="skip()">skip</span>
+                    </div>
+                </ng-template>
+            </p-card>
+           }
+           @case (2) {
+            <p-card header="Best Product" subheader="" styleClass="shadow-none">
+                <ng-template pTemplate="header">
+                    <img alt="Card" class="px-3" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
+                </ng-template>
+                <p>
+                    It's is to find pharmacy that is near to your location with just one tap.
+                </p>
+                <div class="steps">
+                    <div class="step-1"></div>
+                    <div class="step-2 bg-primary"></div>
+                    <div class="step-3"></div>
+                </div>
+                <ng-template pTemplate="footer">
+                    <div class="flex gap-3 align-items-center mt-1">
+                        <p-button label="Get Started" severity="success" (click)="changeStep()" class="w-full" styleClass="w-6" />
+                        <span  class="cursor-pointer" (click)="skip()">skip</span>
+                    </div>
+                </ng-template>
+            </p-card>
+           }
+           @case (3) {
+            <p-card header="Best Pharmacy" subheader="" styleClass="shadow-none">
+                <ng-template pTemplate="header">
+                    <img alt="Card" class="px-3" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
+                </ng-template>
+                <p>
+                    It's is to find pharmacy that is near to your location with just one tap.
+                </p>
+                <div class="steps">
+                    <div class="step-1"></div>
+                    <div class="step-2"></div>
+                    <div class="step-3 bg-primary"></div>
+                </div>
+                <ng-template pTemplate="footer">
+                    <div class="flex gap-3 align-items-center mt-1">
+                        <p-button label="Get Started" severity="success" (click)="changeStep()" class="w-full" styleClass="w-6" />
+                        <span class="cursor-pointer" (click)="skip()">skip</span>
+                    </div>
+                </ng-template>
+            </p-card>
+           }
+        }
     </div>
 </div>
