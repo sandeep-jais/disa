@@ -15,3 +15,10 @@
         }
     }
 }
+
+@media screen and (max-width: 370px) {
+    .boarding-page .started-button{
+       min-width: 150px;
+       width: 150px;
+    }
+}

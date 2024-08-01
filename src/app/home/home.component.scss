@@ -2,3 +2,12 @@
     height: 100vh;
     margin: 0;
 }
+
+@media screen and (max-width: 370px) {
+    .home-page{
+       padding: 0px !important;
+       .container{
+        margin: 8px;
+       }
+    }
+}

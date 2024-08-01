@@ -2,3 +2,8 @@
     height: 100vh;
     margin: 0;
 }
+@media screen and (max-width: 370px) {
+    .login-page .check-area{
+        font-size: 14px;
+    }
+}
