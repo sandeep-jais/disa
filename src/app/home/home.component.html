@@ -1,56 +1,62 @@
-<div class="surface-card p-4 shadow-2 border-round w-full lg:w-4 mx-auto home-page">
-
-        <p-toolbar 
-            styleClass="shadow-2" 
-            [style]="{ }">
-            <ng-template pTemplate="start">
-                <span class="pi pi-bars"></span>
-            </ng-template>
-            <ng-template pTemplate="center">
-                <div class="flex flex-wrap align-items-center gap-1">
-                    <span class="pi pi-plus" style="color: rgb(7, 110, 29);font-weight: 600;"></span>iHealth
-                </div>
-            </ng-template>
-            <ng-template pTemplate="end">
-                <div class="flex align-items-center gap-2">
-                    <i class="pi pi-bell p-text-secondary" pBadge style="font-size: 1rem" severity="danger"></i>
-                </div>
-            </ng-template>
-        </p-toolbar>
-        
+<div class=" p-4 shadow-2 border-round w-full lg:w-4 mx-auto home-page">
       <div class="container">
-        <div class="py-3">
+        <div class="flex align-items-center justify-content-between">
+            <div>
+                <h3>Good Evening!</h3>
+                <div>John Morf</div>
+            </div>
+            <div>
+               <span class="text-green-600 font-bold">6:30 PM</span>
+            </div>
+        </div>
+
+        <div class="flex align-items-center justify-content-around mt-3">
+            <div class="bg-white px-3 py-2 text-center" style="border-radius: 30px; height: 200px;">
+                <h4>Outlets Assigned</h4>
+                <div>12</div>
+            </div>
+            <div class="bg-white px-3 py-2 text-center" style="border-radius: 30px; height: 200px;">
+                <h4>Outlets Pending</h4>
+                <p-knob [readonly]="true" [ngModel]="pendingOutlets" [strokeWidth]="7"  />
+            </div>
+        </div>
+
+        <div class="pt-3">
             <p-inputGroup>
                 <p-inputGroupAddon class="bg-transparent" styleClass="">
                     <i class="pi pi-search"></i>
                 </p-inputGroupAddon>
-                <input pInputText class="border-r-0" placeholder="Search" />
+                <input pInputText class="border-r-0" placeholder="Search Pharmacy" />
             </p-inputGroup>   
         </div>
         <div class=" mt-5">
             <ul class="m-0 p-0 list-none border-1 surface-border border-round p-3 flex flex-column gap-2 w-full md:w-24rem">
                 <li 
                     *ngFor="let product of data" 
-                    class=" hover:surface-hover border-round border-1 border-transparent transition-all transition-duration-200" 
-                    (contextmenu)="onContextMenu($event)">
+                    class=" hover:surface-hover bg-white border-round border-1 border-transparent transition-all transition-duration-200" 
+                    (contextmenu)="onContextMenu($event)" routerLink="/product-detail">
                         <div class="flex flex-wrap p-2 align-items-center gap-3">
-                            <img 
-                                class="w-4rem flex-shrink-0 border-round" 
-                                src="https://primefaces.org/cdn/primeng/images/demo/product/{{ product.image }}" 
-                                alt="product.name" />
+                            <div
+                                class="w-3rem text-center pt-3 bg-gray-300 flex-shrink-0 border-round" 
+                                 style="height: 50px;width: 50px;">
+                                {{
+                                    product.name.slice(0,2)
+                                }}
+                            </div>
                             <div class="flex-1 flex flex-column gap-1">
                                 <span class="font-bold">
                                     {{ product.name }}
                                 </span>
                                 <div class="flex align-items-center gap-2">
-                                    <i class="pi pi-tag text-sm"></i>
-                                    <span>
-                                        {{ product.category }}
+                                    <i class="pi pi-map-marker text-sm"></i>
+                                    <span class="text-sm">
+                                        {{ product.description }}
                                     </span>
                                 </div>
+                                <div>{{product.distance}}</div>
                             </div>
-                            <span class="font-bold text-900 ml-5">
-                            &#36;{{ product.price }}
+                            <span class="text-700 ml-5 capitalize">
+                             {{ product.status }}
                             </span>
                         </div>
                 </li>

@@ -15,16 +15,18 @@ import { CommonModule } from '@angular/common';
 import { ContextMenu, ContextMenuModule } from 'primeng/contextmenu';
 import { MenuItem } from 'primeng/api';
 import { KnobModule } from 'primeng/knob';
+import { HeaderComponent } from "../components/common/header/header.component";
+
 @Component({
-  selector: 'app-home',
+  selector: 'app-product-detail',
   standalone: true,
-  imports: [ StyleClassModule,InputOtpModule, ButtonModule,BadgeModule,FormsModule,ToolbarModule, AvatarModule,
-     InputGroupModule, InputGroupAddonModule, InputTextModule,
-     ContextMenuModule, CommonModule, RippleModule,KnobModule],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  imports: [StyleClassModule, InputOtpModule, ButtonModule, BadgeModule, FormsModule, ToolbarModule, AvatarModule,
+    InputGroupModule, InputGroupAddonModule, InputTextModule,
+    ContextMenuModule, CommonModule, RippleModule, KnobModule, HeaderComponent],
+  templateUrl: './product-detail.component.html',
+  styleUrl: './product-detail.component.scss'
 })
-export class HomeComponent {
+export class ProductDetailComponent {
   router= inject(Router);
   items: MenuItem[] | undefined;
   pendingOutlets:number= 8;
@@ -54,6 +56,48 @@ export class HomeComponent {
             status:"completed",
             distance: 70
         },
+        {
+          id: '1000',
+          name: 'Sita Pharmacy',
+          description: '3/5 Mohali punjab',
+          status:"pending",
+          distance: 65
+      },
+      {
+          id: '1001',
+          name: 'Go Site Pharmacy',
+          description: '3/5 Mohali punjab',
+          status:"completed",
+          distance: 90
+      },
+      {
+          id: '1002',
+          name: 'Lala Pharmacy',
+          description: '3/9 Mohali punjab',
+          status:"completed",
+          distance: 70
+      },
+      {
+        id: '1000',
+        name: 'Sita Pharmacy',
+        description: '3/5 Mohali punjab',
+        status:"pending",
+        distance: 65
+    },
+    {
+        id: '1001',
+        name: 'Go Site Pharmacy',
+        description: '3/5 Mohali punjab',
+        status:"completed",
+        distance: 90
+    },
+    {
+        id: '1002',
+        name: 'Lala Pharmacy',
+        description: '3/9 Mohali punjab',
+        status:"completed",
+        distance: 70
+    },
         
     ];
 
