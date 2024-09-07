@@ -15,12 +15,14 @@ import { CommonModule } from '@angular/common';
 import { ContextMenu, ContextMenuModule } from 'primeng/contextmenu';
 import { MenuItem } from 'primeng/api';
 import { KnobModule } from 'primeng/knob';
+import { NameSorterPipe } from '../../pipes/name-sorter.pipe';
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [ StyleClassModule,InputOtpModule, ButtonModule,BadgeModule,FormsModule,ToolbarModule, AvatarModule,
      InputGroupModule, InputGroupAddonModule, InputTextModule,
-     ContextMenuModule, CommonModule, RippleModule,KnobModule],
+     ContextMenuModule, CommonModule, RippleModule,KnobModule,NameSorterPipe],
+  providers:[NameSorterPipe],   
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -44,14 +46,14 @@ export class HomeComponent {
             id: '1001',
             name: 'Go Site Pharmacy',
             description: '3/5 Mohali punjab',
-            status:"completed",
+            status:"pending",
             distance: 90
         },
         {
             id: '1002',
             name: 'Lala Pharmacy',
             description: '3/9 Mohali punjab',
-            status:"completed",
+            status:"pending",
             distance: 70
         },
         

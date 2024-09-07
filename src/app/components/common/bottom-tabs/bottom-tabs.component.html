@@ -1,0 +1,42 @@
+<div class="w-full lg:w-4 flex bg-white mx-auto fixed bottom-0 py-2">
+    <div class="w-3 cursor-pointer">
+        <div class="text-center">
+            <span class="pi pi-home"></span>
+        </div>
+        <div class="text-center" (click)="navigate('/home')">
+            <span class="text-sm">
+                Home
+            </span>
+        </div>
+    </div>
+    <div class="w-3 cursor-pointer">
+        <div class="text-center">
+            <span class="pi pi-chart-bar"></span>
+        </div>
+        <div class="text-center">
+            <span class="text-sm">
+                Dashboard
+            </span>
+        </div>
+    </div>
+    <div class="w-3 cursor-pointer">
+        <div class="text-center">
+            <span class="pi pi-comment"></span>
+        </div>
+        <div class="text-center">
+            <span class="text-sm">
+                Messages
+            </span>
+        </div>
+    </div>
+    <div class="w-3 cursor-pointer">
+        <div class="text-center">
+            <span class="pi pi-sign-out"></span>
+        </div>
+        <div class="text-center" (click)="navigate('/')">
+            <span class="text-sm">
+                Logout
+            </span>
+        </div>
+    </div>
+</div>

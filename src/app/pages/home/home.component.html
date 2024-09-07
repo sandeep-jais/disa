@@ -13,11 +13,11 @@
         <div class="flex align-items-center justify-content-around mt-3">
             <div class="bg-white px-3 py-2 text-center" style="border-radius: 30px; height: 200px;">
                 <h4>Outlets Assigned</h4>
-                <div class="text-3xl">12</div>
+                <div style="font-size: 48px;">12</div>
             </div>
             <div class="bg-white px-3 py-2 text-center" style="border-radius: 30px; height: 200px;">
                 <h4>Outlets Pending</h4>
-                <p-knob [readonly]="true" [ngModel]="pendingOutlets" [strokeWidth]="7"  />
+                <p-knob [readonly]="true" [ngModel]="pendingOutlets" styleClass="outlet-pending" [strokeWidth]="7"  />
             </div>
         </div>
 
@@ -33,14 +33,14 @@
             <ul class="m-0 p-0 list-none border-1 surface-border border-round p-3 flex flex-column gap-2 w-full md:w-24rem">
                 <li 
                     *ngFor="let product of data" 
-                    class=" hover:surface-hover bg-white border-round border-1 border-transparent transition-all transition-duration-200" 
-                    (contextmenu)="onContextMenu($event)" routerLink="/product-detail">
+                    class=" hover:surface-hover bg-white cursor-pointer border-round border-1 border-transparent transition-all transition-duration-200" 
+                    (contextmenu)="onContextMenu($event)" routerLink="/pharmacy-detail">
                         <div class="flex flex-wrap p-2 align-items-center gap-3">
                             <div
                                 class="w-3rem text-center pt-3 bg-gray-300 flex-shrink-0 border-round" 
                                  style="height: 50px;width: 50px;">
                                 {{
-                                    product.name.slice(0,2)
+                                    product.name| nameSorter
                                 }}
                             </div>
                             <div class="flex-1 flex flex-column gap-1">

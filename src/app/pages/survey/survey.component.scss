@@ -1,18 +1,18 @@
-.product-detail-page{
+.product-survey-page{
     height: 100vh;
     overflow-y: auto;
     margin: 0;
     background-color: rgb(245, 248, 250);
 }
-.product-detail-page::-webkit-scrollbar{
-    width: 8px;
+.product-survey-page::-webkit-scrollbar{
+    width: 6px;
     color: aliceblue;
 }
-.product-detail-page::-webkit-scrollbar-thumb{
+.product-survey-page::-webkit-scrollbar-thumb{
     background-color: rgb(211, 208, 208);
 }
 @media screen and (max-width: 370px) {
-    .product-detail-page{
+    .product-survey-page{
        
        padding: 0px !important;
        .container{

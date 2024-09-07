@@ -15,20 +15,26 @@ import { CommonModule } from '@angular/common';
 import { ContextMenu, ContextMenuModule } from 'primeng/contextmenu';
 import { MenuItem } from 'primeng/api';
 import { KnobModule } from 'primeng/knob';
-import { HeaderComponent } from "../components/common/header/header.component";
+import { HeaderComponent } from "../../components/common/header/header.component";
+import { AccordionModule } from 'primeng/accordion';
+import { BottomTabsComponent } from "../../components/common/bottom-tabs/bottom-tabs.component";
 
 @Component({
   selector: 'app-product-detail',
   standalone: true,
   imports: [StyleClassModule, InputOtpModule, ButtonModule, BadgeModule, FormsModule, ToolbarModule, AvatarModule,
-    InputGroupModule, InputGroupAddonModule, InputTextModule,
-    ContextMenuModule, CommonModule, RippleModule, KnobModule, HeaderComponent],
+    InputGroupModule, InputGroupAddonModule, InputTextModule, AccordionModule,
+    ContextMenuModule, CommonModule, RippleModule, KnobModule, HeaderComponent, BottomTabsComponent],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.scss'
 })
 export class ProductDetailComponent {
   router= inject(Router);
   items: MenuItem[] | undefined;
+
+  navigate(path:string){
+    this.router.navigate([path])
+  }
   pendingOutlets:number= 8;
     @ViewChild('cm') cm!: ContextMenu;
 

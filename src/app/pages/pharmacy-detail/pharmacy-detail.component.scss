@@ -1,18 +1,18 @@
-.home-page{
+.pharmacy-detail-page{
     height: 100vh;
     overflow-y: auto;
     margin: 0;
     background-color: rgb(245, 248, 250);
 }
-.home-page::-webkit-scrollbar{
+.pharmacy-detail-page::-webkit-scrollbar{
     width: 8px;
     color: aliceblue;
 }
-.home-page::-webkit-scrollbar-thumb{
+.pharmacy-detail-page::-webkit-scrollbar-thumb{
     background-color: rgb(211, 208, 208);
 }
 @media screen and (max-width: 370px) {
-    .home-page{
+    .pharmacy-detail-page{
        
        padding: 0px !important;
        .container{

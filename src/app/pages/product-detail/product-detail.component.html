@@ -1,0 +1,112 @@
+<div class="shadow-2 border-round w-full lg:w-4 mx-auto product-detail-page">
+    <div class="container p-4 mb-5">
+        <app-header />
+
+        <div class=" hover:surface-hover my-3 mx-2 bg-white transition-all transition-duration-200"
+            (contextmenu)="onContextMenu($event)">
+            <div class=" p-2 gap-3">
+                <div class="w-full flex justify-content-center">
+
+                    <!-- <div class=" text-center pt-4 bg-gray-300 "
+                        style="height: 70px;width: 70px; border-radius: 50%;">
+                        SP
+                    </div> -->
+                    <img class="bg-white" src="/assets/images/image.png" style="height: 80px;width: 80px; border-radius: 50%;object-fit: contain;" />
+                </div>
+                <div class="flex-1 flex align-items-center flex-column gap-1">
+                    <span class="font-bold py-2">
+                        Sita Pharmacy
+                    </span>
+                    <div class="flex align-items-center gap-2 py-2 mx-4">
+                        <i class="pi pi-map-marker text-sm"></i>
+                        <span class="text-sm">
+                            Nivea Cellular Luminous 630° Anti Dark-Spot Advanced Treatment Serum - 30ml
+                        </span>
+                    </div>
+                </div>
+                <span class="text-700 ml-5 capitalize">
+                </span>
+            </div>
+        </div>
+        <div>
+            <div class="w-full flex">
+                <div class="w-4 text-center" >
+                     <div class="flex flex-column align-items-center" >
+                        <div class="flex justify-content-center pt-3 bg-white "
+                        style="height: 50px;width: 50px; border-radius: 50%;">
+                            <span class="pi pi-user"></span>
+                        </div>
+                        <p class="text-sm px-3">Product Placement Guidelines</p>
+                     </div>
+                </div>
+                <div class="w-4 text-center">
+                    <div class="flex flex-column align-items-center">
+                        <div class="flex justify-content-center pt-3 bg-white "
+                        style="height: 50px;width: 50px; border-radius: 50%;">
+                       <span class="pi pi-file-check"></span>
+                       </div>
+                       <p class="text-sm px-3">Primary Visibility Guidelines</p>
+                    </div>
+               </div>
+               <div class="w-4 text-center">
+                <div class="flex flex-column align-items-center">
+                    <div class="flex justify-content-center pt-3 bg-white "
+                        style="height: 50px;width: 50px; border-radius: 50%;">
+                   <span class="pi pi-heart"></span>
+                   </div>
+                   <p class="text-sm px-3">Product Placement Guidelines</p>
+                </div>
+           </div>
+            </div>
+        </div>
+        <div class=" mt-5">
+           
+            <p-contextMenu #cm [model]="items" (onHide)="onHide()">
+                <ng-template pTemplate="item" let-item>
+                    <a pRipple class="flex align-items-center p-menuitem-link">
+                        <span class="item.icon"></span>
+                        <span class="ml-2">{{ item.label }}</span>
+                        <p-badge *ngIf="item.badge" class="ml-auto" [value]="item.badge" />
+                        <span *ngIf="item.shortcut"
+                            class="ml-auto border-1 surface-border border-round surface-100 text-xs p-1">
+                            {{ item.shortcut }}
+                        </span>
+                        <i *ngIf="item.items" class="pi pi-angle-right ml-auto"></i>
+                    </a>
+                </ng-template>
+            </p-contextMenu>
+        </div>
+
+        <div class="mx-3 py-2 px-2">
+            <div class="flex justify-content-between bg-white p-3 mb-2" (click)="navigate('/product-survey')">
+                <div>
+                <span class="pi pi-calendar text-green-600 mr-3"></span>
+                <span>Product Placement Survey</span></div>
+                <span class="pi pi-chevron-right"></span>
+            </div>
+            <div class="flex justify-content-between bg-white p-3 mb-2">
+                <div>
+                <span class="pi pi-paperclip text-green-600 mr-3"></span>
+                <span>Primary Visibility Survey</span></div>
+                <span class="pi pi-chevron-right"></span>
+            </div>
+            <div class="flex justify-content-between bg-white p-3 mb-2">
+                <div>
+                <span class="pi pi-gauge text-green-600 mr-3"></span>
+                <span>Secondary Visibility Survey</span>
+            </div>
+                <span class="pi pi-chevron-right"></span>
+            </div>
+            <div class="flex justify-content-between bg-white p-3 mb-2">
+                <div>
+                    <span class="pi pi-trophy text-green-600 mr-3"></span>
+                    <span>Competition Survey</span>
+                </div>
+                <span class="pi pi-chevron-right"></span>
+            </div>
+        </div>
+    </div>
+    <div class="relative">
+        <app-bottom-tabs />
+    </div>
+</div>
