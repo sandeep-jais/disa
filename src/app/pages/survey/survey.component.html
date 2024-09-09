@@ -1,10 +1,14 @@
 <div class="shadow-2 border-round w-full lg:w-4 mx-auto product-survey-page">
+    @if(!isStarted){
     <div class="container p-4 mb-5">
-        <div class=" hover:surface-hover my-3 mx-2 bg-white transition-all transition-duration-200"
-            >
+        <div class=" hover:surface-hover my-3 mx-2 bg-white transition-all transition-duration-200">
             <div class=" p-2 gap-3">
+                <div class="m-2">
+                    <span class="pi pi-angle-left cursor-pointer" (click)="navigate('/product-detail')"></span>
+                </div>
                 <div class="w-full flex justify-content-center">
-                    <img class="bg-white" src="/assets/images/image.png" style="height: 140px;width: 140px; border-radius: 50%;object-fit: contain;" />
+                    <img class="bg-white" src="/assets/images/image.png"
+                        style="height: 140px;width: 140px; border-radius: 50%;object-fit: contain;" />
                 </div>
                 <div class="flex-1 flex align-items-center flex-column gap-1">
                     <span class="font-bold py-2">
@@ -27,8 +31,67 @@
         </div>
         <div>
             <div class="flex justify-content-center">
-                <button pButton label="Start" class="w-4 bg-warning border-round"></button>
+                <button pButton label="Start" class="w-4 bg-warning border-round" (click)="start()"></button>
             </div>
         </div>
     </div>
+    }@else if(isCompleted){
+    <div>
+        <div class="my-4">
+            <div class="text-center">
+                <span class="pi pi-star text-3xl"></span>
+            </div>
+        </div>
+        <h2 class="text-center">Completed</h2>
+        <div class="my-4">
+            <p class="text-center">Thank You</p>
+        </div>
+        <div class="mt-5 mb-2">
+            <div class="flex justify-content-center">
+                <button pButton label="Go to Product" class="w-6 bg-warning border-round"
+                    (click)="navigate('/product-detail')"></button>
+            </div>
+        </div>
+    </div>
+    }@else {
+    <div class="container p-4 mb-5">
+        <div class=" hover:surface-hover my-3 mx-2 bg-white transition-all transition-duration-200">
+            <div class=" p-2 gap-3">
+                <div class="m-2">
+                    <span class="pi pi-angle-left cursor-pointer" (click)="navigate('/product-detail')"></span>
+                </div>
+                <div class="w-full flex justify-content-center">
+                    <img class="bg-white" src="/assets/images/image.png"
+                        style="height: 100px;width: 100px; border-radius: 50%;object-fit: contain;" />
+                </div>
 
+                @if (questions.length) {
+                <div>
+                    <h4>{{questions[step].quetion}}</h4>
+                    <div class="flex justify-content-around my-5 ">
+                        <div class="text-center ">
+                            <span class="pi text-3xl hover:surface-hover cursor-pointer" (click)="answer(true)"
+                                [class]="questions[step].answer==true?'pi-thumbs-up-fill':'pi-thumbs-up'">
+
+                            </span>
+                        </div>
+                        <div class="text-center ">
+                            <span class="pi text-3xl hover:surface-hover cursor-pointer" (click)="answer(false)"
+                                [class]="questions[step].answer==false ?'pi-thumbs-down-fill':'pi-thumbs-down'">
+
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mt-5 mb-2">
+                        <div class="flex justify-content-center">
+                            <button pButton label="Continue" class="w-4 bg-warning border-round"
+                                (click)="changeStep()"></button>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+    }
+</div>

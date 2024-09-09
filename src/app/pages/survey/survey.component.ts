@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
+import { QUESTIONS } from '../../constants/questions';
 
 @Component({
   selector: 'app-survey',
@@ -10,9 +11,29 @@ import { ButtonModule } from 'primeng/button';
   styleUrl: './survey.component.scss'
 })
 export class SurveyComponent {
-  router= inject(Router);
+  questions = QUESTIONS;
+  router = inject(Router);
+  isStarted: boolean = false;
+  isCompleted: boolean = false;
+  step: number = 0;
+  navigate(path: string) {
+    this.router.navigate([path]);
+  }
 
-  navigate(path:string){
-    this.router.navigate([path])
+  start() {
+    this.isStarted = true;
+  }
+
+  changeStep(){
+    if(this.step == (this.questions.length-1)){
+       this.step= 0;
+       this.isCompleted= true;
+    }else{
+      this.step+=1;
+    }
+  }
+
+  answer(ans?:any){
+      this.questions[this.step].answer= ans;
   }
 }
