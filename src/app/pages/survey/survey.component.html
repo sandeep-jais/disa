@@ -56,6 +56,11 @@
     }@else {
     <div class="container p-4 mb-5">
         <div class=" hover:surface-hover my-3 mx-2 bg-white transition-all transition-duration-200">
+            <div class="flex justify-content-between">
+                @for (q of questions; track $index) {
+                    <span class="bg-gray-600 stepper flex flex-1" [class.done]="q.answer!==undefined"></span>
+                 }
+            </div>
             <div class=" p-2 gap-3">
                 <div class="m-2">
                     <span class="pi pi-angle-left cursor-pointer" (click)="navigate('/product-detail')"></span>
@@ -70,24 +75,39 @@
                     <h4>{{questions[step].quetion}}</h4>
                     <div class="flex justify-content-around my-5 ">
                         <div class="text-center ">
-                            <span class="pi text-3xl hover:surface-hover cursor-pointer" (click)="answer(true)"
-                                [class]="questions[step].answer==true?'pi-thumbs-up-fill':'pi-thumbs-up'">
+                            <span class="pi thumbs-icon hover:surface-hover cursor-pointer" (click)="answer(true)"
+                                [class]="questions[step].answer==true?'pi-thumbs-up-fill green':'pi-thumbs-up'">
 
                             </span>
                         </div>
                         <div class="text-center ">
-                            <span class="pi text-3xl hover:surface-hover cursor-pointer" (click)="answer(false)"
-                                [class]="questions[step].answer==false ?'pi-thumbs-down-fill':'pi-thumbs-down'">
+                            <span class="pi thumbs-icon hover:surface-hover cursor-pointer" (click)="answer(false)"
+                                [class]="questions[step].answer==false ?'pi-thumbs-down-fill red':'pi-thumbs-down'">
 
                             </span>
                         </div>
                     </div>
-                    <div class="mt-5 mb-2">
+                    <div class="mt-5 mb-5">
                         <div class="flex justify-content-center">
                             <button pButton label="Continue" class="w-4 bg-warning border-round"
                                 (click)="changeStep()"></button>
                         </div>
                     </div>
+                    @if(questions[step].answer==true){
+                        <div class="flex flex-wrap">
+                            @for(img of images;track $index){
+                                <div class="answer-image">
+                                    <img [src]="img" />
+                                </div>
+                            }
+                            <div class="answer-image">
+                                <label for="file" class="">
+                                    <span class="pi pi-plus"></span>
+                                    <input type="file" accept=".jpg,.jpeg,.png" (change)="selectFileChange($event)" multiple class="hidden" id="file" />
+                                </label>
+                            </div>
+                        </div>
+                    }
                 </div>
                 }
             </div>

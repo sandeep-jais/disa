@@ -16,6 +16,8 @@ export class SurveyComponent {
   isStarted: boolean = false;
   isCompleted: boolean = false;
   step: number = 0;
+  images:any=[];
+  files:any=[];
   navigate(path: string) {
     this.router.navigate([path]);
   }
@@ -35,5 +37,14 @@ export class SurveyComponent {
 
   answer(ans?:any){
       this.questions[this.step].answer= ans;
+  }
+
+  selectFileChange(event:any){
+    const files= event.target.files;
+    this.files=[...this.files, ...files];
+    for(let f of files){
+      let link=URL.createObjectURL(f);
+      this.images.push(link);
+    }
   }
 }

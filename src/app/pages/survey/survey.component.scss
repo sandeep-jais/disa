@@ -1,22 +1,71 @@
-.product-survey-page{
+.product-survey-page {
     height: 100vh;
     overflow-y: auto;
     margin: 0;
     background-color: rgb(245, 248, 250);
 }
-.product-survey-page::-webkit-scrollbar{
+
+.product-survey-page::-webkit-scrollbar {
     width: 6px;
     color: aliceblue;
 }
-.product-survey-page::-webkit-scrollbar-thumb{
+
+.product-survey-page::-webkit-scrollbar-thumb {
     background-color: rgb(211, 208, 208);
 }
+
 @media screen and (max-width: 370px) {
-    .product-survey-page{
-       
-       padding: 0px !important;
-       .container{
-        margin: 8px;
-       }
+    .product-survey-page {
+
+        padding: 0px !important;
+
+        .container {
+            margin: 8px;
+        }
+    }
+}
+
+.thumbs-icon {
+    font-size: 54px;
+
+    &.red {
+        color: #ff0000;
+    }
+
+    &.green {
+        color: #2afa00;
+    }
+}
+
+.stepper {
+    height: 7px;
+    border-radius: 3px;
+    padding-inline: 10px;
+    margin-inline: 2px;
+
+    &.done {
+        background-color: #1fbb00 !important;
+    }
+}
+
+.answer-image {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    margin-inline: 1px;
+    margin-bottom: 2px;
+    img {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        object-fit: contain;
+    }
+
+    label {
+        display: flex;
+        justify-content: center;
+        padding: 15px 0px;
+        align-content: cente
     }
 }
