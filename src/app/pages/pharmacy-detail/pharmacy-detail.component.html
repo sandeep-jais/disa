@@ -2,7 +2,7 @@
     <div class="container">
         <app-header />
 
-        <div class=" hover:surface-hover my-3 mx-2 bg-white border-round border-1 border-transparent transition-all transition-duration-200"
+        <div class="shadow-1 my-3 mx-2 bg-white border-round border-1 border-transparent transition-all transition-duration-200"
             (contextmenu)="onContextMenu($event)">
             <div class="flex flex-wrap p-2 align-items-center gap-3">
                 <div class="w-3rem text-center pt-3 bg-gray-300 flex-shrink-0 border-round"
@@ -40,7 +40,7 @@
                     class=" hover:surface-hover w-3 cursor-pointer border-round border-1 border-transparent transition-all transition-duration-200"
                     (contextmenu)="onContextMenu($event)" routerLink="/product-detail">
                     <div class="flex justify-content-center flex-wrap p-2 align-items-center gap-3">
-                        <div class=" text-center pt-3 bg-gray-300 flex-shrink-0 border-round"
+                        <div class="shadow-1 text-center pt-3 bg-gray-300 flex-shrink-0 border-round"
                             style="height: 50px;width: 50px;">
                             {{
                             product.name|nameSorter
