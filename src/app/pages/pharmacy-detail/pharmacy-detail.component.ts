@@ -17,6 +17,7 @@ import { MenuItem } from 'primeng/api';
 import { KnobModule } from 'primeng/knob';
 import { HeaderComponent } from "../../components/common/header/header.component";
 import { NameSorterPipe } from '../../pipes/name-sorter.pipe';
+import { FooterComponent } from "../../components/common/footer/footer.component";
 
 
 @Component({
@@ -24,7 +25,7 @@ import { NameSorterPipe } from '../../pipes/name-sorter.pipe';
   standalone: true,
   imports: [StyleClassModule, InputOtpModule, ButtonModule, BadgeModule, FormsModule, ToolbarModule, AvatarModule,
     InputGroupModule, InputGroupAddonModule, InputTextModule,
-    ContextMenuModule, CommonModule, RippleModule, KnobModule, HeaderComponent,NameSorterPipe],
+    ContextMenuModule, CommonModule, RippleModule, KnobModule, HeaderComponent, NameSorterPipe, FooterComponent],
   templateUrl: './pharmacy-detail.component.html',
   styleUrl: './pharmacy-detail.component.scss'
 })

@@ -16,12 +16,14 @@ import { ContextMenu, ContextMenuModule } from 'primeng/contextmenu';
 import { MenuItem } from 'primeng/api';
 import { KnobModule } from 'primeng/knob';
 import { NameSorterPipe } from '../../pipes/name-sorter.pipe';
+import { FooterComponent } from "../../components/common/footer/footer.component";
+import { HeaderComponent } from "../../components/common/header/header.component";
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ StyleClassModule,InputOtpModule, ButtonModule,BadgeModule,FormsModule,ToolbarModule, AvatarModule,
-     InputGroupModule, InputGroupAddonModule, InputTextModule,
-     ContextMenuModule, CommonModule, RippleModule,KnobModule,NameSorterPipe],
+  imports: [StyleClassModule, InputOtpModule, ButtonModule, BadgeModule, FormsModule, ToolbarModule, AvatarModule,
+    InputGroupModule, InputGroupAddonModule, InputTextModule,
+    ContextMenuModule, CommonModule, RippleModule, KnobModule, NameSorterPipe, FooterComponent, HeaderComponent],
   providers:[NameSorterPipe],   
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'

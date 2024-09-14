@@ -18,13 +18,14 @@ import { KnobModule } from 'primeng/knob';
 import { HeaderComponent } from "../../components/common/header/header.component";
 import { AccordionModule } from 'primeng/accordion';
 import { BottomTabsComponent } from "../../components/common/bottom-tabs/bottom-tabs.component";
+import { FooterComponent } from "../../components/common/footer/footer.component";
 
 @Component({
   selector: 'app-product-detail',
   standalone: true,
   imports: [StyleClassModule, InputOtpModule, ButtonModule, BadgeModule, FormsModule, ToolbarModule, AvatarModule,
     InputGroupModule, InputGroupAddonModule, InputTextModule, AccordionModule,
-    ContextMenuModule, CommonModule, RippleModule, KnobModule, HeaderComponent, BottomTabsComponent],
+    ContextMenuModule, CommonModule, RippleModule, KnobModule, HeaderComponent, BottomTabsComponent, FooterComponent],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.scss'
 })

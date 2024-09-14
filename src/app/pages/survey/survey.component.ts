@@ -2,11 +2,13 @@ import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { QUESTIONS } from '../../constants/questions';
+import { HeaderComponent } from "../../components/common/header/header.component";
+import { FooterComponent } from "../../components/common/footer/footer.component";
 
 @Component({
   selector: 'app-survey',
   standalone: true,
-  imports: [ButtonModule],
+  imports: [ButtonModule, HeaderComponent, FooterComponent],
   templateUrl: './survey.component.html',
   styleUrl: './survey.component.scss'
 })

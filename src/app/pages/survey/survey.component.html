@@ -1,14 +1,14 @@
 <div class="shadow-2 border-round w-full lg:w-4 mx-auto product-survey-page">
+    <div class="px-4 mt-2">
+        <app-header></app-header>
+    </div>
     @if(!isStarted){
     <div class="container p-4 mb-5">
         <div class="shadow-1 my-3 mx-2 bg-white transition-all transition-duration-200">
             <div class=" p-2 gap-3">
-                <div class="m-2">
-                    <span class="pi pi-angle-left cursor-pointer" (click)="navigate('/product-detail')"></span>
-                </div>
                 <div class="w-full flex justify-content-center">
                     <img class="bg-white" src="/assets/images/image.png"
-                        style="height: 140px;width: 140px; border-radius: 50%;object-fit: contain;" />
+                        style="height: 160px;width: 140px; border-radius: 50%;object-fit: contain;" />
                 </div>
                 <div class="flex-1 flex align-items-center flex-column gap-1">
                     <span class="font-bold py-2">
@@ -62,12 +62,9 @@
                  }
             </div>
             <div class=" p-2 gap-3">
-                <div class="m-2">
-                    <span class="pi pi-angle-left cursor-pointer" (click)="navigate('/product-detail')"></span>
-                </div>
                 <div class="w-full flex justify-content-center">
                     <img class="bg-white" src="/assets/images/image.png"
-                        style="height: 100px;width: 100px; border-radius: 50%;object-fit: contain;" />
+                        style="height: 140px;width: 140px; border-radius: 50%;object-fit: contain;" />
                 </div>
 
                 @if (questions.length) {
@@ -76,23 +73,18 @@
                     <div class="flex justify-content-around my-5 ">
                         <div class="text-center ">
                             <span class="pi thumbs-icon hover:surface-hover cursor-pointer" (click)="answer(true)"
-                                [class]="questions[step].answer==true?'pi-thumbs-up-fill green':'pi-thumbs-up'">
+                                [class]="'pi-thumbs-up-fill green'">
 
                             </span>
                         </div>
                         <div class="text-center ">
                             <span class="pi thumbs-icon hover:surface-hover cursor-pointer" (click)="answer(false)"
-                                [class]="questions[step].answer==false ?'pi-thumbs-down-fill red':'pi-thumbs-down'">
+                                [class]="'pi-thumbs-down-fill red'">
 
                             </span>
                         </div>
                     </div>
-                    <div class="mt-5 mb-5">
-                        <div class="flex justify-content-center">
-                            <button pButton label="Continue" class="w-4 bg-warning border-round"
-                                (click)="changeStep()"></button>
-                        </div>
-                    </div>
+                   
                     @if(questions[step].answer==true){
                         <div class="flex flex-wrap">
                             @for(img of images;track $index){
@@ -108,10 +100,17 @@
                             </div>
                         </div>
                     }
+                    <div class="mt-5 mb-5">
+                        <div class="flex justify-content-center">
+                            <button pButton label="Next" class="w-4 bg-warning border-round"
+                                (click)="changeStep()"></button>
+                        </div>
+                    </div>
                 </div>
                 }
             </div>
         </div>
+        <app-footer></app-footer>
     </div>
     }
 </div>
