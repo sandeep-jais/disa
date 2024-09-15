@@ -18,22 +18,34 @@ export class SurveyComponent {
   isStarted: boolean = false;
   isCompleted: boolean = false;
   step: number = 0;
-  images:any=[];
+  images:any=['','',''];
   files:any=[];
   navigate(path: string) {
     this.router.navigate([path]);
   }
+  time:number= 0;
+  faces:any={
+    '0': 'Top',
+    '1': 'Left',
+    '2': 'Right'
+  }
 
   start() {
     this.isStarted = true;
+    this.time=0;
+    this.startTimer();
   }
 
   changeStep(){
     if(this.step == (this.questions.length-1)){
        this.step= 0;
        this.isCompleted= true;
+       this.time=0;
+       console.log("first",this.questions)
     }else{
       this.step+=1;
+      this.questions[this.step].time= this.time;
+      this.time=0;
     }
   }
 
@@ -41,12 +53,18 @@ export class SurveyComponent {
       this.questions[this.step].answer= ans;
   }
 
-  selectFileChange(event:any){
-    const files= event.target.files;
-    this.files=[...this.files, ...files];
-    for(let f of files){
-      let link=URL.createObjectURL(f);
-      this.images.push(link);
+  selectFileChange(event:any,index:number){
+    const file= event.target.files[0];
+    this.files=[...this.files, file];
+    if(file){
+      let link=URL.createObjectURL(file);
+      this.images[index]=link;
     }
+  }
+
+  startTimer(){
+    setInterval(()=>{
+      this.time= this.time+1;
+    },1000)
   }
 }

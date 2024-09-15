@@ -87,17 +87,20 @@
                    
                     @if(questions[step].answer==true){
                         <div class="flex flex-wrap">
-                            @for(img of images;track $index){
+                            @for(img of images;track $index;){
                                 <div class="answer-image">
-                                    <img [src]="img" />
+                                    @if (img) {
+                                        <img [src]="img" />
+                                    }@else{
+                                        <label [for]="'file'+$index" class="">
+                                            <span class="pi pi-plus"></span>
+                                            <input type="file" accept=".jpg,.jpeg,.png" (change)="selectFileChange($event,$index)" class="hidden" [id]="'file'+$index" />
+                                        </label>
+                                    }
+                                    <div style="font-size: 11px;" class="text-center pt-2">{{faces[$index]}}</div>
                                 </div>
+                                
                             }
-                            <div class="answer-image">
-                                <label for="file" class="">
-                                    <span class="pi pi-plus"></span>
-                                    <input type="file" accept=".jpg,.jpeg,.png" (change)="selectFileChange($event)" multiple class="hidden" id="file" />
-                                </label>
-                            </div>
                         </div>
                     }
                     <div class="mt-5 mb-5">
