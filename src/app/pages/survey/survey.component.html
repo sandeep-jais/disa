@@ -70,42 +70,49 @@
                 @if (questions.length) {
                 <div>
                     <h4>{{questions[step].quetion}}</h4>
-                    <div class="flex justify-content-around my-5 ">
-                        <div class="text-center ">
-                            <span class="pi thumbs-icon hover:surface-hover cursor-pointer" (click)="answer(true)"
-                                [class]="'pi-thumbs-up-fill green'">
-
-                            </span>
-                        </div>
-                        <div class="text-center ">
-                            <span class="pi thumbs-icon hover:surface-hover cursor-pointer" (click)="answer(false)"
-                                [class]="'pi-thumbs-down-fill red'">
-
-                            </span>
-                        </div>
-                    </div>
-                   
-                    @if(questions[step].answer==true){
-                        <div class="flex flex-wrap">
-                            @for(img of images;track $index;){
-                                <div class="answer-image">
-                                    @if (img) {
-                                        <img [src]="img" />
-                                    }@else{
-                                        <label [for]="'file'+$index" class="">
-                                            <span class="pi pi-plus"></span>
-                                            <input type="file" accept=".jpg,.jpeg,.png" (change)="selectFileChange($event,$index)" class="hidden" [id]="'file'+$index" />
-                                        </label>
-                                    }
-                                    <div style="font-size: 11px;" class="text-center pt-2">{{faces[$index]}}</div>
-                                </div>
-                                
-                            }
-                        </div>
+                    @if(questions[step].type=='thumbsup'){
+                        <ng-container>
+                            <div class="flex justify-content-around my-5 ">
+                              <div class="text-center ">
+                                  <span class="pi thumbs-icon hover:surface-hover cursor-pointer" (click)="answer(true)"
+                                      [class]="'pi-thumbs-up-fill green'">
+      
+                                  </span>
+                              </div>
+                              <div class="text-center ">
+                                  <span class="pi thumbs-icon hover:surface-hover cursor-pointer" (click)="answer(false)"
+                                      [class]="'pi-thumbs-down-fill red'">
+      
+                                  </span>
+                              </div>
+                            </div>
+                              <div class="flex flex-wrap justify-content-center">
+                                  @for(img of images;track $index;){
+                                      <div class="answer-image mx-1">
+                                          @if (img) {
+                                              <img [src]="img" />
+                                          }@else{
+                                              <label [for]="'file'+$index" class="">
+                                                  <span class="pi pi-plus cursor-pointer"></span>
+                                                  <input type="file" accept=".jpg,.jpeg,.png" (change)="selectFileChange($event,$index)" class="hidden" [id]="'file'+$index" />
+                                              </label>
+                                          }
+                                          <div style="font-size: 11px;" class="text-center pt-2">{{faces[$index]}}</div>
+                                      </div>
+                                      
+                                  }
+                              </div>
+                         </ng-container>
+                    }@else if (questions[step].type=='counter') {
+                        <ng-container>
+                            <app-counter [value]="questions[step].answer==undefined?0:questions[step].answer" (change)="answer($event)" />
+                        </ng-container>
                     }
+
+                  
                     <div class="mt-5 mb-5">
                         <div class="flex justify-content-center">
-                            <button pButton label="Next" class="w-4 bg-warning border-round"
+                            <button [disabled]="questions|checkAnswer:step:images" pButton label="Next" class="w-4 bg-warning border-round"
                                 (click)="changeStep()"></button>
                         </div>
                     </div>
