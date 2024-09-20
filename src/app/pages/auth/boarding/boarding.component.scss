@@ -1,6 +1,7 @@
 .boarding-page{
     height: 100vh;
     margin: 0;
+    background-color: var(--periwinkle-color);
 
     .steps{
         margin-top: 30px;
@@ -11,7 +12,7 @@
            width: 8px;
            margin-right: 12px;
            border-radius: 4px;
-           background-color: #b6b3b3;
+           background-color: var(--periwinkle-color);
         }
     }
 }

@@ -55,7 +55,7 @@
     </div>
     }@else {
     <div class="container p-4 mb-5">
-        <div class=" hover:surface-hover my-3 mx-2 bg-white transition-all transition-duration-200">
+        <div class="my-3 mx-2 bg-white transition-all transition-duration-200">
             <div class="flex justify-content-between">
                 @for (q of questions; track $index) {
                     <span class="bg-gray-600 stepper flex flex-1" [class.done]="q.answer!==undefined"></span>

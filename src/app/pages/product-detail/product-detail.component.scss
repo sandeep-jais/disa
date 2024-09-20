@@ -2,7 +2,7 @@
     height: 100vh;
     overflow-y: auto;
     margin: 0;
-    background-color: rgb(245, 248, 250);
+    background-color: var(--periwinkle-color);
 }
 .product-detail-page::-webkit-scrollbar{
     width: 6px;
