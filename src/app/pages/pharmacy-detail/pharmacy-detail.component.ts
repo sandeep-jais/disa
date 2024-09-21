@@ -18,13 +18,14 @@ import { KnobModule } from 'primeng/knob';
 import { HeaderComponent } from "../../components/common/header/header.component";
 import { NameSorterPipe } from '../../pipes/name-sorter.pipe';
 import { FooterComponent } from "../../components/common/footer/footer.component";
+import { BottomTabsComponent } from '../../components/common/bottom-tabs/bottom-tabs.component';
 
 
 @Component({
   selector: 'app-pharmacy-detail',
   standalone: true,
   imports: [StyleClassModule, InputOtpModule, ButtonModule, BadgeModule, FormsModule, ToolbarModule, AvatarModule,
-    InputGroupModule, InputGroupAddonModule, InputTextModule,
+    InputGroupModule, InputGroupAddonModule, InputTextModule,BottomTabsComponent,
     ContextMenuModule, CommonModule, RippleModule, KnobModule, HeaderComponent, NameSorterPipe, FooterComponent],
   templateUrl: './pharmacy-detail.component.html',
   styleUrl: './pharmacy-detail.component.scss'

@@ -1,6 +1,4 @@
 .home-page{
-    height: 100vh;
-    overflow-y: auto;
     margin: 0;
     background-color: var(--periwinkle-color);
 }
@@ -8,14 +6,17 @@
     width: 8px;
     color: aliceblue;
 }
+.home-page .container{
+    height: calc(100vh - 85px);
+    overflow-y: auto;
+    padding-inline: 20px;
+}
 .home-page::-webkit-scrollbar-thumb{
     background-color: rgb(211, 208, 208);
 }
 
 @media screen and (max-width: 370px) {
     .home-page{
-       
-       padding: 5px !important;
        .container{
         padding: 10px;
         margin: 0px;

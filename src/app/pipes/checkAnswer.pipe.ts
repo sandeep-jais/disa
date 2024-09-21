@@ -10,7 +10,7 @@ export class CheckAnswerPipe implements PipeTransform {
     if (questions[step].type == 'thumbsup') {
       return images.includes('');
     } else if (questions[step].type == 'counter') {
-      return questions[step].answer ? true : false;
+      return questions[step].answer>0 ? false : true;
     }
     return false;
   }

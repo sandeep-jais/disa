@@ -13,7 +13,7 @@ body {
     --blueberry-color: #5680E9;
     --skyblue-color: #84CEEB;
     --bluejeans-color: #5AB9EA;
-    --periwinkle-color: #C1C8E4;
+    --periwinkle-color: #dadff1;
     --amethyst-color: #8860D0;
 }
 
@@ -23,4 +23,11 @@ body {
 
 .bg-periwinkle{
     background-color: var(--periwinkle-color);
+}
+
+.bg-linear-blue{
+    font-weight: 600;
+    color: #FFFFFF;
+    background: rgb(86,128,233);
+    background: linear-gradient(90deg, rgba(86,128,233,1) 53%, rgba(136,96,208,1) 72%);
 }

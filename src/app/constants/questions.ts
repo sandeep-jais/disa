@@ -52,7 +52,10 @@ export const QUESTIONS=[
         type:"thumbsup",
         files:[],
         images:[]
-    },
+    }
+]
+
+export const STEP_2=[
     {
         id: 7,
         quetion:"Is the Product displayed on the Shelf",

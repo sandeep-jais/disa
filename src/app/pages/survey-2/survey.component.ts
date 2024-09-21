@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
-import { QUESTIONS } from '../../constants/questions';
+import { QUESTIONS, STEP_2 } from '../../constants/questions';
 import { HeaderComponent } from "../../components/common/header/header.component";
 import { FooterComponent } from "../../components/common/footer/footer.component";
 import { CounterComponent } from "../../components/common/counter/counter.component";
@@ -16,8 +16,8 @@ import { BottomTabsComponent } from '../../components/common/bottom-tabs/bottom-
   templateUrl: './survey.component.html',
   styleUrl: './survey.component.scss'
 })
-export class SurveyComponent {
-  questions = QUESTIONS;
+export class SurveyComponent2 {
+  questions = STEP_2;
   router = inject(Router);
   isStarted: boolean = false;
   isCompleted: boolean = false;
@@ -46,7 +46,6 @@ export class SurveyComponent {
       this.isCompleted = true;
       this.time = 0;
       this.images = ['', '', ''];
-      this.navigate('/product-survey-2');
     } else {
       this.step += 1;
       this.questions[this.step].time = this.time;

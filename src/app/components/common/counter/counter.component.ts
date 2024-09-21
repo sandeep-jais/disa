@@ -11,16 +11,19 @@ import { ButtonModule } from 'primeng/button';
 export class CounterComponent {
   @Input({required:true}) value: any = 0;
   @Output() change:any= new EventEmitter<any>();
-
+  
+  ngOnInit():void{
+    console.log(this.value)
+  }
   increment() {
     this.value++;
-    this.change(this.value);
+    this.change.emit(this.value);
   }
 
   decrement() {
     if (this.value > 0) {
       this.value--;
-      this.change(this.value);
+      this.change.emit(this.value);
     }
   }
 }

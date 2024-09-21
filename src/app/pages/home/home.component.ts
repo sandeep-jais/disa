@@ -18,11 +18,12 @@ import { KnobModule } from 'primeng/knob';
 import { NameSorterPipe } from '../../pipes/name-sorter.pipe';
 import { FooterComponent } from "../../components/common/footer/footer.component";
 import { HeaderComponent } from "../../components/common/header/header.component";
+import { BottomTabsComponent } from '../../components/common/bottom-tabs/bottom-tabs.component';
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [StyleClassModule, InputOtpModule, ButtonModule, BadgeModule, FormsModule, ToolbarModule, AvatarModule,
-    InputGroupModule, InputGroupAddonModule, InputTextModule,
+    InputGroupModule, InputGroupAddonModule, InputTextModule,BottomTabsComponent,
     ContextMenuModule, CommonModule, RippleModule, KnobModule, NameSorterPipe, FooterComponent, HeaderComponent],
   providers:[NameSorterPipe],   
   templateUrl: './home.component.html',

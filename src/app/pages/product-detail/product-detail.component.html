@@ -1,6 +1,6 @@
 <div class="shadow-2 border-round w-full lg:w-4 mx-auto product-detail-page">
-    <div class="container p-4 mb-5">
-        <app-header />
+    <app-header />
+    <div class="container p-2 mb-5">
 
         <div class="shadow-2 my-3 mx-2 border-round bg-white transition-all transition-duration-200"
             (contextmenu)="onContextMenu($event)">
@@ -78,7 +78,7 @@
         </div>
 
         <div class="mx-7 py-2 px-2">
-            <div class="flex justify-content-center shadow-2 bg-white p-3 mb-2 cursor-pointer" (click)="navigate('/product-survey')">
+            <div  class="mx-5 flex bg-linear-blue justify-content-center border-round  shadow-2 p-3 mb-2 cursor-pointer" (click)="navigate('/product-survey')">
                 <div>
                 <span>Start Survey</span></div>
             </div>
