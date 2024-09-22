@@ -1,20 +1,19 @@
 .pharmacy-detail-page{
-    
     margin: 0;
     background-color: var(--periwinkle-color);
 }
-.pharmacy-detail-page::-webkit-scrollbar{
+.pharmacy-detail-page .container::-webkit-scrollbar{
     width: 8px;
     color: aliceblue;
 }
+.pharmacy-detail-page .container::-webkit-scrollbar-thumb{
+    background-color: rgb(211, 208, 208);
+}
 
 .pharmacy-detail-page .container{
-    height: calc(100vh - 85px);
+    height: calc(100vh - 65px);
     overflow-y: auto;
     padding-inline: 20px;
-}
-.pharmacy-detail-page::-webkit-scrollbar-thumb{
-    background-color: rgb(211, 208, 208);
 }
 @media screen and (max-width: 370px) {
     .pharmacy-detail-page{
