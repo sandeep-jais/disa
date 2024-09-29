@@ -2,41 +2,8 @@
     <div class="">
         <app-header></app-header>
     </div>
-    @if(!isStarted){
-    <div class="container p-2 mb-5">
-        <div class=" my-3 mx-2 transition-all transition-duration-200">
-            <div class=" p-2 gap-3">
-                <div class="w-full flex justify-content-center bg-white p-3 shadow-1">
-                    <img class="" src="/assets/images/image.png"
-                        style="height: 160px;width: 140px; border-radius: 50%;object-fit: contain;" />
-                </div>
-                <div class="flex-1 flex align-items-center flex-column gap-1">
-                    <span class="font-bold py-2">
-                        Sita Pharmacy
-                    </span>
-                    <div class="flex align-items-center gap-2 py-2 mx-4">
-                        <i class="pi pi-map-marker text-sm"></i>
-                        <span class="text-sm">
-                            Nivea Cellular Luminous 630° Anti Dark-Spot Advanced Treatment Serum - 30ml
-                        </span>
-                    </div>
-                </div>
-                <span class="text-700 ml-5 capitalize">
-                </span>
-            </div>
-        </div>
-
-        <div class="mx-3">
-            <h4>Product Placement Audit</h4>
-        </div>
-        <div>
-            <div class="flex justify-content-center">
-                <button pButton label="Start" class="w-4  bg-linear-blue  border-round" (click)="start()"></button>
-            </div>
-        </div>
-    </div>
-    }@else if(isCompleted){
-    <div>
+    @if(isCompleted){
+    <div class="container">
         <div class="my-4">
             <div class="text-center">
                 <span class="pi pi-star text-3xl"></span>
@@ -62,58 +29,42 @@
                  }
             </div>
             <div class=" p-2 gap-3">
-                <div class="w-full flex justify-content-center bg-white p-3 shadow-1">
-                    <img class="bg-white" src="/assets/images/image.png"
-                        style="height: 140px;width: 140px; border-radius: 50%;object-fit: contain;" />
-                </div>
+
 
                 @if (questions.length) {
                 <div>
-                    <h4>{{questions[step].quetion}}</h4>
-                    @if(questions[step].type=='thumbsup'){
-                        <ng-container>
-                            <div class="flex justify-content-around my-5 ">
-                              <div class="text-center ">
-                                  <span class="pi thumbs-icon hover:surface-hover cursor-pointer" (click)="answer(true)"
-                                      [class]="'pi-thumbs-up-fill green'">
-      
-                                  </span>
-                              </div>
-                              <div class="text-center ">
-                                  <span class="pi thumbs-icon hover:surface-hover cursor-pointer" (click)="answer(false)"
-                                      [class]="'pi-thumbs-down-fill red'">
-      
-                                  </span>
-                              </div>
-                            </div>
-                              <div class="flex flex-wrap justify-content-center">
-                                  @for(img of images;track $index;){
-                                      <div class="answer-image mx-1 bg-white">
-                                          @if (img) {
-                                              <img [src]="img" />
-                                          }@else{
-                                              <label [for]="'file'+$index" class="">
-                                                  <span class="pi pi-plus cursor-pointer"></span>
-                                                  <input type="file" accept=".jpg,.jpeg,.png" (change)="selectFileChange($event,$index)" class="hidden" [id]="'file'+$index" />
-                                              </label>
-                                          }
-                                          <div style="font-size: 11px;" class="text-center pt-2">{{faces[$index]}}</div>
-                                      </div>
-                                      
-                                  }
-                              </div>
-                         </ng-container>
-                    }@else if (questions[step].type=='counter') {
-                        <ng-container>
-                            <app-counter [value]="questions[step].answer==undefined?0:questions[step].answer" (change)="answer($event)" />
-                        </ng-container>
-                    }
+                    <div>
+                        <p [innerHTML]="questions[step].quetion"></p>
+                    </div>
 
-                  
+                    <ng-container>
+                       @switch (questions[step].type) {
+                        @case ('start') {
+                            <app-question-start></app-question-start>
+                        }
+                        @case ('meter') {
+                            <app-question-meter></app-question-meter>
+                        }
+                        @case ('multi-select-image') {
+                            <app-question-multi-select-image></app-question-multi-select-image>
+                        }
+                        @case ('meter-image') {
+                            <app-question-meter-image></app-question-meter-image>
+                        }
+                        @case ('meter-count') {
+                            <app-question-meter-count></app-question-meter-count>
+                        }
+                        @case ('multi-select-question') {
+                            <app-question-multi-select-question></app-question-multi-select-question>
+                        }
+                       }
+                    </ng-container>
                     <div class="mt-5 mb-5">
-                        <div class="flex justify-content-center">
-                            <button [disabled]="questions|checkAnswer:step:images" pButton label="Next" class="w-4  bg-linear-blue  border-round"
-                                (click)="changeStep()"></button>
+                        <div class="flex justify-content-between">
+                            <app-back-button [disabled]="questions|checkAnswer:step:images" 
+                            (click)="changeStep()"></app-back-button>
+                            <app-next-button [disabled]="questions|checkAnswer:step:images" 
+                            (click)="changeStep()"></app-next-button>    
                         </div>
                     </div>
                 </div>

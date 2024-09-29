@@ -1,0 +1,28 @@
+.product-detail-page{
+    margin: 0;
+    background-color: var(--periwinkle-color);
+}
+.product-detail-page::-webkit-scrollbar{
+    width: 6px;
+    color: aliceblue;
+}
+.product-detail-page::-webkit-scrollbar-thumb{
+    background-color: rgb(211, 208, 208);
+}
+.product-detail-page .container{
+    height: calc(100vh - 95px);
+    overflow-y: auto;
+}
+@media screen and (max-width: 370px) {
+    .product-detail-page{
+       
+       padding: 0px !important;
+       .container{
+        margin: 8px;
+        padding: 0px !important;
+       }
+    }
+}
+.images-product .object-fit{
+    object-fit: contain;
+}

@@ -2,83 +2,27 @@
     <app-header />
     <div class="container p-2 mb-5">
 
-        <div class="shadow-2 my-3 mx-2 border-round bg-white transition-all transition-duration-200"
-            (contextmenu)="onContextMenu($event)">
-            <div class=" p-2 gap-3">
-                <div class="w-full flex justify-content-center">
-
-                    <!-- <div class=" text-center pt-4 bg-gray-300 "
-                        style="height: 70px;width: 70px; border-radius: 50%;">
-                        SP
-                    </div> -->
-                    <img class="bg-white" src="/assets/images/image.png" style="height: 80px;width: 80px; border-radius: 50%;object-fit: contain;" />
-                </div>
-                <div class="flex-1 flex align-items-center flex-column gap-1">
-                    <span class="font-bold py-2">
-                        Nivea Cellular Luminous 
-                    </span>
-                    <div class="flex align-items-center gap-2 py-2 mx-4">
-                        <i class="pi pi-map-marker text-sm"></i>
-                        <span class="text-sm">
-                            630° Anti Dark-Spot Advanced Treatment Serum - 30ml
-                        </span>
-                    </div>
-                </div>
-                <span class="text-700 ml-5 capitalize">
-                </span>
+        <div class="px-3 my-3 md:mx-5">
+            <span class="text-2xl">
+                We are at the <span class="font-bold ">Dubai Mall Carrefour </span>for surveying the following products.
+            </span>
+        </div>
+        <div class="w-full flex flex-wrap images-product">
+            <div class="w-6 p-2 text-center">
+                <img height="100" class="w-full object-fit" src="assets/images/p1.png" />
+            </div>
+            <div class="w-6 p-2">
+                <img height="100" class="w-full object-fit" src="assets/images/p2.png" />
+            </div>
+            <div class="w-6 p-2">
+                <img height="100" class="w-full object-fit" src="assets/images/p3.png" />
+            </div>
+            <div class="w-6 p-2">
+                <img height="100" class="w-full object-fit" src="assets/images/p4.png" />
             </div>
         </div>
-        <div>
-            <div class="w-full flex">
-                <div class="w-4 text-center" >
-                     <div class="flex flex-column align-items-center" >
-                        <div class="flex justify-content-center shadow-2 pt-3 bg-white "
-                        style="height: 50px;width: 50px; border-radius: 50%;">
-                            <span class="pi pi-user"></span>
-                        </div>
-                        <p class="text-sm px-3">Product Placement Guidelines</p>
-                     </div>
-                </div>
-                <div class="w-4 text-center">
-                    <div class="flex flex-column align-items-center">
-                        <div class="flex justify-content-center shadow-2 pt-3 bg-white "
-                        style="height: 50px;width: 50px; border-radius: 50%;">
-                       <span class="pi pi-file-check"></span>
-                       </div>
-                       <p class="text-sm px-3">Primary Visibility Guidelines</p>
-                    </div>
-               </div>
-               <div class="w-4 text-center">
-                <div class="flex flex-column align-items-center">
-                    <div class="flex justify-content-center shadow-2 pt-3 bg-white "
-                        style="height: 50px;width: 50px; border-radius: 50%;">
-                   <span class="pi pi-heart"></span>
-                   </div>
-                   <p class="text-sm px-3">Product Placement Guidelines</p>
-                </div>
-           </div>
-            </div>
-        </div>
-        <div class=" mt-5">
-           
-            <p-contextMenu #cm [model]="items" (onHide)="onHide()">
-                <ng-template pTemplate="item" let-item>
-                    <a pRipple class="flex align-items-center p-menuitem-link">
-                        <span class="item.icon"></span>
-                        <span class="ml-2">{{ item.label }}</span>
-                        <p-badge *ngIf="item.badge" class="ml-auto" [value]="item.badge" />
-                        <span *ngIf="item.shortcut"
-                            class="ml-auto border-1 surface-border border-round surface-100 text-xs p-1">
-                            {{ item.shortcut }}
-                        </span>
-                        <i *ngIf="item.items" class="pi pi-angle-right ml-auto"></i>
-                    </a>
-                </ng-template>
-            </p-contextMenu>
-        </div>
-
         <div class="mx-7 py-2 px-2">
-            <div  class="mx-5 flex bg-linear-blue justify-content-center border-round  shadow-2 p-3 mb-2 cursor-pointer" (click)="navigate('/product-survey')">
+            <div  class="mx-5 flex bg-linear-blue justify-content-center border-round  shadow-2 p-3 mb-2 cursor-pointer" (click)="navigate('/product-survey-info')">
                 <div>
                 <span>Start Survey</span></div>
             </div>

@@ -1,23 +1,33 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
-import { QUESTIONS } from '../../constants/questions';
+import { PRODUCT_QUESTIONS, QUESTIONS } from '../../constants/questions';
 import { HeaderComponent } from "../../components/common/header/header.component";
 import { FooterComponent } from "../../components/common/footer/footer.component";
 import { CounterComponent } from "../../components/common/counter/counter.component";
 import { CheckAnswerPipe } from '../../pipes/checkAnswer.pipe';
 import { BottomTabsComponent } from '../../components/common/bottom-tabs/bottom-tabs.component';
+import { NextButtonComponent } from "../../components/common/next-button/next-button.component";
+import { BackButtonComponent } from '../../components/common/back-button/back-button.component';
+import { QuestionStartComponent } from "./question-start/question-start.component";
+import { QuestionMeterComponent } from './question-meter/question-meter.component';
+import { QuestionMeterCountComponent } from './question-meter-count/question-meter-count.component';
+import { QuestionMeterImageComponent } from './question-meter-image/question-meter-image.component';
+import { QuestionMultiSelectImageComponent } from './question-multi-select-image/question-multi-select-image.component';
+import { QuestionMultiSelectQuestionComponent } from './question-multi-select-question/question-multi-select-question.component';
 
 @Component({
   selector: 'app-survey',
   standalone: true,
-  imports: [ButtonModule, HeaderComponent,BottomTabsComponent,
-     FooterComponent, CounterComponent,CheckAnswerPipe],
+  imports: [ButtonModule, HeaderComponent, BottomTabsComponent, BackButtonComponent,QuestionMeterComponent,
+    FooterComponent, CounterComponent, CheckAnswerPipe, NextButtonComponent, QuestionStartComponent,
+    QuestionMeterCountComponent,QuestionMeterImageComponent,QuestionMultiSelectImageComponent,QuestionMultiSelectQuestionComponent 
+  ],
   templateUrl: './survey.component.html',
   styleUrl: './survey.component.scss'
 })
 export class SurveyComponent {
-  questions = QUESTIONS;
+  questions = PRODUCT_QUESTIONS;
   router = inject(Router);
   isStarted: boolean = false;
   isCompleted: boolean = false;
@@ -46,7 +56,6 @@ export class SurveyComponent {
       this.isCompleted = true;
       this.time = 0;
       this.images = ['', '', ''];
-      this.navigate('/product-survey-2');
     } else {
       this.step += 1;
       this.questions[this.step].time = this.time;
