@@ -15,14 +15,15 @@ import { QuestionMeterCountComponent } from './question-meter-count/question-met
 import { QuestionMeterImageComponent } from './question-meter-image/question-meter-image.component';
 import { QuestionMultiSelectImageComponent } from './question-multi-select-image/question-multi-select-image.component';
 import { QuestionMultiSelectQuestionComponent } from './question-multi-select-question/question-multi-select-question.component';
+import { QuestionImageComponent } from "./question-image/question-image.component";
 
 @Component({
   selector: 'app-survey',
   standalone: true,
-  imports: [ButtonModule, HeaderComponent, BottomTabsComponent, BackButtonComponent,QuestionMeterComponent,
+  imports: [ButtonModule, HeaderComponent, BottomTabsComponent, BackButtonComponent, QuestionMeterComponent,
     FooterComponent, CounterComponent, CheckAnswerPipe, NextButtonComponent, QuestionStartComponent,
-    QuestionMeterCountComponent,QuestionMeterImageComponent,QuestionMultiSelectImageComponent,QuestionMultiSelectQuestionComponent 
-  ],
+    QuestionMeterCountComponent, QuestionMeterImageComponent,QuestionImageComponent,
+     QuestionMultiSelectImageComponent, QuestionMultiSelectQuestionComponent, QuestionImageComponent],
   templateUrl: './survey.component.html',
   styleUrl: './survey.component.scss'
 })
@@ -51,6 +52,7 @@ export class SurveyComponent {
   }
 
   changeStep() {
+    this.questions[this.step].answer = true;
     if (this.step == (this.questions.length - 1)) {
       this.step = 0;
       this.isCompleted = true;
@@ -62,7 +64,6 @@ export class SurveyComponent {
       this.time = 0;
       this.images = ['', '', ''];
     }
-    this.questions[this.step].answer = true;
   }
 
   back(){

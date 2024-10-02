@@ -57,6 +57,9 @@
                         @case ('multi-select-question') {
                             <app-question-multi-select-question [question]="questions[step]"></app-question-multi-select-question>
                         }
+                        @case ('question-image') {
+                            <app-question-image [question]="questions[step]"></app-question-image>
+                        }
                        }
                     </ng-container>
                     <div class="mt-5 mb-5">

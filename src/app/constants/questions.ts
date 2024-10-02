@@ -115,6 +115,41 @@ export const PRODUCT_QUESTIONS=[
         file:"",
         image:""
     },
+    {
+        id: 9,
+        quetion:"Do you see any of the following branding in the area where products are displayed?",
+        answer: undefined,
+        time: 0,
+        type:"multi-select-image",
+        options:[
+            {
+                image:"p1.png",
+                checked: false
+            },
+            {
+                image:"p2.png",
+                checked: false
+            },
+            {
+                image:"p3.png",
+                checked: false
+            },
+            {
+                image:"p4.png",
+                checked: false
+            }
+        ]
+    },
+    {
+        id: 10,
+        quetion:"Click a picture of the following branding display",
+        answer: undefined,
+        productImage:'p1.png',
+        time: 0,
+        type:"question-image",
+        file:"",
+        image:""
+    },
 ]
 
 export const QUESTIONS=[
