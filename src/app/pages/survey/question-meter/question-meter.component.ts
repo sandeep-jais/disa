@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-question-meter',
@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './question-meter.component.scss'
 })
 export class QuestionMeterComponent {
+  @Input('meters') meters:number=0;
+  @Input('centimeter') centimeter:number=0;
 
 }

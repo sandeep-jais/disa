@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-question-meter-count',
@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './question-meter-count.component.scss'
 })
 export class QuestionMeterCountComponent {
-
+  @Input('counts') counts: number = 0;
 }

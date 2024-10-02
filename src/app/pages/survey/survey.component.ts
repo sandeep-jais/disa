@@ -27,7 +27,7 @@ import { QuestionMultiSelectQuestionComponent } from './question-multi-select-qu
   styleUrl: './survey.component.scss'
 })
 export class SurveyComponent {
-  questions = PRODUCT_QUESTIONS;
+  questions:any = PRODUCT_QUESTIONS;
   router = inject(Router);
   isStarted: boolean = false;
   isCompleted: boolean = false;
@@ -62,8 +62,12 @@ export class SurveyComponent {
       this.time = 0;
       this.images = ['', '', ''];
     }
+    this.questions[this.step].answer = true;
   }
 
+  back(){
+    this.step--;
+  }
   answer(ans?: any) {
     this.questions[this.step].answer = ans;
   }

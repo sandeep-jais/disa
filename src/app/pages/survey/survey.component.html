@@ -21,7 +21,7 @@
         </div>
     </div>
     }@else {
-    <div class="container p-4 mb-5">
+    <div class="container p-4">
         <div class="my-3 mx-2 transition-all transition-duration-200">
             <div class="flex justify-content-between">
                 @for (q of questions; track $index) {
@@ -55,16 +55,25 @@
                             <app-question-meter-count></app-question-meter-count>
                         }
                         @case ('multi-select-question') {
-                            <app-question-multi-select-question></app-question-multi-select-question>
+                            <app-question-multi-select-question [question]="questions[step]"></app-question-multi-select-question>
                         }
                        }
                     </ng-container>
                     <div class="mt-5 mb-5">
                         <div class="flex justify-content-between">
-                            <app-back-button [disabled]="questions|checkAnswer:step:images" 
-                            (click)="changeStep()"></app-back-button>
-                            <app-next-button [disabled]="questions|checkAnswer:step:images" 
-                            (click)="changeStep()"></app-next-button>    
+                            <div>
+                                @if (step>0) {
+                                    <app-back-button [disabled]="questions|checkAnswer:step:images" 
+                                    (click)="back()"></app-back-button>
+                                }
+                            </div>
+                            <div>
+                                @if (!isCompleted) {
+                                  <app-next-button [disabled]="questions|checkAnswer:step:images" 
+                                  (click)="changeStep()"></app-next-button>
+                                }
+                            </div>
+                               
                         </div>
                     </div>
                 </div>
