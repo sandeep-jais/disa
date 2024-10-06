@@ -5,10 +5,14 @@
     width: 119px;
     cursor: pointer;
 }
+.back-button-outer:hover{
+    opacity: 0.85;
+}
 .back-button{
     font-weight: 600;
     color: #FFFFFF;
     display: inline-block;
+    cursor: pointer;
     width: 100%;
     height: 44px;
     align-content: center;

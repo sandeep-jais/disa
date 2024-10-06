@@ -3,11 +3,11 @@
         <div class="flex w-full flex-wrap">
             @for (item of question.options; track $index;) {
                 <div class="w-6 px-3 py-1">
-                    <div class="relative" >
+                    <div class="relative border-1 border-white border-round" >
                         <img class="w-full" height="140" width="40" [src]="'/assets/images/'+item?.image" />
                         <span class="absolute pi pi-search-plus text-gray-600 cursor-pointer" (click)="openPreview.emit('assets/images/'+item?.image)" style="right: 10px;bottom: 10px;"></span>
                     </div>
-                    <div class="flex justify-content-around">
+                    <div class="flex justify-content-around mt-1">
                         <span class="border p-2 pi pi-check cursor-pointer" [class]="item?.checked?'bg-green-300':'bg-white'"  (click)="checked('checked',$index)" ></span>
                         <span class="border p-2 bg-white pi pi-times cursor-pointer" (click)="checked('cross',$index)"></span>
                     </div>
