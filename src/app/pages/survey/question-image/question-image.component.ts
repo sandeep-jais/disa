@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-question-image',
@@ -9,4 +9,11 @@ import { Component, Input } from '@angular/core';
 })
 export class QuestionImageComponent {
   @Input('question') question:any;
+  @Output() answer = new EventEmitter<any>();
+
+  selectFile(event:any){
+    let file= event.files[0];
+    let link = URL.createObjectURL(file);
+    this.answer.emit({...this.question,file,image: link });
+  }
 }

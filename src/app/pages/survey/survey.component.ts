@@ -16,14 +16,15 @@ import { QuestionMeterImageComponent } from './question-meter-image/question-met
 import { QuestionMultiSelectImageComponent } from './question-multi-select-image/question-multi-select-image.component';
 import { QuestionMultiSelectQuestionComponent } from './question-multi-select-question/question-multi-select-question.component';
 import { QuestionImageComponent } from "./question-image/question-image.component";
+import { ImageLightBoxComponent } from "../../components/image-light-box/image-light-box.component";
 
 @Component({
-  selector: 'app-survey',
+  selector: 'app-survey', 
   standalone: true,
   imports: [ButtonModule, HeaderComponent, BottomTabsComponent, BackButtonComponent, QuestionMeterComponent,
     FooterComponent, CounterComponent, CheckAnswerPipe, NextButtonComponent, QuestionStartComponent,
-    QuestionMeterCountComponent, QuestionMeterImageComponent,QuestionImageComponent,
-     QuestionMultiSelectImageComponent, QuestionMultiSelectQuestionComponent, QuestionImageComponent],
+    QuestionMeterCountComponent, QuestionMeterImageComponent, QuestionImageComponent,
+    QuestionMultiSelectImageComponent, QuestionMultiSelectQuestionComponent, QuestionImageComponent, ImageLightBoxComponent],
   templateUrl: './survey.component.html',
   styleUrl: './survey.component.scss'
 })
@@ -32,9 +33,15 @@ export class SurveyComponent {
   router = inject(Router);
   isStarted: boolean = false;
   isCompleted: boolean = false;
+  selectedImage:any;
+  visible:boolean= false;
   step: number = 0;
   images: any = ['', '', ''];
   files: any = [];
+
+  ngOnInit(){
+    
+  }
   navigate(path: string) {
     this.router.navigate([path]);
   }
@@ -70,7 +77,7 @@ export class SurveyComponent {
     this.step--;
   }
   answer(ans?: any) {
-    this.questions[this.step].answer = ans;
+    this.questions[this.step]= ans;
   }
 
   selectFileChange(event: any, index: number) {
@@ -86,5 +93,14 @@ export class SurveyComponent {
     setInterval(() => {
       this.time = this.time + 1;
     }, 1000)
+  }
+ 
+  openPreview(fileName:any){
+    this.selectedImage= fileName;
+    this.visible= true;
+  }
+  hideLightBox(){
+    this.visible= false;
+    this.selectedImage= null;
   }
 }

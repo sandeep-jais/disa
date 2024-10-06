@@ -1,27 +1,28 @@
 <div class="my-3">
     <div class="mx-2">
         <div class=" flex align-items-center justify-content-between mb-3 p-2">
-            <span style="font-size: 40px;" class="pi pi-minus-circle"></span>
+            <span style="font-size: 40px;" class="pi pi-minus-circle cursor-pointer" 
+             (click)="pressMinus('mtr')"></span>
             <div class="flex justify-content-between align-items-center">
                 <span>
-                    <span class="bg-white px-2" style="font-size: 32px;">{{meters}}</span>
+                    <span class="bg-white px-2" style="font-size: 32px;">{{question?.meters}}</span>
                 </span>
                 <span class="ml-2">mtr</span>
             </div>
-            <span class="pi pi-plus-circle" style="font-size: 40px;"></span>
+            <span class="pi pi-plus-circle cursor-pointer" (click)="pressPlus('mtr')" style="font-size: 40px;"></span>
         </div>
         <div class=" flex align-items-center justify-content-between p-2">
-            <span style="font-size: 40px;" class="pi pi-minus-circle"></span>
+            <span style="font-size: 40px;" class="pi pi-minus-circle cursor-pointer"  (click)="pressMinus('cms')"></span>
             <div class="flex justify-content-between align-items-center">
                 <span>
-                    <span class="bg-white px-2" style="font-size: 32px;">{{centimeter}}</span>
+                    <span class="bg-white px-2" style="font-size: 32px;">{{question?.centimeter}}</span>
                 </span>
                 <span class="ml-2">cms</span>
             </div>
-            <span class="pi pi-plus-circle" style="font-size: 40px;"></span>
+            <span class="pi pi-plus-circle cursor-pointer" (click)="pressPlus('cms')" style="font-size: 40px;"></span>
         </div>
     </div>
-    <p>
+    <p class="text-sm">
         Click here to know how to measure the shelve space.
     </p>
 </div>

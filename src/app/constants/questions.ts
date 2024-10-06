@@ -75,19 +75,19 @@ export const PRODUCT_QUESTIONS=[
         options:[
             {
                 title: 'Straight in front of me',
-                value: ''
+                value: false
             },
             {
                 title: 'One level below eye contact',
-                value: ''
+                value: false
             },
             {
                 title: 'Bottom Shelves',
-                value: ''
+                value: false
             },
             {
                 title: 'Topmost Shelf',
-                value: ''
+                value: false
             }
         ],
         file:"",
@@ -123,19 +123,19 @@ export const PRODUCT_QUESTIONS=[
         type:"multi-select-image",
         options:[
             {
-                image:"p1.png",
+                image:"p7.png",
                 checked: false
             },
             {
-                image:"p2.png",
+                image:"p8.png",
                 checked: false
             },
             {
-                image:"p3.png",
+                image:"p5.png",
                 checked: false
             },
             {
-                image:"p4.png",
+                image:"p6.png",
                 checked: false
             }
         ]
@@ -144,7 +144,7 @@ export const PRODUCT_QUESTIONS=[
         id: 10,
         quetion:"Click a picture of the following branding display",
         answer: undefined,
-        productImage:'p1.png',
+        productImage:'p7.png',
         time: 0,
         type:"question-image",
         file:"",

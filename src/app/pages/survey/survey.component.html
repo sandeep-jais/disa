@@ -40,25 +40,27 @@
                     <ng-container>
                        @switch (questions[step].type) {
                         @case ('start') {
-                            <app-question-start></app-question-start>
+                            <app-question-start [question]="questions[step]" (answer)="answer($event)"></app-question-start>
                         }
                         @case ('meter') {
-                            <app-question-meter></app-question-meter>
+                            <app-question-meter [question]="questions[step]" (answer)="answer($event)"></app-question-meter>
                         }
                         @case ('multi-select-image') {
-                            <app-question-multi-select-image></app-question-multi-select-image>
+                            <app-question-multi-select-image  [question]="questions[step]" 
+                            (answer)="answer($event)" (openPreview)="openPreview($event)"></app-question-multi-select-image>
                         }
                         @case ('meter-image') {
-                            <app-question-meter-image></app-question-meter-image>
+                            <app-question-meter-image [question]="questions[step]" (answer)="answer($event)"></app-question-meter-image>
                         }
                         @case ('meter-count') {
-                            <app-question-meter-count></app-question-meter-count>
+                            <app-question-meter-count [question]="questions[step]" 
+                            (answer)="answer($event)" (openPreview)="openPreview($event)"></app-question-meter-count>
                         }
                         @case ('multi-select-question') {
-                            <app-question-multi-select-question [question]="questions[step]"></app-question-multi-select-question>
+                            <app-question-multi-select-question [question]="questions[step]" (answer)="answer($event)"></app-question-multi-select-question>
                         }
                         @case ('question-image') {
-                            <app-question-image [question]="questions[step]"></app-question-image>
+                            <app-question-image [question]="questions[step]" (answer)="answer($event)"></app-question-image>
                         }
                        }
                     </ng-container>
@@ -86,3 +88,5 @@
     </div>
     }
 </div>
+
+<app-image-light-box [visible]="visible" [imageUrl]="selectedImage" (close)="hideLightBox()" />

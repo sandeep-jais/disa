@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-question-meter-count',
@@ -8,5 +8,21 @@ import { Component, Input } from '@angular/core';
   styleUrl: './question-meter-count.component.scss'
 })
 export class QuestionMeterCountComponent {
-  @Input('counts') counts: number = 0;
+  @Input('question') question:any;
+  @Output() answer = new EventEmitter<any>();
+  @Output() openPreview = new EventEmitter<any>();
+
+  pressPlus(){
+      this.answer.emit({...this.question,counts: this.question.counts+1 });
+  }
+
+  pressMinus(){
+      this.answer.emit({...this.question,counts: this.question.counts==0?0:this.question.counts-1  });
+  }
+
+  selectFile(event:any){
+    let file= event.files[0];
+    let link = URL.createObjectURL(file);
+    this.answer.emit({...this.question,file,image: link });
+  }
 }

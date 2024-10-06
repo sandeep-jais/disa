@@ -3,7 +3,14 @@
         Click a front view of the overall display
     </p>
     <div class="flex justify-content-around align-items-center">
-        <img src="assets/images/camera.png" height="30" width="30" />
+        <label for="file-1" class="cursor-pointer">
+            @if(question.frontViewFile){
+                <img [src]="question.frontViewImage" height="70" width="80" />
+            }@else {
+                <img src="assets/images/camera.png" height="30" width="30" />
+            }
+            <input (change)="selectFile('front',$event.target)" type="file" id="file-1" class="hidden" />
+        </label>
         <div class="box-label-opacity relative ">
             <img src="assets/images/sample-image.png" class="opacity-70" height="70" width="80" />
             <span class="left-0 pl-2 pt-2 absolute">Sample Image</span>
@@ -14,7 +21,14 @@
         Click a side view of the overall display.
     </p>
     <div class="flex justify-content-around align-items-center">
-        <img src="assets/images/camera.png" height="30" width="30" />
+        <label for="file-2" class="cursor-pointer">
+            @if(question.sideViewFile){
+                <img [src]="question.sideViewImage" height="70" width="80" />
+            }@else {
+                <img src="assets/images/camera.png" height="30" width="30" />
+            }
+            <input (change)="selectFile('side',$event.target)" type="file" id="file-2" class="hidden" />
+        </label>
         <div class="box-label-opacity relative ">
             <img src="assets/images/sample-image.png" class="opacity-70" height="70" width="80" />
             <span class="left-0 pl-2 pt-2 absolute">Sample Image</span>

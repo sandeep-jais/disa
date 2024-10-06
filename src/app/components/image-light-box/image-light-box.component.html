@@ -1,0 +1,14 @@
+<p-dialog 
+    header="Preview" 
+    [(visible)]="visible" 
+    [modal]="true" 
+    [maximizable]="true"
+    (onHide)="hide()"
+    [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" 
+    [style]="{ width: '50vw' }" 
+    [draggable]="false" 
+    [resizable]="false">
+        <div class="w-full flex justify-content-center">
+            <img [src]="imageUrl" alt="full preview" />
+        </div>
+</p-dialog>
