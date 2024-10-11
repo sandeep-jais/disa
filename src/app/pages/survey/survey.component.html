@@ -64,25 +64,27 @@
                         }
                        }
                     </ng-container>
-                    <div class="mt-5 mb-5">
-                        <div class="flex justify-content-between">
-                            <div>
-                                @if (step>0) {
-                                    <app-back-button [disabled]="questions|checkAnswer:step:images" 
-                                    (click)="back()"></app-back-button>
-                                }
-                            </div>
-                            <div>
-                                @if (!isCompleted) {
-                                  <app-next-button [disabled]="questions|checkAnswer:step:images" 
-                                  (click)="changeStep()"></app-next-button>
-                                }
-                            </div>
-                               
-                        </div>
-                    </div>
+                    
                 </div>
                 }
+                
+            </div>
+        </div>
+        <div class="mt-5 mb-5">
+            <div class="flex justify-content-between">
+                <div>
+                    @if (step>0) {
+                        <app-back-button [disabled]="questions|checkAnswer:step:images" 
+                        (click)="back()"></app-back-button>
+                    }
+                </div>
+                <div>
+                    @if (!isCompleted) {
+                      <app-next-button [disabled]="questions|checkAnswer:step:images" 
+                      (click)="changeStep()"></app-next-button>
+                    }
+                </div>
+                   
             </div>
         </div>
     </div>

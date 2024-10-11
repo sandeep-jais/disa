@@ -4,7 +4,7 @@
     </div>
     <div class="mx-2">
         <div class=" flex align-items-center justify-content-center mb-3 p-2">
-            <div class="relative">
+            <div class="relative border-1 border-round p-2 shadow-1 border-gray-300">
                 <img height="100" width="w-full" src="/assets/images/p3.png" />
             </div>
         </div>
@@ -23,14 +23,15 @@
     <div class="flex justify-content-around align-items-center">
         <label for="file-img" class="cursor-pointer">
             @if(question.file){
-                <img [src]="question.image" height="70" width="80" />
+                <img [src]="question.image" class="border-1 border-round p-2 shadow-1 border-gray-300" height="70" width="80" />
             }@else {
-                <img src="assets/images/camera.png" height="30" width="30" />
+                <img src="assets/images/camera.png"
+                class="border-1 border-round p-2 shadow-1 border-gray-300" height="70" width="80" />
             }
             <input (change)="selectFile($event.target)" type="file" id="file-img" class="hidden" />
         </label>
         <div class="box-label-opacity relative ">
-            <img src="assets/images/sample-image.png" class="opacity-70" height="70" width="80" />
+            <img src="assets/images/sample-image.png" class="opacity-70 border border-round" height="70" width="80" />
             <span class="left-0 pl-2 pt-2 absolute">Sample Image</span>
         </div>
     </div>

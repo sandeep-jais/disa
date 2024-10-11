@@ -1,7 +1,8 @@
 <div class="shadow-2 border-round w-full lg:w-4 mx-auto product-detail-page">
     <app-header />
-    <div class="container p-2">
+    <div class="container p-2 flex flex-column justify-content-between ">
 
+        <div>
         <div class="px-3 my-3 md:mx-5">
             <span class="text-2xl">
                 We are at the <span class="font-bold ">Dubai Mall Carrefour </span>for surveying the following products.
@@ -9,18 +10,19 @@
         </div>
         <div class="w-full flex flex-wrap images-product">
             <div class="w-6 p-2 text-center">
-                <img height="130" class="w-full object-fit" src="assets/images/p1.png" />
+                <img height="130" class="border-2 border-round p-2 shadow-1 border-gray-300 object-fit" src="assets/images/p1.png" />
             </div>
-            <div class="w-6 p-2">
-                <img height="130" class="w-full object-fit" src="assets/images/p2.png" />
+            <div class="w-6 p-2 text-center">
+                <img height="130" class="border-2 border-round p-2 shadow-1 border-gray-300 object-fit" src="assets/images/p2.png" />
             </div>
-            <div class="w-6 p-2">
-                <img height="130" class="w-full object-fit" src="assets/images/p3.png" />
+            <div class="w-6 p-2 text-center">
+                <img height="130" class="border-2 border-round p-2 shadow-1 border-gray-300 object-fit" src="assets/images/p3.png" />
             </div>
-            <div class="w-6 p-2">
-                <img height="130" class="w-full object-fit" src="assets/images/p4.png" />
+            <div class="w-6 p-2 text-center">
+                <img height="130" class="border-2 border-round p-2 shadow-1 border-gray-300 object-fit" src="assets/images/p4.png" />
             </div>
         </div>
+       </div>
         <div class="mx-7 my-3 py-2 px-2">
             <div  class="mx-5 flex bg-linear-blue justify-content-center border-round  shadow-2 p-3 mb-2 cursor-pointer" (click)="navigate('/product-survey-info')">
                 <div>
