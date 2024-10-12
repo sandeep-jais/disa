@@ -17,14 +17,16 @@ import { QuestionMultiSelectImageComponent } from './question-multi-select-image
 import { QuestionMultiSelectQuestionComponent } from './question-multi-select-question/question-multi-select-question.component';
 import { QuestionImageComponent } from "./question-image/question-image.component";
 import { ImageLightBoxComponent } from "../../components/image-light-box/image-light-box.component";
+import { CustomProgressComponent } from "../../components/common/custom-progress/custom-progress.component";
+import { AnswerLengthPipe } from '../../pipes/answerLength.pipe';
 
 @Component({
   selector: 'app-survey', 
   standalone: true,
   imports: [ButtonModule, HeaderComponent, BottomTabsComponent, BackButtonComponent, QuestionMeterComponent,
     FooterComponent, CounterComponent, CheckAnswerPipe, NextButtonComponent, QuestionStartComponent,
-    QuestionMeterCountComponent, QuestionMeterImageComponent, QuestionImageComponent,
-    QuestionMultiSelectImageComponent, QuestionMultiSelectQuestionComponent, QuestionImageComponent, ImageLightBoxComponent],
+    QuestionMeterCountComponent, QuestionMeterImageComponent, QuestionImageComponent,AnswerLengthPipe,
+    QuestionMultiSelectImageComponent, QuestionMultiSelectQuestionComponent, QuestionImageComponent, ImageLightBoxComponent, CustomProgressComponent],
   templateUrl: './survey.component.html',
   styleUrl: './survey.component.scss'
 })

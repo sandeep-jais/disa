@@ -30,9 +30,11 @@
             }
             <input (change)="selectFile($event.target)" type="file" id="file-img" class="hidden" />
         </label>
-        <div class="box-label-opacity relative ">
-            <img src="assets/images/sample-image.png" class="opacity-70 border border-round" height="70" width="80" />
-            <span class="left-0 pl-2 pt-2 absolute">Sample Image</span>
+        <div class="box-label-opacity">
+            <img src="assets/images/sample-image.png" class="border border-round" height="70" width="80" />
+            <div>
+                <span class="left-0 pl-1 pt-1" style="font-size: 10px;">Sample Image</span>
+            </div>
         </div>
     </div>
 </div>

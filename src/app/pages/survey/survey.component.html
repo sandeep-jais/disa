@@ -23,11 +23,12 @@
     }@else {
     <div class="container p-4">
         <div class="my-3 mx-2 transition-all transition-duration-200">
-            <div class="flex justify-content-between">
+            <!-- <div class="flex justify-content-between">
                 @for (q of questions; track $index) {
                     <span class="bg-gray-600 stepper flex flex-1" [class.done]="q.answer!==undefined"></span>
                  }
-            </div>
+                </div> -->
+            <app-custom-progress [total]="questions.length" [value]="questions|answerLength" />
             <div class=" p-2 gap-3">
 
 
