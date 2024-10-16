@@ -21,8 +21,8 @@
         </div>
     </div>
     }@else {
-    <div class="container p-4">
-        <div class="my-3 mx-2 transition-all transition-duration-200">
+    <div class="container relative">
+        <div class="p-4 transition-all transition-duration-200">
             <!-- <div class="flex justify-content-between">
                 @for (q of questions; track $index) {
                     <span class="bg-gray-600 stepper flex flex-1" [class.done]="q.answer!==undefined"></span>
@@ -71,7 +71,7 @@
                 
             </div>
         </div>
-        <div class="mt-5 mb-5">
+        <div class="p-4 bottom-0 absolute w-full">
             <div class="flex justify-content-between">
                 <div>
                     @if (step>0) {

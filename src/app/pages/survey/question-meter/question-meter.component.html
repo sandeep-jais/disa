@@ -1,6 +1,6 @@
-<div class="my-3">
+<div class="my-3 relative height-full">
     <div class="mx-2">
-        <div class=" flex align-items-center justify-content-between mb-3 p-2">
+        <div class=" flex align-items-center justify-content-around mb-3 p-2">
             <span style="font-size: 40px;" class="pi pi-minus-circle cursor-pointer" 
              (click)="pressMinus('mtr')"></span>
             <div class="flex justify-content-between align-items-center">
@@ -11,7 +11,7 @@
             </div>
             <span class="pi pi-plus-circle cursor-pointer" (click)="pressPlus('mtr')" style="font-size: 40px;"></span>
         </div>
-        <div class=" flex align-items-center justify-content-between p-2">
+        <div class=" flex align-items-center justify-content-around p-2">
             <span style="font-size: 40px;" class="pi pi-minus-circle cursor-pointer"  (click)="pressMinus('cms')"></span>
             <div class="flex justify-content-between align-items-center">
                 <span>
@@ -22,7 +22,9 @@
             <span class="pi pi-plus-circle cursor-pointer" (click)="pressPlus('cms')" style="font-size: 40px;"></span>
         </div>
     </div>
-    <p class="text-sm">
-        Click here to know how to measure the shelve space.
-    </p>
+    <div class="text-sm absolute bottom-0" >
+        <p class="text-gray-600 text-sm">
+            Click here to know how to measure the shelve space.
+        </p>
+    </div>
 </div>
