@@ -41,10 +41,12 @@
                     <ng-container>
                        @switch (questions[step].type) {
                         @case ('start') {
-                            <app-question-start [question]="questions[step]" (answer)="answer($event)"></app-question-start>
+                            <app-question-start [question]="questions[step]" (answer)="answer($event)"
+                            (openPreview)="openPreview($event)"></app-question-start>
                         }
                         @case ('meter') {
-                            <app-question-meter [question]="questions[step]" (answer)="answer($event)"></app-question-meter>
+                            <app-question-meter [question]="questions[step]" (answer)="answer($event)"
+                            (openPreview)="openPreview($event)"></app-question-meter>
                         }
                         @case ('multi-select-image') {
                             <app-question-multi-select-image  [question]="questions[step]" 
@@ -58,7 +60,8 @@
                             (answer)="answer($event)" (openPreview)="openPreview($event)"></app-question-meter-count>
                         }
                         @case ('multi-select-question') {
-                            <app-question-multi-select-question [question]="questions[step]" (answer)="answer($event)"></app-question-multi-select-question>
+                            <app-question-multi-select-question [question]="questions[step]" (answer)="answer($event)"
+                            (openPreview)="openPreview($event)"></app-question-multi-select-question>
                         }
                         @case ('question-image') {
                             <app-question-image [question]="questions[step]" (answer)="answer($event)"></app-question-image>

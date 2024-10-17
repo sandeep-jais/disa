@@ -6,14 +6,15 @@
         <div class=" flex align-items-center justify-content-center p-2">
             <div class="relative border-1 border-round p-2 shadow-1 border-gray-300">
                 <img height="80" width="w-full" src="/assets/images/p3.png" />
+                <span class="absolute pi pi-search-plus text-gray-600 cursor-pointer" (click)="openPreview.emit('assets/images/p3.png')" style="right: 10px;bottom: 10px;"></span>
             </div>
         </div>
     </div>
     <div>
         @for (option of question?.options; track $index) {
             <div class="mb-1 flex">
-                <input type="checkbox" [checked]="option?.value" (change)="checked($event.target,$index)" class="mr-2 p-2" />
-                <span class="">{{option?.title}}</span>
+                <input type="checkbox" [id]="'check-'+$index" [checked]="option?.value" (change)="checked($event.target,$index)" class="mr-2 p-2" />
+                <label class="" [for]="'check-'+$index">{{option?.title}}</label>
             </div>
         }
     </div>
@@ -30,8 +31,9 @@
             }
             <input (change)="selectFile($event.target)" type="file" id="file-img" class="hidden" />
         </label>
-        <div class="box-label-opacity">
+        <div class="box-label-opacity relative">
             <img src="assets/images/sample-image.png" class="border border-round" height="70" width="80" />
+            <span class="absolute pi pi-search-plus text-white cursor-pointer" (click)="openPreview.emit('assets/images/sample-image.png')" style="right: 10px;bottom: 30px;"></span>
             <div>
                 <span class="left-0 pl-1 pt-1" style="font-size: 10px;">Sample Image</span>
             </div>

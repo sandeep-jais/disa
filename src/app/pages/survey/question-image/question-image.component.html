@@ -12,8 +12,10 @@
     <div class="flex justify-content-around align-items-center">
         <label for="file-img" class="cursor-pointer">
             @if(question.file){
-                <img [src]="question.image" class="border-1 border-round p-2 shadow-1 border-gray-300"
-                 height="70" width="80" />
+                <div>
+                    <img [src]="question.image" class="border-1 border-round p-2 shadow-1 border-gray-300"
+                    height="70" width="80" />
+                </div>
             }@else {
                 <img src="assets/images/camera.png"
                 class="border-1 border-round p-2 shadow-1 border-gray-300" height="70" width="80" />

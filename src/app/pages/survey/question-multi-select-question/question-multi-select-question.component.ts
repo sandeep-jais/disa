@@ -10,7 +10,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class QuestionMultiSelectQuestionComponent {
     @Input('question') question:any;
     @Output() answer = new EventEmitter<any>();
-
+    @Output() openPreview = new EventEmitter<any>();
+    
     selectFile(event:any){
       let file= event.files[0];
       let link = URL.createObjectURL(file);

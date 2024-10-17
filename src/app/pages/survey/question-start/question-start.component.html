@@ -11,8 +11,9 @@
             }
             <input (change)="selectFile('front',$event.target)" type="file" id="file-1" class="hidden" />
         </label>
-        <div class="box-label-opacity">
+        <div class="box-label-opacity relative">
             <img src="assets/images/sample-image.png" class=" border border-round" height="90" width="100" />
+            <span class="absolute pi pi-search-plus text-white cursor-pointer" (click)="openPreview.emit('assets/images/sample-image.png')" style="right: 10px;bottom: 30px;"></span>
             <div class="text-center">
                 <span class=" pt-1" style="font-size: 10px;">Sample Image</span>
             </div>
@@ -31,8 +32,9 @@
             }
             <input (change)="selectFile('side',$event.target)" type="file" id="file-2" class="hidden" />
         </label>
-        <div class="box-label-opacity">
+        <div class="box-label-opacity relative">
             <img src="assets/images/sample-image.png" class="border border-round" height="90" width="100" />
+            <span class="absolute pi pi-search-plus text-white cursor-pointer" (click)="openPreview.emit('assets/images/sample-image.png')" style="right: 10px;bottom: 30px;"></span>
             <div>
                 <span class="left-0 pl-1 pt-1" style="font-size: 10px;">Sample Image</span>
             </div>
