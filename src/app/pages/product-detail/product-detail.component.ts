@@ -20,93 +20,96 @@ import { AccordionModule } from 'primeng/accordion';
 import { BottomTabsComponent } from "../../components/common/bottom-tabs/bottom-tabs.component";
 import { FooterComponent } from "../../components/common/footer/footer.component";
 import { ImageModule } from 'primeng/image';
+import { ImageLightBoxComponent } from '../../components/image-light-box/image-light-box.component';
 
 @Component({
-  selector: 'app-product-detail',
-  standalone: true,
-  imports: [StyleClassModule, InputOtpModule, ButtonModule, BadgeModule, FormsModule, ToolbarModule, AvatarModule,
-    InputGroupModule, InputGroupAddonModule, InputTextModule, AccordionModule,ImageModule,
-    ContextMenuModule, CommonModule, RippleModule, KnobModule, HeaderComponent, BottomTabsComponent, FooterComponent],
-  templateUrl: './product-detail.component.html',
-  styleUrl: './product-detail.component.scss'
+    selector: 'app-product-detail',
+    standalone: true,
+    imports: [StyleClassModule, InputOtpModule, ButtonModule, BadgeModule, FormsModule, ToolbarModule, AvatarModule,
+        InputGroupModule, InputGroupAddonModule, InputTextModule, AccordionModule, ImageModule, ImageLightBoxComponent,
+        ContextMenuModule, CommonModule, RippleModule, KnobModule, HeaderComponent, BottomTabsComponent, FooterComponent],
+    templateUrl: './product-detail.component.html',
+    styleUrl: './product-detail.component.scss'
 })
 export class ProductDetailComponent {
-  router= inject(Router);
-  items: MenuItem[] | undefined;
-
-  navigate(path:string){
-    this.router.navigate([path])
-  }
-  pendingOutlets:number= 8;
+    router = inject(Router);
+    items: MenuItem[] | undefined;
+    visible: boolean = false;
+    selectedImage:any;
+    
+    navigate(path: string) {
+        this.router.navigate([path])
+    }
+    pendingOutlets: number = 8;
     @ViewChild('cm') cm!: ContextMenu;
 
-    selectedId!: string|undefined;
+    selectedId!: string | undefined;
 
     data = [
         {
             id: '1000',
             name: 'Sita Pharmacy',
             description: '3/5 Mohali punjab',
-            status:"pending",
+            status: "pending",
             distance: 65
         },
         {
             id: '1001',
             name: 'Go Site Pharmacy',
             description: '3/5 Mohali punjab',
-            status:"completed",
+            status: "completed",
             distance: 90
         },
         {
             id: '1002',
             name: 'Lala Pharmacy',
             description: '3/9 Mohali punjab',
-            status:"completed",
+            status: "completed",
             distance: 70
         },
         {
-          id: '1000',
-          name: 'Sita Pharmacy',
-          description: '3/5 Mohali punjab',
-          status:"pending",
-          distance: 65
-      },
-      {
-          id: '1001',
-          name: 'Go Site Pharmacy',
-          description: '3/5 Mohali punjab',
-          status:"completed",
-          distance: 90
-      },
-      {
-          id: '1002',
-          name: 'Lala Pharmacy',
-          description: '3/9 Mohali punjab',
-          status:"completed",
-          distance: 70
-      },
-      {
-        id: '1000',
-        name: 'Sita Pharmacy',
-        description: '3/5 Mohali punjab',
-        status:"pending",
-        distance: 65
-    },
-    {
-        id: '1001',
-        name: 'Go Site Pharmacy',
-        description: '3/5 Mohali punjab',
-        status:"completed",
-        distance: 90
-    },
-    {
-        id: '1002',
-        name: 'Lala Pharmacy',
-        description: '3/9 Mohali punjab',
-        status:"completed",
-        distance: 70
-    },
-        
+            id: '1000',
+            name: 'Sita Pharmacy',
+            description: '3/5 Mohali punjab',
+            status: "pending",
+            distance: 65
+        },
+        {
+            id: '1001',
+            name: 'Go Site Pharmacy',
+            description: '3/5 Mohali punjab',
+            status: "completed",
+            distance: 90
+        },
+        {
+            id: '1002',
+            name: 'Lala Pharmacy',
+            description: '3/9 Mohali punjab',
+            status: "completed",
+            distance: 70
+        },
+        {
+            id: '1000',
+            name: 'Sita Pharmacy',
+            description: '3/5 Mohali punjab',
+            status: "pending",
+            distance: 65
+        },
+        {
+            id: '1001',
+            name: 'Go Site Pharmacy',
+            description: '3/5 Mohali punjab',
+            status: "completed",
+            distance: 90
+        },
+        {
+            id: '1002',
+            name: 'Lala Pharmacy',
+            description: '3/9 Mohali punjab',
+            status: "completed",
+            distance: 70
+        },
+
     ];
 
     ngOnInit() {
@@ -143,12 +146,21 @@ export class ProductDetailComponent {
         ];
     }
 
-    onContextMenu(event:any) {
+    onContextMenu(event: any) {
         this.cm.target = event.currentTarget;
         this.cm.show(event);
     }
 
     onHide() {
         this.selectedId = undefined;
+    }
+
+    openPreview(fileName: any) {
+        this.selectedImage = fileName;
+        this.visible = true;
+    }
+    hideLightBox() {
+        this.visible = false;
+        this.selectedImage = null;
     }
 }

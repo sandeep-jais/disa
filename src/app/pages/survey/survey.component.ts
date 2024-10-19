@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
-import { PRODUCT_QUESTIONS, QUESTIONS } from '../../constants/questions';
+import { PRODUCT_QUESTIONS} from '../../constants/questions';
 import { HeaderComponent } from "../../components/common/header/header.component";
 import { FooterComponent } from "../../components/common/footer/footer.component";
 import { CounterComponent } from "../../components/common/counter/counter.component";

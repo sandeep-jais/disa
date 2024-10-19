@@ -9,17 +9,20 @@
             </span> 
         </div>
         <div class="w-full flex flex-wrap images-product">
-            <div class="w-6 p-2 text-center">
-                <img height="170" class="border-2 border-round p-2 shadow-1 border-gray-300 object-fit" src="assets/images/p1.png" />
+            <div class="w-6 p-2 text-center  relative">
+                <img  (click)="openPreview('assets/images/p1.png')" height="170" class="border-2 border-round p-2 shadow-1 border-gray-300 object-fit" 
+                  src="assets/images/p1.png" />
             </div>
-            <div class="w-6 p-2 text-center">
-                <img height="170" class="border-2 border-round p-2 shadow-1 border-gray-300 object-fit" src="assets/images/p2.png" />
+            <div class="w-6 p-2 text-center relative">
+                <img  (click)="openPreview('assets/images/p2.png')" height="170" class="border-2 border-round p-2 shadow-1 border-gray-300 object-fit" src="assets/images/p2.png" />
             </div>
-            <div class="w-6 p-2 text-center">
-                <img height="170" class="border-2 border-round p-2 shadow-1 border-gray-300 object-fit" src="assets/images/p3.png" />
+            <div class="w-6 p-2 text-center relative">
+                <img height="170" (click)="openPreview('assets/images/p3.png')" class="border-2 border-round p-2 shadow-1 border-gray-300 object-fit"
+                 src="assets/images/p3.png" />
             </div>
-            <div class="w-6 p-2 text-center">
-                <img height="170" class="border-2 border-round p-2 shadow-1 border-gray-300 object-fit" src="assets/images/p4.png" />
+            <div class="w-6 p-2 text-center relative">
+                <img height="170" (click)="openPreview('assets/images/p4.png')" class="border-2 border-round p-2 shadow-1 border-gray-300 object-fit"
+                 src="assets/images/p4.png" />
             </div>
         </div>
        </div>
@@ -31,3 +34,5 @@
         </div>
     </div>
 </div>
+
+<app-image-light-box [visible]="visible" [imageUrl]="selectedImage" (close)="hideLightBox()" />

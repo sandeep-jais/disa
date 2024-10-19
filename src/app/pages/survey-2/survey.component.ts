@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
-import { QUESTIONS, STEP_2 } from '../../constants/questions';
+import { PRODUCT_QUESTIONS } from '../../constants/questions';
 import { HeaderComponent } from "../../components/common/header/header.component";
 import { FooterComponent } from "../../components/common/footer/footer.component";
 import { CounterComponent } from "../../components/common/counter/counter.component";
@@ -17,7 +17,7 @@ import { BottomTabsComponent } from '../../components/common/bottom-tabs/bottom-
   styleUrl: './survey.component.scss'
 })
 export class SurveyComponent2 {
-  questions = STEP_2;
+  questions = PRODUCT_QUESTIONS;
   router = inject(Router);
   isStarted: boolean = false;
   isCompleted: boolean = false;

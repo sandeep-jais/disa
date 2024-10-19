@@ -2,16 +2,25 @@
     <div class="mx-2">
         <div class="flex w-full flex-wrap">
             @for (item of question.options; track $index;) {
-                <div class="w-6 px-3 py-1">
-                    <div class="relative border-1 border-white border-round" >
-                        <img class="w-full border-2 border-round p-2 shadow-1 border-gray-300" height="140" width="40" [src]="'/assets/images/'+item?.image" />
-                        <span class="absolute pi pi-search-plus text-gray-600 cursor-pointer" (click)="openPreview.emit('assets/images/'+item?.image)" style="right: 10px;bottom: 10px;"></span>
+            <div class="p-2 w-6">
+                <div class=" border-2 border-round shadow-1 border-gray-300">
+                    <div class="relative border-1 border-white border-round">
+                        <img class="w-full" height="130" width="40" [src]="'/assets/images/'+item?.image" />
+                        <span class="absolute pi pi-search-plus text-gray-600 cursor-pointer"
+                            (click)="openPreview.emit('assets/images/'+item?.image)"
+                            style="right: 10px;bottom: 10px;"></span>
                     </div>
-                    <div class="flex justify-content-around mt-1">
-                        <span class="border p-2 pi pi-check cursor-pointer" [class]="item?.checked?'bg-green-300':'bg-gray-200'"  (click)="checked('checked',$index)" ></span>
-                        <span class="border p-2 pi pi-times cursor-pointer" [class]="item?.checked?'bg-gray-300':'bg-red-300'"  (click)="checked('cross',$index)"></span>
+                    <div class="flex justify-content-around mt-t ">
+                        <span class="w-6  cursor-pointer" [class]="item?.checked==true?'bg-green-600 text-white':'bg-green-100'" (click)="checked('checked',$index)">
+                            <span class="p-2 text-sm pi pi-check "
+                            ></span> Yes
+                        </span>
+                        <span class="w-6 cursor-pointer" [class]="item?.checked==false?'bg-red-600 text-white':'bg-red-100'" style="border-left: 1px solid #ccc;" (click)="checked('cross',$index)">
+                        <span class="p-2 text-sm pi pi-times "
+                             ></span> No</span>
                     </div>
                 </div>
+            </div>
             }
         </div>
     </div>

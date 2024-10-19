@@ -28,19 +28,19 @@ export const PRODUCT_QUESTIONS=[
         options:[
             {
                 image:"p1.png",
-                checked: false
+                checked: null
             },
             {
                 image:"p2.png",
-                checked: false
+                checked: null
             },
             {
                 image:"p3.png",
-                checked: false
+                checked: null
             },
             {
                 image:"p4.png",
-                checked: false
+                checked: null
             }
         ]
     },
@@ -124,19 +124,19 @@ export const PRODUCT_QUESTIONS=[
         options:[
             {
                 image:"p7.png",
-                checked: false
+                checked: null
             },
             {
                 image:"p8.png",
-                checked: false
+                checked: null
             },
             {
                 image:"p5.png",
-                checked: false
+                checked: null
             },
             {
                 image:"p6.png",
-                checked: false
+                checked: null
             }
         ]
     },
@@ -150,106 +150,4 @@ export const PRODUCT_QUESTIONS=[
         file:"",
         image:""
     },
-]
-
-export const QUESTIONS=[
-    {
-        id: 1,
-        quetion:"Is the Product displayed on the Shelf",
-        answer: undefined,
-        time: 0,
-        type:"thumbsup",
-        files:[],
-        images:[]
-    },
-    {
-        id: 2,
-        quetion:"Is the Product displayed where similar products from other brands are placed",
-        answer: undefined,
-        time: 0,
-        type:"thumbsup",
-        files:[],
-        images:[]
-    },
-    {
-        id: 3,
-        quetion:"is the product kept in the shelf",
-        answer: undefined,
-        time: 0,
-        type:"thumbsup",
-        files:[],
-        images:[]
-    },
-    {
-        id: 4,
-        quetion:"Is the Product displayed on the Shelf",
-        answer: undefined,
-        time: 0,
-        type:"thumbsup",
-        files:[],
-        images:[]
-    },
-    {
-        id: 5,
-        quetion:"Is the Product displayed where similar products from other brands are placed",
-        answer: undefined,
-        time: 0,
-        type:"thumbsup",
-        files:[],
-        images:[]
-    },
-    {
-        id: 6,
-        quetion:"is the product kept in the shelf",
-        answer: undefined,
-        time: 0,
-        type:"thumbsup",
-        files:[],
-        images:[]
-    }
-]
-
-export const STEP_2=[
-    {
-        id: 7,
-        quetion:"Is the Product displayed on the Shelf",
-        answer: undefined,
-        time: 0,
-        type:"counter"
-    },
-    {
-        id: 8,
-        quetion:"Is the Product displayed where similar products from other brands are placed",
-        answer: undefined,
-        time: 0,
-        type:"counter"
-    },
-    {
-        id: 9,
-        quetion:"is the product kept in the shelf",
-        answer: undefined,
-        time: 0,
-        type:"counter"
-    },
-    {
-        id: 10,
-        quetion:"Is the Product displayed on the Shelf",
-        answer: undefined,
-        time: 0,
-        type:"counter"
-    },
-    {
-        id: 11,
-        quetion:"Is the Product displayed where similar products from other brands are placed",
-        answer: undefined,
-        time: 0,
-        type:"counter"
-    },
-    {
-        id: 12,
-        quetion:"is the product kept in the shelf",
-        answer: undefined,
-        time: 0,
-        type:"counter"
-    }
 ]
