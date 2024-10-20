@@ -10,6 +10,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class QuestionImageComponent {
   @Input('question') question:any;
   @Output() answer = new EventEmitter<any>();
+  @Output() openPreview = new EventEmitter<any>();
 
   selectFile(event:any){
     let file= event.files[0];

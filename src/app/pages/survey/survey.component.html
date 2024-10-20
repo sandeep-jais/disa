@@ -64,7 +64,8 @@
                             (openPreview)="openPreview($event)"></app-question-multi-select-question>
                         }
                         @case ('question-image') {
-                            <app-question-image [question]="questions[step]" (answer)="answer($event)"></app-question-image>
+                            <app-question-image [question]="questions[step]" 
+                            (answer)="answer($event)" (openPreview)="openPreview($event)"></app-question-image>
                         }
                        }
                     </ng-container>
