@@ -19,6 +19,7 @@ import { QuestionImageComponent } from "./question-image/question-image.componen
 import { ImageLightBoxComponent } from "../../components/image-light-box/image-light-box.component";
 import { CustomProgressComponent } from "../../components/common/custom-progress/custom-progress.component";
 import { AnswerLengthPipe } from '../../pipes/answerLength.pipe';
+import { DATA_PRODUCT } from '../../constants';
 
 @Component({
   selector: 'app-survey', 
@@ -42,7 +43,7 @@ export class SurveyComponent {
   files: any = [];
 
   ngOnInit(){
-    
+    console.log("",JSON.parse(JSON.stringify(DATA_PRODUCT)));
   }
   navigate(path: string) {
     this.router.navigate([path]);

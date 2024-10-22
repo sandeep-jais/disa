@@ -151,3 +151,13 @@ export const PRODUCT_QUESTIONS=[
         image:""
     },
 ]
+
+const QUESTIONS=[
+    {
+        id: 1, 
+        type:"",
+        category:"",
+        subCategory:"",
+        question:""
+    }
+]
