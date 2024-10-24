@@ -28,6 +28,11 @@ body {
 .bg-linear-blue{
     font-weight: 600;
     color: #FFFFFF;
-    background: rgb(86,128,233);
-    background: linear-gradient(90deg, rgba(86,128,233,1) 53%, rgba(136,96,208,1) 72%);
+    background: #991DB3;
+    cursor: pointer;
 }
+
+.p-button{
+    background-color: #991DB3;
+    border-color: #991DB3;
+} 
