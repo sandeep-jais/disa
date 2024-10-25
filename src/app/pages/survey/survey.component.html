@@ -3,7 +3,7 @@
         <app-header></app-header>
     </div>
     @if(isCompleted){
-    <div class="container">
+    <div class="container question-card">
         <div class="my-4">
             <div class="text-center">
                 <span class="pi pi-star text-3xl"></span>
@@ -21,8 +21,8 @@
         </div>
     </div>
     }@else {
-    <div class="container relative">
-        <div class="p-4 transition-all transition-duration-200">
+    <div class="container relative question-card">
+        <div class="p-2 transition-all transition-duration-200">
             <!-- <div class="flex justify-content-between">
                 @for (q of questions; track $index) {
                     <span class="bg-gray-600 stepper flex flex-1" [class.done]="q.answer!==undefined"></span>
