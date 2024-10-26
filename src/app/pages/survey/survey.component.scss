@@ -10,6 +10,11 @@
 .product-survey-page .container{
     height: calc(100vh - 62px);
     overflow-y: auto;
+    .question-inner-box{
+        height: calc(100vh - 210px);
+        display: grid;
+        place-content: center;
+    }
 }
 
 .product-survey-page::-webkit-scrollbar-thumb {

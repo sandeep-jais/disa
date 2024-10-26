@@ -38,7 +38,7 @@
                         <p [innerHTML]="questions[step].quetion"></p>
                     </div>
 
-                    <ng-container>
+                    <div class="question-inner-box">
                        @switch (questions[step].type) {
                         @case ('start') {
                             <app-question-start [question]="questions[step]" (answer)="answer($event)"
@@ -68,7 +68,7 @@
                             (answer)="answer($event)" (openPreview)="openPreview($event)"></app-question-image>
                         }
                        }
-                    </ng-container>
+                    </div>
                     
                 </div>
                 }
