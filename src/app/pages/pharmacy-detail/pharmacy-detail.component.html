@@ -35,7 +35,7 @@
             <h4>Products</h4>
         </div>
         <div class=" my-5">
-            <div class="m-0 p-0  p-3 flex gap-2 md:w-24rem flex flex-wrap justify-content-around">
+            <div class="m-0 p-0  p-3 flex gap-2 w-full flex flex-wrap justify-content-around">
                 <span *ngFor="let product of data"
                     class=" w-3 cursor-pointer border-round border-1 border-transparent transition-all transition-duration-200"
                     (contextmenu)="onContextMenu($event)" routerLink="/product-detail">

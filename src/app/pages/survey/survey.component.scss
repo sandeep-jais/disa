@@ -1,6 +1,7 @@
 .product-survey-page {
     margin: 0;
     background-color: var(--winkle-color);
+    height: 100vh;
 }
 
 .product-survey-page::-webkit-scrollbar {
@@ -8,7 +9,7 @@
     color: aliceblue;
 }
 .product-survey-page .container{
-    height: calc(100vh - 62px);
+    height: calc(100vh - 105px);
     overflow-y: auto;
     .question-inner-box{
         height: calc(100vh - 210px);
