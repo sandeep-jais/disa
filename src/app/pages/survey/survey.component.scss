@@ -27,13 +27,11 @@
     overflow-y: auto;
     .question-inner-box{
         height: calc(100vh - 345px);
-        display: grid;
-        place-content: center;
     }
 }
 
 
-@media screen and (max-width: 370px) {
+@media screen and (max-width: 400px) {
     .product-survey-page {
 
         padding: 0px !important;
