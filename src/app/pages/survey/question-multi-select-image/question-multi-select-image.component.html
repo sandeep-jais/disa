@@ -5,19 +5,17 @@
             <div class="p-2 w-6">
                 <div class=" border-2 border-round shadow-1 border-gray-300">
                     <div class="relative">
-                        <img class="w-full" height="160" width="40" [src]="'/assets/images/'+item?.image" />
+                        <img class="w-full" style="max-height: 150px;" height="150" width="40" [src]="'/assets/images/'+item?.image" />
                         <span class="absolute pi pi-search-plus text-gray-600 cursor-pointer"
                             (click)="openPreview.emit('assets/images/'+item?.image)"
                             style="right: 10px;bottom: 10px;"></span>
                     </div>
                     <div class="flex justify-content-around mt-t text-sm" style="padding: 2px;">
-                        <span class="w-6  cursor-pointer" [class]="item?.checked==true?'bg-green-600 text-white':'bg-green-500'" (click)="checked('checked',$index)">
-                            <span class="p-2 pi pi-check " style="font-size: 10px;"
-                            ></span>Yes
-                        </span>
-                        <span class="w-6 cursor-pointer" [class]="item?.checked==false?'bg-red-600 text-white':'bg-red-500'" style="border-left: 1px solid #ccc;" (click)="checked('cross',$index)">
-                        <span class="p-2 pi pi-times" style="font-size: 10px;"
-                             ></span>No</span>
+                        
+                        <button pButton pRipple label="Yes" class="p-button-success-custom w-6" (click)="checked('checked',$index)">
+                        </button>
+                        <button pButton pRipple label="No" class="p-button-danger-custom w-6" (click)="checked('cross',$index)" >
+                        </button>
                     </div>
                 </div>
             </div>

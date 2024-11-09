@@ -1,9 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ButtonModule } from 'primeng/button';
+import { RippleModule } from 'primeng/ripple';
 
 @Component({
   selector: 'app-question-multi-select-image',
   standalone: true,
-  imports: [],
+  imports: [ButtonModule,RippleModule],
   templateUrl: './question-multi-select-image.component.html',
   styleUrl: './question-multi-select-image.component.scss'
 })

@@ -15,13 +15,25 @@
     height: calc(100dvh - 102px);
     overflow-y: auto;
 }
-@media screen and (max-width: 370px) {
+@media screen and (max-width: 400px) {
     .product-detail-page{
        
        padding: 0px !important;
        .container{
         margin: 8px;
         padding: 0px !important;
+        .q-text{
+            font-size: 20px !important;
+        }
+        .images-product{
+            gap: 5px !important;
+            .w-6{
+                width: 49% !important;
+            }
+            img{
+                height: 150px !important;
+            }
+        }
        }
     }
 }

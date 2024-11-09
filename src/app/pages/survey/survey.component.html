@@ -22,7 +22,7 @@
     </div>
     }@else {
     <div class="container relative question-card">
-        <div class="p-2 transition-all transition-duration-200">
+        <div class="p-2 transition-all transition-duration-200 scrolling-container overflow-auto">
             <!-- <div class="flex justify-content-between">
                 @for (q of questions; track $index) {
                     <span class="bg-gray-600 stepper flex flex-1" [class.done]="q.answer!==undefined"></span>
@@ -30,66 +30,64 @@
                 </div> -->
             <app-custom-progress [total]="questions.length" [value]="questions|answerLength" />
             <div class=" p-2 gap-3">
-
-
                 @if (questions.length) {
                 <div>
                     <div>
-                        <p [innerHTML]="questions[step].quetion"></p>
+                        <p class="text-2xl q-text" [innerHTML]="questions[step].quetion"></p>
                     </div>
 
                     <div class="question-inner-box">
-                       @switch (questions[step].type) {
+                        @switch (questions[step].type) {
                         @case ('start') {
-                            <app-question-start [question]="questions[step]" (answer)="answer($event)"
+                        <app-question-start [question]="questions[step]" (answer)="answer($event)"
                             (openPreview)="openPreview($event)"></app-question-start>
                         }
                         @case ('meter') {
-                            <app-question-meter [question]="questions[step]" (answer)="answer($event)"
+                        <app-question-meter [question]="questions[step]" (answer)="answer($event)"
                             (openPreview)="openPreview($event)"></app-question-meter>
                         }
                         @case ('multi-select-image') {
-                            <app-question-multi-select-image  [question]="questions[step]" 
-                            (answer)="answer($event)" (openPreview)="openPreview($event)"></app-question-multi-select-image>
+                        <app-question-multi-select-image [question]="questions[step]" (answer)="answer($event)"
+                            (openPreview)="openPreview($event)"></app-question-multi-select-image>
                         }
                         @case ('meter-image') {
-                            <app-question-meter-image [question]="questions[step]" (answer)="answer($event)"></app-question-meter-image>
+                        <app-question-meter-image [question]="questions[step]"
+                            (answer)="answer($event)"></app-question-meter-image>
                         }
                         @case ('meter-count') {
-                            <app-question-meter-count [question]="questions[step]" 
-                            (answer)="answer($event)" (openPreview)="openPreview($event)"></app-question-meter-count>
+                        <app-question-meter-count [question]="questions[step]" (answer)="answer($event)"
+                            (openPreview)="openPreview($event)"></app-question-meter-count>
                         }
                         @case ('multi-select-question') {
-                            <app-question-multi-select-question [question]="questions[step]" (answer)="answer($event)"
+                        <app-question-multi-select-question [question]="questions[step]" (answer)="answer($event)"
                             (openPreview)="openPreview($event)"></app-question-multi-select-question>
                         }
                         @case ('question-image') {
-                            <app-question-image [question]="questions[step]" 
-                            (answer)="answer($event)" (openPreview)="openPreview($event)"></app-question-image>
+                        <app-question-image [question]="questions[step]" (answer)="answer($event)"
+                            (openPreview)="openPreview($event)"></app-question-image>
                         }
-                       }
+                        }
                     </div>
-                    
+
                 </div>
                 }
-                
+
             </div>
         </div>
         <div class="p-4 bottom-0 absolute" style="width: 98%;">
             <div class="flex justify-content-between">
                 <div>
                     @if (step>0) {
-                        <app-back-button [disabled]="questions|checkAnswer:step:images" 
-                        (click)="back()"></app-back-button>
+                    <app-back-button [disabled]="questions|checkAnswer:step:images" (click)="back()"></app-back-button>
                     }
                 </div>
                 <div>
                     @if (!isCompleted) {
-                      <app-next-button [disabled]="questions|checkAnswer:step:images" 
-                      (click)="changeStep()"></app-next-button>
+                    <app-next-button [disabled]="questions|checkAnswer:step:images"
+                        (click)="changeStep()"></app-next-button>
                     }
                 </div>
-                   
+
             </div>
         </div>
     </div>
