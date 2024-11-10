@@ -2,5 +2,5 @@
     <div class="border-1 border-gray-300 border-round flex w-full" style="height: 8px;">
         <span [style.width.%]="value/total*100" class="bg-linear-blue"></span>
     </div>
-    <div class="text-right" style="width: 30px;">{{value/total*100}}%</div>
+    <div class="text-right" style="width: 50px;">{{(value/total*100).toFixed(1)}}%</div>
 </div>

@@ -20,12 +20,13 @@ import { ImageLightBoxComponent } from "../../components/image-light-box/image-l
 import { CustomProgressComponent } from "../../components/common/custom-progress/custom-progress.component";
 import { AnswerLengthPipe } from '../../pipes/answerLength.pipe';
 import { DATA_PRODUCT } from '../../constants';
+import { QuestionTextComponent } from './question-text/question-text.component';
 
 @Component({
   selector: 'app-survey', 
   standalone: true,
   imports: [ButtonModule, HeaderComponent, BottomTabsComponent, BackButtonComponent, QuestionMeterComponent,
-    FooterComponent, CounterComponent, CheckAnswerPipe, NextButtonComponent, QuestionStartComponent,
+    FooterComponent, CounterComponent, CheckAnswerPipe, NextButtonComponent, QuestionStartComponent,QuestionTextComponent,
     QuestionMeterCountComponent, QuestionMeterImageComponent, QuestionImageComponent,AnswerLengthPipe,
     QuestionMultiSelectImageComponent, QuestionMultiSelectQuestionComponent, QuestionImageComponent, ImageLightBoxComponent, CustomProgressComponent],
   templateUrl: './survey.component.html',

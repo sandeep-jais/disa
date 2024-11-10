@@ -1,0 +1,20 @@
+<div class="my-3">
+    <div class="mx-2">
+        <div class=" flex align-items-center justify-content-center mb-3 p-2">
+            <div class="relative">
+                <img class="w-full" height="220" [src]="'/assets/images/'+question?.productImage" />
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <textarea 
+        rows="4"
+        placeholder="Write answer"
+        cols="32"
+        [(ngModel)]="value"
+        (ngModelChange)="change()"
+        pInputTextarea 
+        [autoResize]="true">
+    </textarea>
+    </div>
+</div>

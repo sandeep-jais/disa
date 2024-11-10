@@ -150,6 +150,14 @@ export const PRODUCT_QUESTIONS=[
         file:"",
         image:""
     },
+    {
+        id: 11,
+        quetion:"Where is the product kept on the shelves?",
+        answer: undefined,
+        productImage:'p7.png',
+        time: 0,
+        type:"question-text",
+    },
 ]
 
 const QUESTIONS=[
