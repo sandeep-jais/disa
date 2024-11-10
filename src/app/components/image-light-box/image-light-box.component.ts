@@ -11,7 +11,7 @@ import { DialogModule } from 'primeng/dialog';
 })
 export class ImageLightBoxComponent {
   @Input('visible') visible: boolean = false;
-  @Input('imageUrl') imageUrl: string= 'assets/images/camera.png';
+  @Input('imageUrl') imageUrl: string= 'assets/images/camera.svg';
 
   @Output('close') close= new EventEmitter<any>();
 

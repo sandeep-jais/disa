@@ -5,7 +5,7 @@
     <div class="mx-2">
         <div class=" flex align-items-center justify-content-center p-2">
             <div class="relative border-1 border-round p-2 shadow-1 border-gray-300">
-                <img height="140" width="w-full" src="/assets/images/p3.png" />
+                <img height="100" width="w-full" src="/assets/images/p3.png" />
                 <span class="absolute pi pi-search-plus text-gray-600 cursor-pointer" (click)="openPreview.emit('assets/images/p3.png')" style="right: 10px;bottom: 10px;"></span>
             </div>
         </div>
@@ -26,7 +26,7 @@
             @if(question.file){
                 <img [src]="question.image" class="border-1 border-round p-2 shadow-1 border-gray-300" height="70" width="80" />
             }@else {
-                <img src="assets/images/camera.png"
+                <img src="assets/images/camera.svg"
                 class="border-1 border-round p-2 shadow-1 border-gray-300" height="70" width="80" />
             }
             <input (change)="selectFile($event.target)" type="file" id="file-img" class="hidden" />

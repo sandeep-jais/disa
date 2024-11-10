@@ -12,7 +12,7 @@
             @if(question.sideViewFile){
                 <img [src]="question.sideViewImage" class="border-1 border-round p-2 shadow-1 border-gray-300" height="60" width="80" />
             }@else {
-                <img src="assets/images/camera.png" class="border-1 border-round p-2 shadow-1 border-gray-300" height="60" width="80" />
+                <img src="assets/images/camera.svg" class="border-1 border-round p-2 shadow-1 border-gray-300" height="60" width="80" />
             }
             <input (change)="selectFile('side',$event.target)" type="file" id="file-2" class="hidden" />
         </label>

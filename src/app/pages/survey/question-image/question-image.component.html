@@ -2,7 +2,7 @@
     <div class="mx-2">
         <div class=" flex align-items-center justify-content-center mb-3 p-2">
             <div class="relative">
-                <img class="w-full" height="250" [src]="'/assets/images/'+question?.productImage" />
+                <img class="w-full" height="220" [src]="'/assets/images/'+question?.productImage" />
             </div>
         </div>
     </div>
@@ -17,7 +17,7 @@
                     height="70" width="80" />
                 </div>
             }@else {
-                <img src="assets/images/camera.png"
+                <img src="assets/images/camera.svg"
                 class="border-1 border-round p-2 shadow-1 border-gray-300" height="70" width="80" />
             }
             <input (change)="selectFile($event.target)" type="file" id="file-img" class="hidden" />
