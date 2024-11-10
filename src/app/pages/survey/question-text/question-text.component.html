@@ -2,13 +2,14 @@
     <div class="mx-2">
         <div class=" flex align-items-center justify-content-center mb-3 p-2">
             <div class="relative">
-                <img class="w-full" height="220" [src]="'/assets/images/'+question?.productImage" />
+                <img class="w-full" height="230" [src]="'/assets/images/'+question?.productImage" />
             </div>
         </div>
     </div>
-    <div class="text-center">
+    <div class="text-center mx-3">
         <textarea 
-        rows="4"
+        class="w-full"
+        rows="2"
         placeholder="Write answer"
         cols="32"
         [(ngModel)]="value"
