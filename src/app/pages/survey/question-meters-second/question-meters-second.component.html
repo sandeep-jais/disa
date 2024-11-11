@@ -1,5 +1,12 @@
-<div class="my-3 relative height-full">
-    <div class=" mt-5 pt-5 mx-auto" style="width: 250px;">
+<div class="my-3">
+    <div class=" my-4">
+        <div class="flex w-full gap-2">
+            <img height="130" class="w-4 border-1 border-round p-2 shadow-1 border-gray-300" width="40" src="/assets/images/p1.png" />
+            <img height="130"  class="w-4 border-1 border-round p-2 shadow-1 border-gray-300"  src="/assets/images/p2.png" />
+            <img height="130"  class="w-4 border-1 border-round p-2 shadow-1 border-gray-300 px-1"  src="/assets/images/p3.png" />
+        </div>
+    </div>
+    <div class="my-3 mx-auto"  style="width: 250px;">
         <div class=" question-card mx-0 flex mb-5 border border-gray-300 align-items-center justify-content-around mb-3 p-2">
             <span style="font-size: 40px;" class="pi pi-minus-circle cursor-pointer" 
              (click)="pressMinus('mtr')"></span>
@@ -11,9 +18,7 @@
             </div>
             <span class="pi pi-plus-circle cursor-pointer" (click)="pressPlus('mtr')" style="font-size: 40px;"></span>
         </div>
-        <div class="py-3">
-
-        </div>
+        <div></div>
         <div class=" question-card mx-0 flex  align-items-center justify-content-around p-2">
             <span style="font-size: 40px;" class="pi pi-minus-circle cursor-pointer"  (click)="pressMinus('cms')"></span>
             <div class="flex justify-content-between align-items-center">
@@ -25,7 +30,7 @@
             <span class="pi pi-plus-circle cursor-pointer" (click)="pressPlus('cms')" style="font-size: 40px;"></span>
         </div>
     </div>
-    <div class="text-sm absolute mx-2" style="bottom: 20px;" >
+    <div class="text-sm mx-2" style="bottom: 20px;" >
         <p class="text-gray-600 text-sm">
             <strong>HINT:</strong> Measuring tape should be used for the measurements (Click to know more)
         </p>

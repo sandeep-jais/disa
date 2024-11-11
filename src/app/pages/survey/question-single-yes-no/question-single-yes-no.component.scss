@@ -1,0 +1,29 @@
+.p-button-success-custom{
+    color: #4caf50;
+    margin-right: 1px;
+    background-color: #ffffff;
+    border-color: #cdcccc;
+}
+.p-button-success-custom:hover{
+    box-shadow: 0 14px 26px -12px rgba(76, 175, 80, .42), 0 4px 23px 0 rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(76, 175, 80, .2);
+}
+.p-button-danger-custom{
+    color: #f44336;
+    background-color: #ffffff;
+    margin-left: 1px;
+    border-color: #cdcccc;
+}
+.p-button-danger-custom:hover{
+    box-shadow: 0 14px 26px -12px rgba(244, 67, 54, .42), 0 4px 23px 0 rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(244, 67, 54, .2);
+}
+
+
+
+@media screen and (max-width: 400px) {
+    .multi-select-image-grid{
+        font-size: 16px;
+        img{
+            height: 125px !important;
+        }
+    }
+}

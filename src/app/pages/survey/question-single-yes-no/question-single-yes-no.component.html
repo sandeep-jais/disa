@@ -1,0 +1,23 @@
+<div class="my-3">
+    <div class="mx-2">
+        <div class="flex w-full justify-content-center mb-5 pb-3 mx-auto">
+            <div class="p-2 w-6">
+                <div class=" border-2 border-round shadow-1 border-gray-300 p-2">
+                    <div class="relative">
+                        <img  height="180"  [src]="'/assets/images/pr3.jpg'" />
+                        <span class="absolute pi pi-search-plus text-gray-600 cursor-pointer"
+                            (click)="openPreview.emit('assets/images/pr3.jpg')"
+                            style="right: 10px;bottom: 10px;"></span>
+                    </div>
+                </div>
+                <div class="flex justify-content-around mt-1 text-sm" style="padding: 2px;">
+                    
+                    <button pButton pRipple label="Yes" class="p-button-success-custom w-6" (click)="checked('checked')">
+                    </button>
+                    <button pButton pRipple label="No" class="p-button-danger-custom w-6" (click)="checked('cross')" >
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

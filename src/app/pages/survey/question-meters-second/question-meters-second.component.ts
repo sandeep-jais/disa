@@ -3,13 +3,13 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 @Component({
-  selector: 'app-question-meter-image',
+  selector: 'app-question-meters-second',
   standalone: true,
   imports: [FormsModule, InputTextareaModule, InputTextModule],
-  templateUrl: './question-meter-image.component.html',
-  styleUrl: './question-meter-image.component.scss'
+  templateUrl: './question-meters-second.component.html',
+  styleUrl: './question-meters-second.component.scss'
 })
-export class QuestionMeterImageComponent {
+export class QuestionMeterSecondComponent {
   @Input('question') question:any;
   @Output() answer = new EventEmitter<any>();
   @Output() openPreview = new EventEmitter<any>();

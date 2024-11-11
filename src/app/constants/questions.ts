@@ -1,10 +1,10 @@
 export const PRODUCT_QUESTIONS=[
     {
         id: 1,
-        quetion:"Great!!! <br/> Let’s click some pictures of the <strong>Skincare section</strong>.",
+        quetion:"What is the name of the section (as displayed in the store) where the below products are placed?",
         answer: undefined,
         time: 0,
-        type:"start",
+        type:"meter-image",
         frontViewFile:'',
         frontViewImage:'',
         sideViewFile:'',
@@ -12,12 +12,28 @@ export const PRODUCT_QUESTIONS=[
     },
     {
         id: 2,
-        quetion:"Let’s measure how big is the <strong>Body Lotion</strong> category in the store.",
+        quetion:"Let's measure the size of the <strong>SKINCARE</strong> category in this store.",
         answer: undefined,
         time: 0,
         type:"meter",
         meters: 0,
         centimeter: 0
+    },
+    {
+        id: 3,
+        quetion:"Great, Now let's measure the shelf space allocated to the products shown below",
+        answer: undefined,
+        time: 0,
+        type:"meter-image-second",
+        meters: 0,
+        centimeter: 0,
+    },
+    {
+        id: 4,
+        quetion:"Is the SKU <strong>Skin Firming Nourishing Hydration 400 ML Body Lotion</strong>, shown in the image below, available on the shelf?",
+        answer: undefined,
+        time: 0,
+        type:"single-question-yes-no",
     },
     {
         id: 3,

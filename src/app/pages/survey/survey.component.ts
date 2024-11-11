@@ -21,14 +21,16 @@ import { CustomProgressComponent } from "../../components/common/custom-progress
 import { AnswerLengthPipe } from '../../pipes/answerLength.pipe';
 import { DATA_PRODUCT } from '../../constants';
 import { QuestionTextComponent } from './question-text/question-text.component';
+import { QuestionMeterSecondComponent } from './question-meters-second/question-meters-second.component';
+import { QuestionSingleYesNoComponent } from "./question-single-yes-no/question-single-yes-no.component";
 
 @Component({
   selector: 'app-survey', 
   standalone: true,
   imports: [ButtonModule, HeaderComponent, BottomTabsComponent, BackButtonComponent, QuestionMeterComponent,
-    FooterComponent, CounterComponent, CheckAnswerPipe, NextButtonComponent, QuestionStartComponent,QuestionTextComponent,
-    QuestionMeterCountComponent, QuestionMeterImageComponent, QuestionImageComponent,AnswerLengthPipe,
-    QuestionMultiSelectImageComponent, QuestionMultiSelectQuestionComponent, QuestionImageComponent, ImageLightBoxComponent, CustomProgressComponent],
+    FooterComponent, CounterComponent, CheckAnswerPipe, NextButtonComponent, QuestionStartComponent, QuestionTextComponent,
+    QuestionMeterCountComponent, QuestionMeterImageComponent, QuestionImageComponent, AnswerLengthPipe, QuestionMeterSecondComponent,
+    QuestionMultiSelectImageComponent, QuestionMultiSelectQuestionComponent, QuestionImageComponent, ImageLightBoxComponent, CustomProgressComponent, QuestionSingleYesNoComponent],
   templateUrl: './survey.component.html',
   styleUrl: './survey.component.scss'
 })
