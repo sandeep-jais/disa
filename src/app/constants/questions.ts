@@ -142,7 +142,7 @@ export const PRODUCT_QUESTIONS=[
     },
     {
         id: 15,
-        quetion:"How many facings of <strong>Skin Firming Melanin Beauty and Hydration 400 ML Body Lotion<strong> are kept on other shelves for which you have to either bend or raise your hand to pick?",
+        quetion:"How many facings of <strong>Skin Firming Melanin Beauty and Hydration 400 ML Body Lotion</strong> are kept on other shelves for which you have to either bend or raise your hand to pick?",
         answer: undefined,
         time: 0,
         type:"meter-count",
