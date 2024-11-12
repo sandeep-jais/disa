@@ -16,7 +16,7 @@
         <div class="mt-5 mb-2">
             <div class="flex justify-content-center">
                 <button pButton label="Go to Product" class="w-6  bg-linear-blue  border-round"
-                    (click)="navigate('/product-detail')"></button>
+                    (click)="navigate('/')"></button>
             </div>
         </div>
     </div>
@@ -84,22 +84,22 @@
                 </div>
                 }
 
-            </div>
-        </div>
-        <div class="p-4 bottom-0 absolute" style="width: 98%;">
-            <div class="flex justify-content-between">
-                <div>
-                    @if (step>0) {
-                    <app-back-button [disabled]="questions|checkAnswer:step:images" (click)="back()"></app-back-button>
-                    }
+                <div class="mx-1" style="width: 98%;">
+                    <div class="flex justify-content-between">
+                        <div>
+                            @if (step>0) {
+                            <app-back-button [disabled]="questions|checkAnswer:step:images" (click)="back()"></app-back-button>
+                            }
+                        </div>
+                        <div>
+                            @if (!isCompleted) {
+                            <app-next-button [disabled]="questions|checkAnswer:step:images"
+                                (click)="changeStep()"></app-next-button>
+                            }
+                        </div>
+        
+                    </div>
                 </div>
-                <div>
-                    @if (!isCompleted) {
-                    <app-next-button [disabled]="questions|checkAnswer:step:images"
-                        (click)="changeStep()"></app-next-button>
-                    }
-                </div>
-
             </div>
         </div>
     </div>

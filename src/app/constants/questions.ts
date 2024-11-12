@@ -32,147 +32,124 @@ export const PRODUCT_QUESTIONS=[
         id: 4,
         quetion:"Is the SKU <strong>Skin Firming Nourishing Hydration 400 ML Body Lotion</strong>, shown in the image below, available on the shelf?",
         answer: undefined,
+        productImage:"pr3.jpg",
         time: 0,
         type:"single-question-yes-no",
     },
     {
-        id: 3,
-        quetion:"Do you see the below products on the shelves?",
-        answer: undefined,
-        time: 0,
-        type:"multi-select-image",
-        options:[
-            {
-                image:"p1.png",
-                checked: null
-            },
-            {
-                image:"p2.png",
-                checked: null
-            },
-            {
-                image:"p3.png",
-                checked: null
-            },
-            {
-                image:"p4.png",
-                checked: null
-            }
-        ]
-    },
-    {
-        id: 4,
-        quetion:"Let’s measure total shelve space occupied  by all the below products.",
-        answer: undefined,
-        time: 0,
-        type:"meter-image",
-        images:['p1.png','p2.png','p3.png','p4.png'],
-        meters: 0,
-        centimeter: 0
-    },
-    {
         id: 5,
-        quetion:"Count the number of product facings displayed on the shelves?",
+        quetion:"How many facings of <strong>Skin Firming Nourishing Hydration 400 ML Body Lotion</strong> are kept on the shelf?",
         answer: undefined,
         time: 0,
         type:"meter-count",
-        productImage:'p1.png',
+        productImage:'pr3.jpg',
         counts: 0,
         file:"",
         image:""
     },
     {
         id: 6,
-        quetion:"Where is the product kept on the shelves?",
+        quetion:"How many facings of <strong>Skin Firming Nourishing Hydration 400 ML Body Lotion</strong> are kept on the shelf in front of you that you can reach out without bending with straight hand to pick?",
         answer: undefined,
         time: 0,
-        type:"multi-select-question",
-        productImage:'p1.png',
-        options:[
-            {
-                title: 'Straight in front of me',
-                value: false
-            },
-            {
-                title: 'One level below eye contact',
-                value: false
-            },
-            {
-                title: 'Bottom Shelves',
-                value: false
-            },
-            {
-                title: 'Topmost Shelf',
-                value: false
-            }
-        ],
+        type:"meter-count",
+        productImage:'pr3.jpg',
+        counts: 0,
         file:"",
         image:""
     },
     {
         id: 7,
-        quetion:"Count the number of product facings displayed straight in front of me?",
+        quetion:"How many facings of <strong>Skin Firming Nourishing Hydration 400 ML Body Lotion</strong> are kept on other shelves for which you have to either bend or raise your hand to pick?",
         answer: undefined,
         time: 0,
         type:"meter-count",
-        productImage:'p1.png',
+        productImage:'pr3.jpg',
         counts: 0,
         file:"",
         image:""
     },
     {
         id: 8,
-        quetion:"Count the number of product facings displayed one level above eye contact?",
+        quetion:"Is the SKU <strong>Skin Firming Sheer Hydration 400 ML Body Lotion</strong>, shown in the image below, available on the shelf?",
+        answer: undefined,
+        productImage:"pr1.jpg",
+        time: 0,
+        type:"single-question-yes-no",
+    },
+    {
+        id: 9,
+        quetion:"How many facings of <strong>Skin Firming Sheer Hydration 400 ML Body Lotion</strong> are kept on the shelf?",
         answer: undefined,
         time: 0,
         type:"meter-count",
-        productImage:'p1.png',
+        productImage:'pr1.jpg',
         counts: 0,
         file:"",
         image:""
     },
     {
-        id: 9,
-        quetion:"Do you see any of the following branding in the area where products are displayed?",
-        answer: undefined,
-        time: 0,
-        type:"multi-select-image",
-        options:[
-            {
-                image:"p7.png",
-                checked: null
-            },
-            {
-                image:"p8.png",
-                checked: null
-            },
-            {
-                image:"p5.png",
-                checked: null
-            },
-            {
-                image:"p6.png",
-                checked: null
-            }
-        ]
-    },
-    {
         id: 10,
-        quetion:"Click a picture of the following branding display",
+        quetion:"How many facings of <strong>Skin Firming Sheer Hydration 400 ML Body Lotion</strong> are kept on the shelf in front of you that you can reach out without bending with straight hand to pick?",
         answer: undefined,
-        productImage:'p7.png',
         time: 0,
-        type:"question-image",
+        type:"meter-count",
+        productImage:'pr1.jpg',
+        counts: 0,
         file:"",
         image:""
     },
     {
         id: 11,
-        quetion:"Where is the product kept on the shelves?",
+        quetion:"How many facings of <strong>Skin Firming Sheer Hydration 400 ML Body Lotion</strong> are kept on other shelves for which you have to either bend or raise your hand to pick?",
         answer: undefined,
-        productImage:'p7.png',
         time: 0,
-        type:"question-text",
+        type:"meter-count",
+        productImage:'pr1.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 12,
+        quetion:"Is the SKU <strong>Skin Firming Melanin Beauty and Hydration 400 ML Body Lotion</strong>, shown in the image below, available on the shelf?",
+        answer: undefined,
+        productImage:"pr2.jpg",
+        time: 0,
+        type:"single-question-yes-no",
+    },
+    {
+        id: 13,
+        quetion:"How many facings of <strong>Skin Firming Melanin Beauty and Hydration 400 ML Body Lotion</strong> are kept on the shelf?",
+        answer: undefined,
+        time: 0,
+        type:"meter-count",
+        productImage:'pr2.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 14,
+        quetion:"How many facings of <strong>Skin Firming Melanin Beauty and Hydration 400 ML Body Lotion</strong> are kept on the shelf in front of you that you can reach out without bending with straight hand to pick?",
+        answer: undefined,
+        time: 0,
+        type:"meter-count",
+        productImage:'pr2.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 15,
+        quetion:"How many facings of <strong>Skin Firming Melanin Beauty and Hydration 400 ML Body Lotion<strong> are kept on other shelves for which you have to either bend or raise your hand to pick?",
+        answer: undefined,
+        time: 0,
+        type:"meter-count",
+        productImage:'pr2.jpg',
+        counts: 0,
+        file:"",
+        image:""
     },
 ]
 

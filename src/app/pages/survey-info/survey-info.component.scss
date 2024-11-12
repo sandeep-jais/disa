@@ -14,7 +14,10 @@
     height: calc(100vh - 105px);
     overflow-y: auto;
 }
-@media screen and (max-width: 370px) {
+.heading-text{
+    font-size: 44px;
+}
+@media screen and (max-width: 400px) {
     .product-detail-page{
        
        padding: 0px !important;

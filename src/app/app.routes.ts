@@ -10,12 +10,12 @@ import { SurveyComponent2 } from './pages/survey-2/survey.component';
 import { SurveyInfoComponent } from './pages/survey-info/survey-info.component';
 
 export const routes: Routes = [
-    { path: 'home', component: HomeComponent },
-    { path: '', component: LoginComponent },
-    { path: 'verify', component: VerifyComponent },
-    { path: 'boarding', component: BoardingComponent },
-    { path: 'pharmacy-detail', component: PharmacyDetailComponent },
-    { path: 'product-detail', component: ProductDetailComponent },
+    // { path: 'home', component: HomeComponent },
+    // { path: '', component: LoginComponent },
+    // { path: 'verify', component: VerifyComponent },
+    // { path: 'boarding', component: BoardingComponent },
+    // { path: 'pharmacy-detail', component: PharmacyDetailComponent },
+    { path: '', component: ProductDetailComponent },
     { path: 'product-survey-info', component: SurveyInfoComponent },
     { path: 'product-survey', component: SurveyComponent },
     { path: 'product-survey-2', component: SurveyComponent2 },
