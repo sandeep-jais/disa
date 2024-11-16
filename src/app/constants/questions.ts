@@ -2,13 +2,16 @@ export const PRODUCT_QUESTIONS=[
     {
         id: 1,
         quetion:"What is the name of the section (as displayed in the store) where the below products are placed?",
+        products:[
+            "pr3.jpg",
+            "pr1.jpg",
+            "pr2.jpg"
+        ],
         answer: undefined,
         time: 0,
         type:"meter-image",
-        frontViewFile:'',
-        frontViewImage:'',
-        sideViewFile:'',
-        sideViewImage:''
+        file: undefined,
+        image: undefined
     },
     {
         id: 2,
@@ -157,7 +160,7 @@ export const PRODUCT_QUESTIONS=[
         answer: undefined,
         time: 0,
         type:"single-question-yes-no",
-        productImage:'pr2.jpg',
+        productImage:'p7.png',
         counts: 0,
         file:"",
         image:""
@@ -168,7 +171,7 @@ export const PRODUCT_QUESTIONS=[
         answer: undefined,
         time: 0,
         type:"single-question-yes-no",
-        productImage:'pr2.jpg',
+        productImage:'p6.png',
         counts: 0,
         file:"",
         image:""
@@ -179,7 +182,7 @@ export const PRODUCT_QUESTIONS=[
         answer: undefined,
         time: 0,
         type:"single-question-yes-no",
-        productImage:'pr2.jpg',
+        productImage:'p8.png',
         counts: 0,
         file:"",
         image:""
@@ -188,8 +191,121 @@ export const PRODUCT_QUESTIONS=[
         id: 19,
         quetion:"Great JOB !!!<br/>Let's now proceed with the survey of the <strong>Gondola End</strong> placed in the store as shown in the image below.",
         answer: undefined,
-        hint:"Pls walk around various sections and proceed once you have seen a Gondola End",
+        hint:"Please walk around various sections and proceed once you have seen a Gondola End",
         time: 0,
         type:"question-info",
+    },
+    {
+        id: 20,
+        quetion:"Please provide the name of section where this <strong>Gondola End</strong> is kept in the store.",
+        products:[
+            "gondola.jpg"
+        ],
+        answer: undefined,
+        time: 0,
+        type:"meter-image",
+        file: undefined,
+        image: undefined
+    },
+    {
+        id: 21,
+        quetion:"Is the branding on the <strong>Gondola</strong> same as the one displayed in the below picture?",
+        answer: undefined,
+        time: 0,
+        type:"single-question-yes-no",
+        productImage:'gondola.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 22,
+        quetion:"Is the SKU <strong>Skin Firming Nourishing Hydration 400 ML Body Lotion</strong>, as shown in the image below, available on the Gondola End?",
+        answer: undefined,
+        productImage:"pr3.jpg",
+        time: 0,
+        type:"single-question-yes-no",
+    },
+    {
+        id: 23,
+        quetion:"How many facings of <strong>Skin Firming Nourishing Hydration 400 ML Body Lotion</strong> are kept on the Gondola shelves?",
+        answer: undefined,
+        time: 0,
+        type:"meter-count",
+        productImage:'pr3.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 24,
+        quetion:"Is the display of <strong>Skin Firming Nourishing Hydration 400 ML Body Lotion</strong> on the Gondola Shelves same as displayed in the Gondola Image shown below?",
+        answer: undefined,
+        time: 0,
+        type:"meter-count",
+        productImage:'pr3.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 25,
+        quetion:"Is the SKU <strong>Skin Firming Sheer Hydration 400 ML Body Lotion</strong>, as shown in the image below, available on the Gondola End?",
+        answer: undefined,
+        productImage:"pr1.jpg",
+        time: 0,
+        type:"single-question-yes-no",
+    },
+    {
+        id: 26,
+        quetion:"How many facings of <strong>Skin Firming Sheer Hydration 400 ML Body Lotion</strong> are kept on the Gondola shelves?",
+        answer: undefined,
+        time: 0,
+        type:"meter-count",
+        productImage:'pr1.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 27,
+        quetion:"Is the display of <strong>Skin Firming Sheer Hydration 400 ML Body Lotion</strong> on the Gondola Shelves same as displayed in the Gondola Image shown below?",
+        answer: undefined,
+        time: 0,
+        type:"meter-count",
+        productImage:'pr1.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 28,
+        quetion:"Is the SKU <strong>Skin Firming Melanin Beauty and Hydration 400 ML Body Lotion</strong>, shown in the image below, available on the Gondola End?",
+        answer: undefined,
+        productImage:"pr2.jpg",
+        time: 0,
+        type:"single-question-yes-no",
+    },
+    {
+        id: 29,
+        quetion:"How many facings of <strong>Skin Firming Melanin Beauty and Hydration 400 ML Body Lotion</strong> are kept on the Gondola shelves?",
+        answer: undefined,
+        time: 0,
+        type:"meter-count",
+        productImage:'pr2.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 30,
+        quetion:"Is the display of <strong>Skin Firming Melanin Beauty and Hydration 400 ML Body Lotion</strong> on the Gondola Shelves same as displayed in the Gondola Image shown below?",
+        answer: undefined,
+        time: 0,
+        type:"meter-count",
+        productImage:'pr2.jpg',
+        counts: 0,
+        file:"",
+        image:""
     },
 ]
