@@ -78,6 +78,10 @@
                         <app-question-text [question]="questions[step]" (answer)="answer($event)"
                             (openPreview)="openPreview($event)"></app-question-text>
                         }
+                        @case ('question-info') {
+                            <app-question-information [question]="questions[step]" (answer)="answer($event)"
+                                (openPreview)="openPreview($event)"></app-question-information>
+                            }
                         }
                     </div>
 

@@ -23,6 +23,7 @@ import { DATA_PRODUCT } from '../../constants';
 import { QuestionTextComponent } from './question-text/question-text.component';
 import { QuestionMeterSecondComponent } from './question-meters-second/question-meters-second.component';
 import { QuestionSingleYesNoComponent } from "./question-single-yes-no/question-single-yes-no.component";
+import { QuestionInformationComponent } from "./question-information/question-information.component";
 
 @Component({
   selector: 'app-survey', 
@@ -30,7 +31,8 @@ import { QuestionSingleYesNoComponent } from "./question-single-yes-no/question-
   imports: [ButtonModule, HeaderComponent, BottomTabsComponent, BackButtonComponent, QuestionMeterComponent,
     FooterComponent, CounterComponent, CheckAnswerPipe, NextButtonComponent, QuestionStartComponent, QuestionTextComponent,
     QuestionMeterCountComponent, QuestionMeterImageComponent, QuestionImageComponent, AnswerLengthPipe, QuestionMeterSecondComponent,
-    QuestionMultiSelectImageComponent, QuestionMultiSelectQuestionComponent, QuestionImageComponent, ImageLightBoxComponent, CustomProgressComponent, QuestionSingleYesNoComponent],
+    QuestionMultiSelectImageComponent, QuestionMultiSelectQuestionComponent, QuestionImageComponent, ImageLightBoxComponent,
+     CustomProgressComponent, QuestionSingleYesNoComponent, QuestionInformationComponent],
   templateUrl: './survey.component.html',
   styleUrl: './survey.component.scss'
 })

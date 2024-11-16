@@ -151,14 +151,45 @@ export const PRODUCT_QUESTIONS=[
         file:"",
         image:""
     },
-]
-
-const QUESTIONS=[
     {
-        id: 1, 
-        type:"",
-        category:"",
-        subCategory:"",
-        question:""
-    }
+        id: 16,
+        quetion:"Do you see a <strong>Wobbler</strong> displayed on the shelves in front of you?",
+        answer: undefined,
+        time: 0,
+        type:"single-question-yes-no",
+        productImage:'pr2.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 17,
+        quetion:"Do you see a <strong>Shelf Separator</strong> displayed on the shelves in front of you?",
+        answer: undefined,
+        time: 0,
+        type:"single-question-yes-no",
+        productImage:'pr2.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 18,
+        quetion:"Do you see a <strong>Shelf Strip</strong> displayed on the shelves in front of you?",
+        answer: undefined,
+        time: 0,
+        type:"single-question-yes-no",
+        productImage:'pr2.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 19,
+        quetion:"Great JOB !!!<br/>Let's now proceed with the survey of the <strong>Gondola End</strong> placed in the store as shown in the image below.",
+        answer: undefined,
+        hint:"Pls walk around various sections and proceed once you have seen a Gondola End",
+        time: 0,
+        type:"question-info",
+    },
 ]
