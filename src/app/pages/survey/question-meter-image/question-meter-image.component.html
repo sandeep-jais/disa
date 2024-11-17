@@ -14,8 +14,8 @@
             }
             @else{
                 @for(image of question?.products;track $index){
-                    <div class="relative w-4">
-                        <img  height="145" class="w-full border-1 border-round p-2 shadow-1 border-gray-300" [src]="'/assets/images/'+image" />
+                    <div class="relative w-5">
+                        <img  height="185" class="w-full border-1 border-round p-2 shadow-1 border-gray-300" [src]="'/assets/images/'+image" />
                         <span class="absolute pi pi-search-plus text-gray-600 cursor-pointer"
                             (click)="openPreview.emit('assets/images/'+image)"
                             style="right: 13px;bottom: 10px;"></span>
@@ -25,7 +25,7 @@
             }
          </div>
     </div>
-    <div class="mx-2 my-5">
+    <div class="mx-2" [class]="question.products?.length>1?'my-5':'mb-2'">
         <div class="text-center mx-3 pt-5">
             <input
             class="w-full"

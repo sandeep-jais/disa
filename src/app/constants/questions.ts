@@ -308,4 +308,125 @@ export const PRODUCT_QUESTIONS=[
         file:"",
         image:""
     },
+    {
+        id: 31,
+        quetion:"Great going !!!<br/>Let's now move to the next <strong>Gondola End</strong> kept in the store.",
+        answer: undefined,
+        hint:"\n",
+        time: 0,
+        type:"question-info",
+    },
+    {
+        id: 32,
+        quetion:"Please provide the name of section where this <strong>Gondola End</strong> is kept in the store.",
+        products:[
+            "gondola.jpg"
+        ],
+        answer: undefined,
+        time: 0,
+        type:"meter-image",
+        file: undefined,
+        image: undefined
+    },
+    {
+        id: 33,
+        quetion:"Is the branding on the <strong>Gondola</strong> same as the one displayed in the below picture?",
+        answer: undefined,
+        time: 0,
+        type:"single-question-yes-no",
+        productImage:'gondola.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 34,
+        quetion:"Is the SKU <strong>Skin Firming Nourishing Hydration 400 ML Body Lotion</strong>, as shown in the image below, available on the Gondola End?",
+        answer: undefined,
+        productImage:"pr3.jpg",
+        time: 0,
+        type:"single-question-yes-no",
+    },
+    {
+        id: 35,
+        quetion:"How many facings of <strong>Skin Firming Nourishing Hydration 400 ML Body Lotion</strong> are kept on the Gondola shelves?",
+        answer: undefined,
+        time: 0,
+        type:"meter-count",
+        productImage:'pr3.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 36,
+        quetion:"Is the display of <strong>Skin Firming Nourishing Hydration 400 ML Body Lotion</strong> on the Gondola Shelves same as displayed in the Gondola Image shown below?",
+        answer: undefined,
+        time: 0,
+        type:"meter-count",
+        productImage:'pr3.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 37,
+        quetion:"Is the SKU <strong>Skin Firming Sheer Hydration 400 ML Body Lotion</strong>, as shown in the image below, available on the Gondola End?",
+        answer: undefined,
+        productImage:"pr1.jpg",
+        time: 0,
+        type:"single-question-yes-no",
+    },
+    {
+        id: 38,
+        quetion:"How many facings of <strong>Skin Firming Sheer Hydration 400 ML Body Lotion</strong> are kept on the Gondola shelves?",
+        answer: undefined,
+        time: 0,
+        type:"meter-count",
+        productImage:'pr1.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 39,
+        quetion:"Is the display of <strong>Skin Firming Sheer Hydration 400 ML Body Lotion</strong> on the Gondola Shelves same as displayed in the Gondola Image shown below?",
+        answer: undefined,
+        time: 0,
+        type:"meter-count",
+        productImage:'pr1.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 40,
+        quetion:"Is the SKU <strong>Skin Firming Melanin Beauty and Hydration 400 ML Body Lotion</strong>, shown in the image below, available on the Gondola End?",
+        answer: undefined,
+        productImage:"pr2.jpg",
+        time: 0,
+        type:"single-question-yes-no",
+    },
+    {
+        id: 41,
+        quetion:"How many facings of <strong>Skin Firming Melanin Beauty and Hydration 400 ML Body Lotion</strong> are kept on the Gondola shelves?",
+        answer: undefined,
+        time: 0,
+        type:"meter-count",
+        productImage:'pr2.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 42,
+        quetion:"Is the display of <strong>Skin Firming Melanin Beauty and Hydration 400 ML Body Lotion</strong> on the Gondola Shelves same as displayed in the Gondola Image shown below?",
+        answer: undefined,
+        time: 0,
+        type:"meter-count",
+        productImage:'pr2.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
 ]
