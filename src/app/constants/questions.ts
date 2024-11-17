@@ -197,6 +197,25 @@ export const PRODUCT_QUESTIONS=[
     },
     {
         id: 20,
+        quetion:"How many <strong>Gondola Ends</strong> as displayed in the Image below did you see in the store?",
+        answer: undefined,
+        time: 0,
+        type:"meter-count",
+        productImage:'gondola.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 21,
+        quetion:"OK,<br/>Let's start with the survey of <strong>Gondola End</strong>.",
+        answer: undefined,
+        hint:"\n",
+        time: 0,
+        type:"question-info",
+    },
+    {
+        id: 22,
         quetion:"Please provide the name of section where this <strong>Gondola End</strong> is kept in the store.",
         products:[
             "gondola.jpg"
@@ -208,7 +227,7 @@ export const PRODUCT_QUESTIONS=[
         image: undefined
     },
     {
-        id: 21,
+        id: 23,
         quetion:"Is the branding on the <strong>Gondola</strong> same as the one displayed in the below picture?",
         answer: undefined,
         time: 0,
@@ -219,7 +238,7 @@ export const PRODUCT_QUESTIONS=[
         image:""
     },
     {
-        id: 22,
+        id: 24,
         quetion:"Is the SKU <strong>Skin Firming Nourishing Hydration 400 ML Body Lotion</strong>, as shown in the image below, available on the Gondola End?",
         answer: undefined,
         productImage:"pr3.jpg",
@@ -227,7 +246,7 @@ export const PRODUCT_QUESTIONS=[
         type:"single-question-yes-no",
     },
     {
-        id: 23,
+        id: 25,
         quetion:"How many facings of <strong>Skin Firming Nourishing Hydration 400 ML Body Lotion</strong> are kept on the Gondola shelves?",
         answer: undefined,
         time: 0,
@@ -238,7 +257,7 @@ export const PRODUCT_QUESTIONS=[
         image:""
     },
     {
-        id: 24,
+        id: 26,
         quetion:"Is the display of <strong>Skin Firming Nourishing Hydration 400 ML Body Lotion</strong> on the Gondola Shelves same as displayed in the Gondola Image shown below?",
         answer: undefined,
         time: 0,
@@ -249,7 +268,7 @@ export const PRODUCT_QUESTIONS=[
         image:""
     },
     {
-        id: 25,
+        id: 27,
         quetion:"Is the SKU <strong>Skin Firming Sheer Hydration 400 ML Body Lotion</strong>, as shown in the image below, available on the Gondola End?",
         answer: undefined,
         productImage:"pr1.jpg",
@@ -257,7 +276,7 @@ export const PRODUCT_QUESTIONS=[
         type:"single-question-yes-no",
     },
     {
-        id: 26,
+        id: 28,
         quetion:"How many facings of <strong>Skin Firming Sheer Hydration 400 ML Body Lotion</strong> are kept on the Gondola shelves?",
         answer: undefined,
         time: 0,
@@ -268,7 +287,7 @@ export const PRODUCT_QUESTIONS=[
         image:""
     },
     {
-        id: 27,
+        id: 29,
         quetion:"Is the display of <strong>Skin Firming Sheer Hydration 400 ML Body Lotion</strong> on the Gondola Shelves same as displayed in the Gondola Image shown below?",
         answer: undefined,
         time: 0,
@@ -279,7 +298,7 @@ export const PRODUCT_QUESTIONS=[
         image:""
     },
     {
-        id: 28,
+        id: 30,
         quetion:"Is the SKU <strong>Skin Firming Melanin Beauty and Hydration 400 ML Body Lotion</strong>, shown in the image below, available on the Gondola End?",
         answer: undefined,
         productImage:"pr2.jpg",
@@ -287,7 +306,7 @@ export const PRODUCT_QUESTIONS=[
         type:"single-question-yes-no",
     },
     {
-        id: 29,
+        id: 31,
         quetion:"How many facings of <strong>Skin Firming Melanin Beauty and Hydration 400 ML Body Lotion</strong> are kept on the Gondola shelves?",
         answer: undefined,
         time: 0,
@@ -298,7 +317,7 @@ export const PRODUCT_QUESTIONS=[
         image:""
     },
     {
-        id: 30,
+        id: 32,
         quetion:"Is the display of <strong>Skin Firming Melanin Beauty and Hydration 400 ML Body Lotion</strong> on the Gondola Shelves same as displayed in the Gondola Image shown below?",
         answer: undefined,
         time: 0,
@@ -309,7 +328,7 @@ export const PRODUCT_QUESTIONS=[
         image:""
     },
     {
-        id: 31,
+        id: 33,
         quetion:"Great going !!!<br/>Let's now move to the next <strong>Gondola End</strong> kept in the store.",
         answer: undefined,
         hint:"\n",
@@ -317,7 +336,7 @@ export const PRODUCT_QUESTIONS=[
         type:"question-info",
     },
     {
-        id: 32,
+        id: 34,
         quetion:"Please provide the name of section where this <strong>Gondola End</strong> is kept in the store.",
         products:[
             "gondola.jpg"
@@ -329,7 +348,7 @@ export const PRODUCT_QUESTIONS=[
         image: undefined
     },
     {
-        id: 33,
+        id: 35,
         quetion:"Is the branding on the <strong>Gondola</strong> same as the one displayed in the below picture?",
         answer: undefined,
         time: 0,
@@ -340,7 +359,7 @@ export const PRODUCT_QUESTIONS=[
         image:""
     },
     {
-        id: 34,
+        id: 36,
         quetion:"Is the SKU <strong>Skin Firming Nourishing Hydration 400 ML Body Lotion</strong>, as shown in the image below, available on the Gondola End?",
         answer: undefined,
         productImage:"pr3.jpg",
@@ -348,7 +367,7 @@ export const PRODUCT_QUESTIONS=[
         type:"single-question-yes-no",
     },
     {
-        id: 35,
+        id: 37,
         quetion:"How many facings of <strong>Skin Firming Nourishing Hydration 400 ML Body Lotion</strong> are kept on the Gondola shelves?",
         answer: undefined,
         time: 0,
@@ -359,7 +378,7 @@ export const PRODUCT_QUESTIONS=[
         image:""
     },
     {
-        id: 36,
+        id: 38,
         quetion:"Is the display of <strong>Skin Firming Nourishing Hydration 400 ML Body Lotion</strong> on the Gondola Shelves same as displayed in the Gondola Image shown below?",
         answer: undefined,
         time: 0,
@@ -370,7 +389,7 @@ export const PRODUCT_QUESTIONS=[
         image:""
     },
     {
-        id: 37,
+        id: 39,
         quetion:"Is the SKU <strong>Skin Firming Sheer Hydration 400 ML Body Lotion</strong>, as shown in the image below, available on the Gondola End?",
         answer: undefined,
         productImage:"pr1.jpg",
@@ -378,7 +397,7 @@ export const PRODUCT_QUESTIONS=[
         type:"single-question-yes-no",
     },
     {
-        id: 38,
+        id: 40,
         quetion:"How many facings of <strong>Skin Firming Sheer Hydration 400 ML Body Lotion</strong> are kept on the Gondola shelves?",
         answer: undefined,
         time: 0,
@@ -389,7 +408,7 @@ export const PRODUCT_QUESTIONS=[
         image:""
     },
     {
-        id: 39,
+        id: 41,
         quetion:"Is the display of <strong>Skin Firming Sheer Hydration 400 ML Body Lotion</strong> on the Gondola Shelves same as displayed in the Gondola Image shown below?",
         answer: undefined,
         time: 0,
@@ -400,7 +419,7 @@ export const PRODUCT_QUESTIONS=[
         image:""
     },
     {
-        id: 40,
+        id: 42,
         quetion:"Is the SKU <strong>Skin Firming Melanin Beauty and Hydration 400 ML Body Lotion</strong>, shown in the image below, available on the Gondola End?",
         answer: undefined,
         productImage:"pr2.jpg",
@@ -408,7 +427,7 @@ export const PRODUCT_QUESTIONS=[
         type:"single-question-yes-no",
     },
     {
-        id: 41,
+        id: 43,
         quetion:"How many facings of <strong>Skin Firming Melanin Beauty and Hydration 400 ML Body Lotion</strong> are kept on the Gondola shelves?",
         answer: undefined,
         time: 0,
@@ -419,8 +438,269 @@ export const PRODUCT_QUESTIONS=[
         image:""
     },
     {
-        id: 42,
+        id: 44,
         quetion:"Is the display of <strong>Skin Firming Melanin Beauty and Hydration 400 ML Body Lotion</strong> on the Gondola Shelves same as displayed in the Gondola Image shown below?",
+        answer: undefined,
+        time: 0,
+        type:"meter-count",
+        productImage:'pr2.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 45,
+        quetion:"Great JOB !!!<br/>Let's now proceed with the survey of the <strong>FSUs</strong> or <strong>Free Standing Units</strong> placed in the store as shown in the image below.",
+        answer: undefined,
+        hint:"Pls walk around various sections and proceed once you have seen a FSU",
+        time: 0,
+        type:"question-info",
+    },
+    {
+        id: 46,
+        quetion:"How many <strong>FSUs</strong> as displayed in the Image below did you see in the store?",
+        answer: undefined,
+        time: 0,
+        type:"meter-count",
+        productImage:'fsu.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 47,
+        quetion:"OK,<br/>Let's start with the survey of the first <strong>FSUs</strong>",
+        answer: undefined,
+        hint:"\n",
+        time: 0,
+        type:"question-info",
+    },
+    {
+        id: 48,
+        quetion:"Please provide the name of section where this <strong>FSU</strong> is kept in the store.",
+        products:[
+            "fsu.jpg"
+        ],
+        answer: undefined,
+        time: 0,
+        type:"meter-image",
+        file: undefined,
+        image: undefined
+    },
+    {
+        id: 49,
+        quetion:"Is the branding on the <strong>FSU</strong> same as the one displayed in the below picture?",
+        answer: undefined,
+        time: 0,
+        type:"single-question-yes-no",
+        productImage:'fsu.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 50,
+        quetion:"Is the SKU <strong>Skin Firming Nourishing Hydration 400 ML Body Lotion</strong>, as shown in the image below, available on the FSU?",
+        answer: undefined,
+        productImage:"pr3.jpg",
+        time: 0,
+        type:"single-question-yes-no",
+    },
+    {
+        id: 51,
+        quetion:"How many facings of <strong>Skin Firming Nourishing Hydration 400 ML Body Lotion</strong> are kept on the FSU shelves?",
+        answer: undefined,
+        time: 0,
+        type:"meter-count",
+        productImage:'pr3.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 52,
+        quetion:"Is the display of <strong>Skin Firming Nourishing Hydration 400 ML Body Lotion</strong> on the FSU Shelves same as displayed in the FSU Image shown below?",
+        answer: undefined,
+        time: 0,
+        type:"meter-count",
+        productImage:'pr3.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 53,
+        quetion:"Is the SKU <strong>Skin Firming Sheer Hydration 400 ML Body Lotion</strong>, as shown in the image below, available on the FSU?",
+        answer: undefined,
+        productImage:"pr1.jpg",
+        time: 0,
+        type:"single-question-yes-no",
+    },
+    {
+        id: 54,
+        quetion:"How many facings of <strong>Skin Firming Sheer Hydration 400 ML Body Lotion</strong> are kept on the FSU shelves?",
+        answer: undefined,
+        time: 0,
+        type:"meter-count",
+        productImage:'pr1.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 55,
+        quetion:"Is the display of <strong>Skin Firming Sheer Hydration 400 ML Body Lotion</strong> on the FSU Shelves same as displayed in the FSU Image shown below?",
+        answer: undefined,
+        time: 0,
+        type:"meter-count",
+        productImage:'pr1.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 56,
+        quetion:"Is the SKU <strong>Skin Firming Melanin Beauty and Hydration 400 ML Body Lotion</strong>, shown in the image below, available on the FSU?",
+        answer: undefined,
+        productImage:"pr2.jpg",
+        time: 0,
+        type:"single-question-yes-no",
+    },
+    {
+        id: 57,
+        quetion:"How many facings of <strong>Skin Firming Melanin Beauty and Hydration 400 ML Body Lotion</strong> are kept on the FSU shelves?",
+        answer: undefined,
+        time: 0,
+        type:"meter-count",
+        productImage:'pr2.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 58,
+        quetion:"Is the display of <strong>Skin Firming Melanin Beauty and Hydration 400 ML Body Lotion</strong> on the FSU Shelves same as displayed in the FSU Image shown below?",
+        answer: undefined,
+        time: 0,
+        type:"meter-count",
+        productImage:'pr2.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 59,
+        quetion:"Great going !!!<br/>Let's now move to the next <strong>FSU</strong> kept in the store.",
+        answer: undefined,
+        hint:"\n",
+        time: 0,
+        type:"question-info",
+    },
+    {
+        id: 60,
+        quetion:"Please provide the name of section where this <strong>FSU</strong> is kept in the store.",
+        products:[
+            "fsu.jpg"
+        ],
+        answer: undefined,
+        time: 0,
+        type:"meter-image",
+        file: undefined,
+        image: undefined
+    },
+    {
+        id: 61,
+        quetion:"Is the branding on the <strong>FSU</strong> same as the one displayed in the below picture?",
+        answer: undefined,
+        time: 0,
+        type:"single-question-yes-no",
+        productImage:'fsu.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 62,
+        quetion:"Is the SKU <strong>Skin Firming Nourishing Hydration 400 ML Body Lotion</strong>, as shown in the image below, available on the FSU?",
+        answer: undefined,
+        productImage:"pr3.jpg",
+        time: 0,
+        type:"single-question-yes-no",
+    },
+    {
+        id: 63,
+        quetion:"How many facings of <strong>Skin Firming Nourishing Hydration 400 ML Body Lotion</strong> are kept on the FSU shelves?",
+        answer: undefined,
+        time: 0,
+        type:"meter-count",
+        productImage:'pr3.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 64,
+        quetion:"Is the display of <strong>Skin Firming Nourishing Hydration 400 ML Body Lotion</strong> on the FSU Shelves same as displayed in the FSU Image shown below?",
+        answer: undefined,
+        time: 0,
+        type:"meter-count",
+        productImage:'pr3.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 65,
+        quetion:"Is the SKU <strong>Skin Firming Sheer Hydration 400 ML Body Lotion</strong>, as shown in the image below, available on the FSU?",
+        answer: undefined,
+        productImage:"pr1.jpg",
+        time: 0,
+        type:"single-question-yes-no",
+    },
+    {
+        id: 66,
+        quetion:"How many facings of <strong>Skin Firming Sheer Hydration 400 ML Body Lotion</strong> are kept on the FSU shelves?",
+        answer: undefined,
+        time: 0,
+        type:"meter-count",
+        productImage:'pr1.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 67,
+        quetion:"Is the display of <strong>Skin Firming Sheer Hydration 400 ML Body Lotion</strong> on the FSU Shelves same as displayed in the FSU Image shown below?",
+        answer: undefined,
+        time: 0,
+        type:"meter-count",
+        productImage:'pr1.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 68,
+        quetion:"Is the SKU <strong>Skin Firming Melanin Beauty and Hydration 400 ML Body Lotion</strong>, shown in the image below, available on the FSU?",
+        answer: undefined,
+        productImage:"pr2.jpg",
+        time: 0,
+        type:"single-question-yes-no",
+    },
+    {
+        id: 69,
+        quetion:"How many facings of <strong>Skin Firming Melanin Beauty and Hydration 400 ML Body Lotion</strong> are kept on the FSU shelves?",
+        answer: undefined,
+        time: 0,
+        type:"meter-count",
+        productImage:'pr2.jpg',
+        counts: 0,
+        file:"",
+        image:""
+    },
+    {
+        id: 70,
+        quetion:"Is the display of <strong>Skin Firming Melanin Beauty and Hydration 400 ML Body Lotion</strong> on the FSU Shelves same as displayed in the FSU Image shown below?",
         answer: undefined,
         time: 0,
         type:"meter-count",
