@@ -50,6 +50,7 @@ body {
 
 .product-survey-page .container:has(app-question-information) .q-text{
    font-size: 36px !important;
+   min-height: 265px !important;
 }
 
 .product-survey-page .container:has(app-question-single-yes-no) .q-text,
