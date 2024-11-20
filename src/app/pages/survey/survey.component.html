@@ -81,6 +81,10 @@
                         @case ('question-info') {
                             <app-question-information [question]="questions[step]" (answer)="answer($event)"
                                 (openPreview)="openPreview($event)"></app-question-information>
+                        }
+                        @case ('gondola-fsu-selection') {
+                            <app-question-gondola-fsu [question]="questions[step]" (answer)="answer($event)" 
+                            (openPreview)="openPreview($event)"></app-question-gondola-fsu>
                             }
                         }
                     </div>
@@ -88,7 +92,7 @@
                 </div>
                 }
 
-                <div class="mx-1" style="width: 98%;">
+                <div class="mx-1 bottom-buttons" style="width: 98%;">
                     <div class="flex justify-content-between">
                         <div>
                             @if (step>0) {
@@ -98,7 +102,7 @@
                         <div>
                             @if (!isCompleted) {
                             <app-next-button [disabled]="questions|checkAnswer:step:images"
-                                (click)="changeStep()"></app-next-button>
+                                (click)="changeStep($event)"></app-next-button>
                             }
                         </div>
         
@@ -111,3 +115,5 @@
 </div>
 
 <app-image-light-box [visible]="visible" [imageUrl]="selectedImage" (close)="hideLightBox()" />
+
+<p-confirmDialog />

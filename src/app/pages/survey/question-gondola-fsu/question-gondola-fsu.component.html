@@ -1,0 +1,24 @@
+<div class="relative" style="height: 48vh;">
+    <div class="relative flex justify-content-center mt-5 pt-5">
+        @for(item of question?.products;track $index){
+        <div class="relative w-4 mx-1 ">
+            <img height="160" class="w-full cursor-pointer border-round p-2 shadow-1 "
+                [src]="'/assets/images/'+item?.image" (click)="clickOnStep(item.selection)"
+                 [class]="selectedStep==item?.selection?'border-2 border-green-300':' border-1 border-gray-300'" />
+            <span class="absolute pi pi-search-plus text-gray-600 cursor-pointer"
+                (click)="openPreview.emit('assets/images/'+item?.image)" style="right: 13px;bottom: 10px;"></span>
+        </div>
+
+        }
+    </div>
+    <div class="absolute bottom-0">
+        <div class="my-5 mx-2">
+            <p class="text-sm text-gray-600">
+                {{question?.hint}}
+            </p>
+        </div>
+        <div class="mx-7 px-2 mb-3">
+
+        </div>
+    </div>
+</div>
