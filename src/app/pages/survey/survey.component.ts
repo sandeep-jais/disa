@@ -68,13 +68,20 @@ export class SurveyComponent {
   }
 
   changeStep(event: any) {
+    if (this.step == 43 || this.step == 70) {
+      this.questions[this.step].time = this.time;
+      this.step = 19;
+      this.questions[19].answer = false;
+      this.time = 0;
+      return;
+    }
     if (this.step == 19) {
       if (!this.questions[this.step].answer) {
         return this.confirm(event);
       } else if (this.questions[this.step].answer == 'fsu') {
-        this.questions=this.questions.concat(FSU_QUESTIONS);
+        this.questions = this.questions.slice(0,20).concat(FSU_QUESTIONS);
       } else if (this.questions[this.step].answer == 'gondola') {
-        this.questions=this.questions.concat(GONDOLA_QUESTIONS);
+        this.questions = this.questions.slice(0,20).concat(GONDOLA_QUESTIONS);
       }
     }
     this.questions[this.step].answer = true;
@@ -92,10 +99,10 @@ export class SurveyComponent {
   }
 
   back() {
-      if(this.step==20){
-        this.questions= this.questions.splice(0,20);
-      }
-      this.step--;
+    if (this.step == 20) {
+      this.questions = this.questions.splice(0, 20);
+    }
+    this.step--;
   }
   answer(ans?: any) {
     this.questions[this.step] = ans;
