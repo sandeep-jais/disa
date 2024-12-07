@@ -3,7 +3,7 @@
   [style]="{ 'background-color': '#991DB3', 'box-shadow': 'none','padding-block':'10px' }"
 >
   <ng-template pTemplate="start">
-    <span class="pi pi-bars text-white"></span>
+    <span class="pi pi-bars text-white" (click)="sidebarVisible=true"></span>
   </ng-template>
   <ng-template pTemplate="center">
     <div class="flex flex-wrap align-items-center gap-1 font-bold text-white">
@@ -53,3 +53,13 @@
     </div>
   </ng-template>
 </p-toolbar>
+
+<p-sidebar [(visible)]="sidebarVisible" styleClass="w-20rem">
+  <ng-template pTemplate="header">
+      <span class="font-semibold text-xl">{{userDetail?.firstName}} {{userDetail?.lastName}}</span>
+  </ng-template>
+  
+  <div>
+    <span class="cursor-pointer" (click)="logout()">Logout</span>
+  </div>
+</p-sidebar>

@@ -8,15 +8,15 @@ import { PharmacyDetailComponent } from './pages/pharmacy-detail/pharmacy-detail
 import { SurveyComponent } from './pages/survey/survey.component';
 import { SurveyComponent2 } from './pages/survey-2/survey.component';
 import { SurveyInfoComponent } from './pages/survey-info/survey-info.component';
+import { AuthGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
     // { path: 'home', component: HomeComponent },
-    // { path: '', component: LoginComponent },
-    // { path: 'verify', component: VerifyComponent },
+    { path: '', component: LoginComponent },
+    { path: 'verify', component: VerifyComponent },
     // { path: 'boarding', component: BoardingComponent },
     // { path: 'pharmacy-detail', component: PharmacyDetailComponent },
-    { path: '', component: ProductDetailComponent },
-    { path: 'product-survey-info', component: SurveyInfoComponent },
-    { path: 'product-survey', component: SurveyComponent },
-    { path: 'product-survey-2', component: SurveyComponent2 },
+    { path: 'product', component: ProductDetailComponent,canActivate: [AuthGuard] },
+    { path: 'product-survey-info', component: SurveyInfoComponent ,canActivate: [AuthGuard]},
+    { path: 'product-survey', component: SurveyComponent,canActivate: [AuthGuard] },
 ];
