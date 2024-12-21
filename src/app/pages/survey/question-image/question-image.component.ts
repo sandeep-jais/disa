@@ -13,6 +13,7 @@ export class QuestionImageComponent {
   @Output() openPreview = new EventEmitter<any>();
 
   selectFile(event:any){
+    console.log(event)
     let file= event.files[0];
     let link = URL.createObjectURL(file);
     this.answer.emit({...this.question,file,image: link });
