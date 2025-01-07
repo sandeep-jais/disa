@@ -1,31 +1,37 @@
 <div class="my-3">
-    <div [class]="question.products?.length>1? 'my-5':''">
+    <div [class]="!question.sku? 'my-5':''">
         <div class="flex w-full gap-2 justify-content-center">
-            @if(question.products?.length>1){
-                @for(image of question?.products;track $index){
+            @if(question.sku){
                     <div class="relative w-4">
-                        <img  height="130" class="w-full border-1 border-round p-2 shadow-1 border-gray-300" [src]="'/assets/images/'+image" />
+                        <img  height="185" class="w-full border-1 border-round p-2 shadow-1 border-gray-300" [src]="fileUrl+question.sku?.skuImage" />
                         <span class="absolute pi pi-search-plus text-gray-600 cursor-pointer"
-                            (click)="openPreview.emit('assets/images/'+image)"
+                            (click)="openPreview.emit(fileUrl+question.sku?.skuImage)"
                             style="right: 13px;bottom: 10px;"></span>
                     </div>
-                    
-                }
             }
             @else{
-                @for(image of question?.products;track $index){
                     <div class="relative w-5">
-                        <img  height="185"  class="w-full border-1 border-round p-2 shadow-1 border-gray-300" [src]="'/assets/images/'+image" />
+                        <img  height="135"  class="w-full border-1 border-round p-2 shadow-1 border-gray-300" [src]="fileUrl+'sheer-hydration.jpg'" />
                         <span class="absolute pi pi-search-plus text-gray-600 cursor-pointer"
-                            (click)="openPreview.emit('assets/images/'+image)"
+                            (click)="openPreview.emit(fileUrl+'sheer-hydration.jpg')"
                             style="right: 13px;bottom: 10px;"></span>
                     </div>
-                    
-                }
+                    <div class="relative w-5">
+                        <img  height="135"  class="w-full border-1 border-round p-2 shadow-1 border-gray-300" [src]="fileUrl+'melanin-beauty-hydration.jpg'" />
+                        <span class="absolute pi pi-search-plus text-gray-600 cursor-pointer"
+                            (click)="openPreview.emit(fileUrl+'melanin-beauty-hydration.jpg')"
+                            style="right: 13px;bottom: 10px;"></span>
+                    </div>
+                    <div class="relative w-5">
+                        <img  height="135"  class="w-full border-1 border-round p-2 shadow-1 border-gray-300" [src]="fileUrl+'nourishing-hydration.jpg'" />
+                        <span class="absolute pi pi-search-plus text-gray-600 cursor-pointer"
+                            (click)="openPreview.emit(fileUrl+'nourishing-hydration.jpg')"
+                            style="right: 13px;bottom: 10px;"></span>
+                    </div>
             }
          </div>
     </div>
-    <div class="mx-2" [class]="question.products?.length>1?'my-5':'mb-2'">
+    <div class="mx-2" [class]="!question.sku?'my-5':'mb-2'">
         <div class="text-center mx-3 pt-5">
             <input
             class="w-full"

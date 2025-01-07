@@ -2,25 +2,6 @@
     <div class="">
         <app-header></app-header>
     </div>
-    @if(isCompleted){
-    <div class="container question-card">
-        <div class="my-4">
-            <div class="text-center">
-                <span class="pi pi-star text-3xl"></span>
-            </div>
-        </div>
-        <h2 class="text-center">Completed</h2>
-        <div class="my-4">
-            <p class="text-center">Thank You</p>
-        </div>
-        <div class="mt-5 mb-2">
-            <div class="flex justify-content-center">
-                <button pButton label="Go to Product" class="w-6  bg-linear-blue  border-round"
-                    (click)="navigate('/')"></button>
-            </div>
-        </div>
-    </div>
-    }@else {
     <div class="container relative question-card">
         <div class="p-2 transition-all transition-duration-200 scrolling-container overflow-auto">
             <!-- <div class="flex justify-content-between">
@@ -33,11 +14,13 @@
                 @if (questions.length) {
                 <div>
                     <div class="mx-2">
-                        <p class="text-2xl q-text" [innerHTML]="questions[step].quetion"></p>
+                        <p class="text-2xl q-text"
+                            [innerHTML]="questions[step]['question-master'].description|replaceWords:questions[step].sku:questions[step].product:{sectionName}">
+                        </p>
                     </div>
 
                     <div class="question-inner-box">
-                        @switch (questions[step].type) {
+                        @switch (questions[step]['question-master'].screenType) {
                         @case ('start') {
                         <app-question-start [question]="questions[step]" (answer)="answer($event)"
                             (openPreview)="openPreview($event)"></app-question-start>
@@ -51,16 +34,16 @@
                             (openPreview)="openPreview($event)"></app-question-multi-select-image>
                         }
                         @case ('meter-image') {
-                        <app-question-meter-image [question]="questions[step]"
-                            (answer)="answer($event)" (openPreview)="openPreview($event)"></app-question-meter-image>
+                        <app-question-meter-image [question]="questions[step]" (answer)="answer($event)"
+                            (openPreview)="openPreview($event)"></app-question-meter-image>
                         }
                         @case ('meter-image-second') {
-                            <app-question-meters-second [question]="questions[step]"
-                                (answer)="answer($event)" (openPreview)="openPreview($event)"></app-question-meters-second>
+                        <app-question-meters-second [question]="questions[step]" (answer)="answer($event)"
+                            (openPreview)="openPreview($event)"></app-question-meters-second>
                         }
                         @case ('single-question-yes-no') {
-                            <app-question-single-yes-no [question]="questions[step]"
-                                (answer)="answer($event)" (openPreview)="openPreview($event)"></app-question-single-yes-no>
+                        <app-question-single-yes-no [question]="questions[step]" (answer)="answer($event)"
+                            (openPreview)="openPreview($event)"></app-question-single-yes-no>
                         }
                         @case ('meter-count') {
                         <app-question-meter-count [question]="questions[step]" (answer)="answer($event)"
@@ -79,13 +62,16 @@
                             (openPreview)="openPreview($event)"></app-question-text>
                         }
                         @case ('question-info') {
-                            <app-question-information [question]="questions[step]" (answer)="answer($event)"
-                                (openPreview)="openPreview($event)"></app-question-information>
+                        <app-question-information [question]="questions[step]" (answer)="answer($event)"
+                            (openPreview)="openPreview($event)"></app-question-information>
                         }
                         @case ('gondola-fsu-selection') {
-                            <app-question-gondola-fsu [question]="questions[step]" (answer)="answer($event)" 
+                        <app-question-gondola-fsu [question]="questions[step]" (answer)="answer($event)"
                             (openPreview)="openPreview($event)"></app-question-gondola-fsu>
-                            }
+                        }
+                        @case ('question-complete') {
+                        <app-question-complete></app-question-complete>
+                        }
                         }
                     </div>
 
@@ -96,7 +82,8 @@
                     <div class="flex justify-content-between">
                         <div>
                             @if (step>0) {
-                            <app-back-button [disabled]="questions|checkAnswer:step:images" (click)="back()"></app-back-button>
+                            <app-back-button [disabled]="questions|checkAnswer:step:images"
+                                (click)="back()"></app-back-button>
                             }
                         </div>
                         <div>
@@ -105,13 +92,13 @@
                                 (click)="changeStep($event)"></app-next-button>
                             }
                         </div>
-        
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    }
+
 </div>
 
 <app-image-light-box [visible]="visible" [imageUrl]="selectedImage" (close)="hideLightBox()" />

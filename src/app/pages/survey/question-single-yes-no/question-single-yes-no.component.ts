@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
+import { ENV } from '../../../environments/environment';
 
 @Component({
   selector: 'app-question-single-yes-no',
@@ -10,6 +11,7 @@ import { RippleModule } from 'primeng/ripple';
   styleUrl: './question-single-yes-no.component.scss'
 })
 export class QuestionSingleYesNoComponent {
+  fileUrl=ENV.FILE_URL;
   @Input('question') question:any;
   @Output() answer = new EventEmitter<any>();
   @Output() openPreview = new EventEmitter<any>();

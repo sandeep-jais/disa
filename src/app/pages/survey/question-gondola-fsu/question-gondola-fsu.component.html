@@ -1,6 +1,6 @@
 <div class="relative" style="height: 48vh;">
     <div class="relative flex justify-content-center mt-5 pt-5">
-        @for(item of question?.products;track $index){
+        @for(item of products;track $index){
         <div class="relative w-4 mx-1 ">
             <img height="160" class="w-full cursor-pointer border-round p-2 shadow-1 "
                 [src]="'/assets/images/'+item?.image" (click)="clickOnStep(item.selection)"

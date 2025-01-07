@@ -9,26 +9,36 @@ import { ImageModule } from 'primeng/image';
 @Component({
   selector: 'app-question-gondola-fsu',
   standalone: true,
-  imports: [StyleClassModule, InputOtpModule, ButtonModule, FormsModule,ImageModule],
+  imports: [StyleClassModule, InputOtpModule, ButtonModule, FormsModule, ImageModule],
   templateUrl: './question-gondola-fsu.component.html',
   styleUrl: './question-gondola-fsu.component.scss'
 })
 export class QuestionGondolaAndFSUComponent {
-  router= inject(Router);
-  
-  @Input('question') question:any;
+  products = [
+    {
+      selection: "gondola",
+      image: "gondola.jpg"
+    },
+    {
+      selection: "fsu",
+      image: "fsu.jpg"
+    }
+  ]
+  router = inject(Router);
+
+  @Input('question') question: any;
   @Output() answer = new EventEmitter<any>();
   @Output() openPreview = new EventEmitter<any>();
   @Output() select = new EventEmitter<any>();
-  selectedStep:any;
+  selectedStep: any;
 
-  navigate(path:string){
+  navigate(path: string) {
     this.router.navigate([path])
   }
 
-  clickOnStep(selection:any){
-    this.answer.emit({...this.question,answer: selection });
-    this.selectedStep= selection;
+  clickOnStep(selection: any) {
+    this.answer.emit({ ...this.question, answer: selection });
+    this.selectedStep = selection;
   }
 
 }

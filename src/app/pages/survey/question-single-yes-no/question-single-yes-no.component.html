@@ -3,18 +3,62 @@
         <div class="flex w-full justify-content-center mx-auto">
             <div class="p-2">
                 <div class=" border-2 border-round shadow-1 border-gray-300 p-2">
-                    <div class="relative">
-                        <img  height="150"  [src]="'/assets/images/'+question?.productImage" alt="" />
-                        <span class="absolute pi pi-search-plus text-gray-600 cursor-pointer"
-                            (click)="openPreview.emit('/assets/images/'+question?.productImage)"
-                            style="right: 10px;bottom: 10px;"></span>
-                    </div>
+                    <ng-container>
+                        @switch (question['question-master']?.questionChildCategory) {
+                            @case ("Wobbler") {
+                                <div class="relative">
+                                    <img height="150" [src]="'/assets/images/p7.png'" alt="" />
+                                    <span class="absolute pi pi-search-plus text-gray-600 cursor-pointer"
+                                        (click)="openPreview.emit('/assets/images/p7.png')"
+                                        style="right: 10px;bottom: 10px;"></span>
+                                </div>
+
+                            }@case ("Shelf Separator") {
+                                <div class="relative">
+                                    <img height="150" [src]="'/assets/images/p6.png'" alt="" />
+                                    <span class="absolute pi pi-search-plus text-gray-600 cursor-pointer"
+                                        (click)="openPreview.emit('/assets/images/p6.png')"
+                                        style="right: 10px;bottom: 10px;"></span>
+                                </div>
+                            }@case ("Shelf Strip") {
+                                <div class="relative">
+                                    <img height="150" [src]="'/assets/images/p8.png'" alt="" />
+                                    <span class="absolute pi pi-search-plus text-gray-600 cursor-pointer"
+                                        (click)="openPreview.emit('/assets/images/p8.png')"
+                                        style="right: 10px;bottom: 10px;"></span>
+                                </div>
+                            }@case ("Gondola Branding") {
+                                <div class="relative">
+                                    <img height="150" [src]="'/assets/images/gondola.jpg'" alt="" />
+                                    <span class="absolute pi pi-search-plus text-gray-600 cursor-pointer"
+                                        (click)="openPreview.emit('/assets/images/gondola.jpg')"
+                                        style="right: 10px;bottom: 10px;"></span>
+                                </div>
+                            }@case ("FSU Branding") {
+                                <div class="relative">
+                                    <img height="150" [src]="'/assets/images/fsu.jpg'" alt="" />
+                                    <span class="absolute pi pi-search-plus text-gray-600 cursor-pointer"
+                                        (click)="openPreview.emit('/assets/images/fsu.jpg')"
+                                        style="right: 10px;bottom: 10px;"></span>
+                                </div>
+                            }
+                            @default {
+                                <div class="relative">
+                                    <img height="150" [src]="fileUrl+question?.sku?.skuImage" alt="" />
+                                    <span class="absolute pi pi-search-plus text-gray-600 cursor-pointer"
+                                        (click)="openPreview.emit(fileUrl+question?.sku?.skuImage)"
+                                        style="right: 10px;bottom: 10px;"></span>
+                                </div>
+                            }
+                        }
+                    </ng-container>
                 </div>
                 <div class="flex justify-content-around my-3 text-sm" style="padding: 2px;">
-                    
-                    <button pButton pRipple label="Yes" class="p-button-success-custom w-6" (click)="checked('checked')">
+
+                    <button pButton pRipple label="Yes" class="p-button-success-custom w-6"
+                        (click)="checked('checked')">
                     </button>
-                    <button pButton pRipple label="No" class="p-button-danger-custom w-6" (click)="checked('cross')" >
+                    <button pButton pRipple label="No" class="p-button-danger-custom w-6" (click)="checked('cross')">
                     </button>
                 </div>
             </div>
@@ -24,16 +68,20 @@
                 <div class="flex justify-content-center align-items-center ">
                     <label for="file-2" class="cursor-pointer">
                         @if(question.sideViewFile){
-                            <img [src]="question.sideViewImage" class="border-1 border-round p-2 shadow-1 border-gray-300" height="60" width="80" />
+                        <img [src]="question.sideViewImage" class="border-1 border-round p-2 shadow-1 border-gray-300"
+                            height="60" width="80" />
                         }@else {
-                            <img src="assets/images/camera.svg" class="border-1 border-round p-2 shadow-1 border-gray-300" height="40" width="60" />
+                        <img src="assets/images/camera.svg" class="border-1 border-round p-2 shadow-1 border-gray-300"
+                            height="40" width="60" />
                         }
                         <input (change)="selectFile('',$event.target)" type="file" id="file-2" class="hidden" />
                     </label>
                 </div>
                 <div class="text-center">
-                    <span class="left-0 pl-1 pt-1 cursor-pointer" (click)="openPreview.emit('assets/images/sample-image.png')" style="font-size: 10px;">View Sample Image</span>
-            
+                    <span class="left-0 pl-1 pt-1 cursor-pointer"
+                        (click)="openPreview.emit('assets/images/sample-image.png')" style="font-size: 10px;">View
+                        Sample Image</span>
+
                 </div>
             </div>
             <div class="w-8">

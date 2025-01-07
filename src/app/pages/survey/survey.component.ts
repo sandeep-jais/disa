@@ -24,22 +24,27 @@ import { QuestionInformationComponent } from "./question-information/question-in
 import { QuestionGondolaAndFSUComponent } from './question-gondola-fsu/question-gondola-fsu.component';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService } from 'primeng/api';
+import { QuestionService } from '../../services/question/question.service';
+import { ReplaceWordsPipe } from '../../pipes/replaceWords.pipe';
+import { QuestionCompleteComponent } from './question-complete/question-complete.component';
 @Component({
   selector: 'app-survey',
   standalone: true,
   imports: [ButtonModule, HeaderComponent, BackButtonComponent, QuestionMeterComponent, CheckAnswerPipe, NextButtonComponent, QuestionStartComponent, QuestionTextComponent,
     QuestionMeterCountComponent, QuestionMeterImageComponent, QuestionImageComponent, AnswerLengthPipe, QuestionMeterSecondComponent,
     QuestionMultiSelectImageComponent, QuestionMultiSelectQuestionComponent, QuestionImageComponent, ImageLightBoxComponent,
-    QuestionGondolaAndFSUComponent, ConfirmDialogModule,
+    QuestionGondolaAndFSUComponent, ConfirmDialogModule, ReplaceWordsPipe,QuestionCompleteComponent,
     CustomProgressComponent, QuestionSingleYesNoComponent, QuestionInformationComponent],
   providers: [ConfirmationService],
   templateUrl: './survey.component.html',
   styleUrl: './survey.component.scss'
 })
 export class SurveyComponent {
-  questions: any[] = PRODUCT_QUESTIONS;
+  questions: any[] = [];
+  originalQuestions:any[] = [];
   router = inject(Router);
   confirmService = inject(ConfirmationService);
+  surveyQuestionService= inject(QuestionService);
   isStarted: boolean = false;
   isCompleted: boolean = false;
   selectedImage: any;
@@ -47,9 +52,9 @@ export class SurveyComponent {
   step: number = 0;
   images: any = ['', '', ''];
   files: any = [];
-
+  sectionName: string = "";
   ngOnInit() {
-    console.log("", JSON.parse(JSON.stringify(DATA_PRODUCT)));
+    this.getSurveyQuestions();
   }
   navigate(path: string) {
     this.router.navigate([path]);
@@ -68,41 +73,38 @@ export class SurveyComponent {
   }
 
   changeStep(event: any) {
-    if (this.step == 43 || this.step == 70) {
-      this.questions[this.step].time = this.time;
-      this.step = 19;
-      this.questions[19].answer = false;
-      this.time = 0;
-      return;
-    }
-    if (this.step == 19) {
+    if (this.questions[this.step]['question-master'].screenType=='gondola-fsu-selection') {
+      console.log(this.questions[this.step].answer, this.step)
       if (!this.questions[this.step].answer) {
         return this.confirm(event);
       } else if (this.questions[this.step].answer == 'fsu') {
-        this.questions = this.questions.slice(0,20).concat(FSU_QUESTIONS);
+        this.questions = this.originalQuestions.filter((q)=> q['question-master'].storeDisplayLocation!=='gondola');
+        this.sectionName = this.questions[this.step].answer;
       } else if (this.questions[this.step].answer == 'gondola') {
-        this.questions = this.questions.slice(0,20).concat(GONDOLA_QUESTIONS);
+        this.questions = this.originalQuestions.filter((q)=> q['question-master'].storeDisplayLocation!=='fsu');;
+        this.sectionName = this.questions[this.step].answer;
       }
     }
     this.questions[this.step].answer = true;
-    if (this.step == (this.questions.length - 1)) {
-      this.step = 0;
-      this.isCompleted = true;
+    if (this.step == (this.questions.length - 2)) {
+      let index= this.originalQuestions.findIndex((q)=> q['question-master'].screenType=='gondola-fsu-selection')
+      this.step = index;
       this.time = 0;
-      this.images = ['', '', ''];
+      this.questions[this.step].answer = false;
     } else {
       this.step += 1;
       this.questions[this.step].time = this.time;
       this.time = 0;
-      this.images = ['', '', ''];
     }
   }
 
   back() {
-    if (this.step == 20) {
-      this.questions = this.questions.splice(0, 20);
+    this.step-=1;
+    if (this.questions[this.step]['question-master'].screenType=='gondola-fsu-selection') {
+      this.questions = this.originalQuestions;
+      this.questions[this.step].answer= false;
+      console.log(this.questions[this.step].answer, this.step)
     }
-    this.step--;
   }
   answer(ans?: any) {
     this.questions[this.step] = ans;
@@ -147,6 +149,13 @@ export class SurveyComponent {
         this.time = 0;
         this.images = ['', '', ''];
       }
+    });
+  }
+
+  getSurveyQuestions(){
+    this.surveyQuestionService.getAllSurveyQuestions({}).subscribe((res: any) => {
+      this.questions = res;
+      this.originalQuestions= res;
     });
   }
 

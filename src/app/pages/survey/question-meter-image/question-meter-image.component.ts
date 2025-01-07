@@ -3,6 +3,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { ImageService } from '../../../services/image.service';
+import { ENV } from '../../../environments/environment';
 @Component({
   selector: 'app-question-meter-image',
   standalone: true,
@@ -11,6 +12,7 @@ import { ImageService } from '../../../services/image.service';
   styleUrl: './question-meter-image.component.scss'
 })
 export class QuestionMeterImageComponent {
+  fileUrl=ENV.FILE_URL;
   @Input('question') question: any;
   @Output() answer = new EventEmitter<any>();
   @Output() openPreview = new EventEmitter<any>();

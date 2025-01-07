@@ -1,9 +1,9 @@
 .height-full{
-    height: calc(100vh - 330px);
+    height: calc(100vh - 360px);
 }
 
 @media screen and (max-width: 400px) {
     .height-full{
-        height: calc(100vh - 330px) !important;
+        height: calc(100vh - 360px) !important;
     }
 }

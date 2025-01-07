@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ENV } from '../../../environments/environment';
 
 @Component({
   selector: 'app-question-meter-count',
@@ -8,6 +9,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './question-meter-count.component.scss'
 })
 export class QuestionMeterCountComponent {
+  fileUrl=ENV.FILE_URL;
   @Input('question') question:any;
   @Output() answer = new EventEmitter<any>();
   @Output() openPreview = new EventEmitter<any>();
