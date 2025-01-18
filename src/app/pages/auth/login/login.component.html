@@ -30,7 +30,7 @@
             </div>
 
             <div class="flex justify-content-center">
-                <button pButton pRipple label="Login" icon="pi pi-user"
+                <button pButton pRipple [disabled]="loading" [label]="loading?'Processing...':'Login'"
                     class="w-full"></button>
             </div>
             <div>

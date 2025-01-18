@@ -21,6 +21,7 @@ export class LoginComponent {
   userService= inject(UserService);
   form!:FormGroup;
   error:string = "";
+  loading:boolean = false;
   ngOnInit():void{
     this.form = new FormGroup({
       username: new FormControl('',Validators.required),
@@ -31,6 +32,7 @@ export class LoginComponent {
 
   submit(){
     if(this.form.valid){
+      this.loading=true;
       if(this.form.value.rememberMe){
         localStorage.setItem('username', this.form.value.username);
       }
@@ -44,10 +46,12 @@ export class LoginComponent {
             localStorage.setItem('user', JSON.stringify(result?.data));
             localStorage.setItem('token', result?.token)
             this.router.navigate(['/product'])
+            this.loading=false;
           },
           error: (error) => {
             console.error(error);
             this.error='Invalid credentials';
+            this.loading=false;
           }
         })
       }
