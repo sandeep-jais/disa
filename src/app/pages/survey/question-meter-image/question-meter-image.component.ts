@@ -2,8 +2,9 @@ import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
-import { ImageService } from '../../../services/image.service';
-import { ENV } from '../../../environments/environment';
+import { ImageService } from '@services/image.service';
+import { MediaService } from '@services/media/media.service';
+import { ENV } from '@env/environment';
 @Component({
   selector: 'app-question-meter-image',
   standalone: true,
@@ -18,28 +19,11 @@ export class QuestionMeterImageComponent {
   @Output() openPreview = new EventEmitter<any>();
 
   public imageService = inject(ImageService);
-  pressPlus(type: string) {
-    if (type == 'mtr') {
-      this.answer.emit({ ...this.question, meters: this.question.meters + 1 });
-    } else {
-      this.answer.emit({ ...this.question, centimeter: this.question.centimeter + 1 });
-    }
-  }
-
-  pressMinus(type: string) {
-    if (type == 'mtr') {
-      this.answer.emit({ ...this.question, meters: this.question.meters == 0 ? 0 : this.question.meters - 1 });
-    } else {
-      this.answer.emit({ ...this.question, centimeter: this.question.centimeter == 0 ? 0 : this.question.centimeter - 1 });
-    }
-  }
-
+  public mediaService = inject(MediaService);
   value: string = "";
 
-
-  change() {
-    console.log("first")
-    this.answer.emit({ ...this.question, answer: this.value });
+  change(event:any) {
+    this.answer.emit({ ...this.question, answer: {...this.question?.answer,sectionName:event?.target?.value} });
   }
 
   selectFile(type: string, event: any) {
@@ -52,7 +36,11 @@ export class QuestionMeterImageComponent {
         if(isBlurred){
           alert("Please upload clear image.")
         }else{
-          this.answer.emit({ ...this.question, sideViewFile: file, sideViewImage: link });
+          const formdata= new FormData();
+          formdata.append('file', file);
+          this.mediaService.uploadMedia(formdata).subscribe((data:any)=>{
+            this.answer.emit({ ...this.question, answer:{...this.question?.answer,image: data?.file} });
+          })
         }
       }).catch((err) => {
         console.error('Error:', err);

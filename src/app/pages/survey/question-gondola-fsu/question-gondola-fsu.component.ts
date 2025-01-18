@@ -37,7 +37,7 @@ export class QuestionGondolaAndFSUComponent {
   }
 
   clickOnStep(selection: any) {
-    this.answer.emit({ ...this.question, answer: selection });
+    this.answer.emit({ ...this.question, answer: {selection} });
     this.selectedStep = selection;
   }
 

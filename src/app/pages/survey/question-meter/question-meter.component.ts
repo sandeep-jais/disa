@@ -12,18 +12,19 @@ export class QuestionMeterComponent {
   @Output() answer = new EventEmitter<any>();
 
   pressPlus(type:string){
+    console.log(this.question)
     if(type=='mtr'){
-      this.answer.emit({...this.question,meters: this.question.meters+1 });
+      this.answer.emit({...this.question,answer:{...this.question.answer,meters: Number(this.question?.answer?.meters||0)+1 }});
     }else{
-      this.answer.emit({...this.question,centimeter: this.question.centimeter+1 });
+      this.answer.emit({...this.question,answer:{...this.question.answer,centimeter: Number(this.question?.answer?.centimeter||0)+1 }});
     }
   }
 
   pressMinus(type:string){
     if(type=='mtr'){
-      this.answer.emit({...this.question,meters: this.question.meters==0?0:this.question.meters-1  });
+      this.answer.emit({...this.question,answer:{...this.question.answer,meters: Number(this.question?.answer?.meters==0?0:this.question?.answer?.meters-1)  }});
     }else{
-      this.answer.emit({...this.question,centimeter: this.question.centimeter==0?0:this.question.centimeter-1 });
+      this.answer.emit({...this.question,answer:{...this.question.answer,centimeter: Number(this.question?.answer?.centimeter==0?0:this.question?.answer?.centimeter-1) }});
     }
   }
 

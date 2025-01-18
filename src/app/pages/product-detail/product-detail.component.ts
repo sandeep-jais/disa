@@ -14,13 +14,13 @@ import { RippleModule } from 'primeng/ripple';
 import { CommonModule } from '@angular/common';
 import { ContextMenu, ContextMenuModule } from 'primeng/contextmenu';
 import { MenuItem } from 'primeng/api';
-import { KnobModule } from 'primeng/knob';
-import { HeaderComponent } from "../../components/common/header/header.component";
-import { AccordionModule } from 'primeng/accordion';
-import { BottomTabsComponent } from "../../components/common/bottom-tabs/bottom-tabs.component";
-import { FooterComponent } from "../../components/common/footer/footer.component";
 import { ImageModule } from 'primeng/image';
-import { ImageLightBoxComponent } from '../../components/image-light-box/image-light-box.component';
+import { KnobModule } from 'primeng/knob';
+import { AccordionModule } from 'primeng/accordion';
+import { ImageLightBoxComponent } from '@components/image-light-box/image-light-box.component';
+import { HeaderComponent } from '@components/common/header/header.component';
+import { BottomTabsComponent } from '@components/common/bottom-tabs/bottom-tabs.component';
+import { FooterComponent } from '@components/common/footer/footer.component';
 
 @Component({
     selector: 'app-product-detail',

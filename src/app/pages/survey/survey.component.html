@@ -4,11 +4,6 @@
     </div>
     <div class="container relative question-card">
         <div class="p-2 transition-all transition-duration-200 scrolling-container overflow-auto">
-            <!-- <div class="flex justify-content-between">
-                @for (q of questions; track $index) {
-                    <span class="bg-gray-600 stepper flex flex-1" [class.done]="q.answer!==undefined"></span>
-                 }
-                </div> -->
             <app-custom-progress [total]="questions.length" [value]="questions|answerLength" />
             <div class=" p-2 gap-3">
                 @if (questions.length) {
@@ -20,7 +15,7 @@
                     </div>
 
                     <div class="question-inner-box">
-                        @switch (questions[step]['question-master'].screenType) {
+                     @switch (questions[step]['question-master'].screenType) {
                         @case ('start') {
                         <app-question-start [question]="questions[step]" (answer)="answer($event)"
                             (openPreview)="openPreview($event)"></app-question-start>

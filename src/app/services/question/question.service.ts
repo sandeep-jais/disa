@@ -12,4 +12,8 @@ export class QuestionService {
   getAllSurveyQuestions(payload:any){
     return this.http.get('survey-question/getAllSurveyQuestions', payload)
   }
+  createSubmission(payload:any){
+    return this.http.post('survey-submission/create', payload)
+  }
+
 }

@@ -6,7 +6,7 @@ import { ButtonModule } from 'primeng/button';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { Router } from '@angular/router';
-import { UserService } from '../../../services/user.service';
+import { UserService } from '@services/user.service';
 
 @Component({
   selector: 'app-login',

@@ -67,8 +67,8 @@
             <div class="w-4">
                 <div class="flex justify-content-center align-items-center ">
                     <label for="file-2" class="cursor-pointer">
-                        @if(question.sideViewFile){
-                        <img [src]="question.sideViewImage" class="border-1 border-round p-2 shadow-1 border-gray-300"
+                        @if(question?.answer?.image){
+                        <img [src]="fileUrl+ question?.answer?.image" class="border-1 border-round p-2 shadow-1 border-gray-300"
                             height="60" width="80" />
                         }@else {
                         <img src="assets/images/camera.svg" class="border-1 border-round p-2 shadow-1 border-gray-300"

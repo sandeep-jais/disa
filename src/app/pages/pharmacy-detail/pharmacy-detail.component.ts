@@ -15,10 +15,10 @@ import { CommonModule } from '@angular/common';
 import { ContextMenu, ContextMenuModule } from 'primeng/contextmenu';
 import { MenuItem } from 'primeng/api';
 import { KnobModule } from 'primeng/knob';
-import { HeaderComponent } from "../../components/common/header/header.component";
-import { NameSorterPipe } from '../../pipes/name-sorter.pipe';
-import { FooterComponent } from "../../components/common/footer/footer.component";
-import { BottomTabsComponent } from '../../components/common/bottom-tabs/bottom-tabs.component';
+import { BottomTabsComponent } from '@components/common/bottom-tabs/bottom-tabs.component';
+import { HeaderComponent } from '@components/common/header/header.component';
+import { NameSorterPipe } from '@pipes/name-sorter.pipe';
+import { FooterComponent } from '@components/common/footer/footer.component';
 
 
 @Component({
