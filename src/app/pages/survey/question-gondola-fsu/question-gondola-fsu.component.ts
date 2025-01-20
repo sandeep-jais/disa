@@ -30,7 +30,6 @@ export class QuestionGondolaAndFSUComponent {
   @Output() answer = new EventEmitter<any>();
   @Output() openPreview = new EventEmitter<any>();
   @Output() select = new EventEmitter<any>();
-  selectedStep: any;
 
   navigate(path: string) {
     this.router.navigate([path])
@@ -38,7 +37,6 @@ export class QuestionGondolaAndFSUComponent {
 
   clickOnStep(selection: any) {
     this.answer.emit({ ...this.question, answer: {selection} });
-    this.selectedStep = selection;
   }
 
 }

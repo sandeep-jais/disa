@@ -1,7 +1,9 @@
 .login-page{
-    height: 100vh;
+    height: 90vh;
     margin: 0;
-    background-color: var(--periwinkle-color);
+    form{
+        background-color: var(--periwinkle-color);
+    }
 }
 @media screen and (max-width: 370px) {
     .login-page .check-area{

@@ -16,4 +16,6 @@ export class VerifyComponent {
   otp : any;
   router= inject(Router);
   loading:boolean = false;
+
+  
 }

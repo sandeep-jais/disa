@@ -5,9 +5,9 @@
     <div class="container relative question-card">
         <div class="p-2 transition-all transition-duration-200 scrolling-container overflow-auto">
             <app-custom-progress [total]="questions.length" [value]="questions|answerLength" />
-            <div class=" p-2 gap-3">
+            <div class=" p-2 gap-3 relative">
                 @if (questions.length) {
-                <div>
+                <div class="">
                     <div class="mx-2">
                         <p class="text-2xl q-text"
                             [innerHTML]="questions[step]['question-master'].description|replaceWords:questions[step].sku:questions[step].product:{sectionName}">
@@ -18,7 +18,7 @@
                      @switch (questions[step]['question-master'].screenType) {
                         @case ('start') {
                         <app-question-start [question]="questions[step]" (answer)="answer($event)"
-                            (openPreview)="openPreview($event)"></app-question-start>
+                            (openPreview)="openPreview($event)" (validation)="setValidation($event)"></app-question-start>
                         }
                         @case ('meter') {
                         <app-question-meter [question]="questions[step]" (answer)="answer($event)"
@@ -30,7 +30,7 @@
                         }
                         @case ('meter-image') {
                         <app-question-meter-image [question]="questions[step]" (answer)="answer($event)"
-                            (openPreview)="openPreview($event)"></app-question-meter-image>
+                            (openPreview)="openPreview($event)" (validation)="setValidation($event)"></app-question-meter-image>
                         }
                         @case ('meter-image-second') {
                         <app-question-meters-second [question]="questions[step]" (answer)="answer($event)"
@@ -38,7 +38,7 @@
                         }
                         @case ('single-question-yes-no') {
                         <app-question-single-yes-no [question]="questions[step]" (answer)="answer($event)"
-                            (openPreview)="openPreview($event)"></app-question-single-yes-no>
+                            (openPreview)="openPreview($event)" (validation)="setValidation($event)"></app-question-single-yes-no>
                         }
                         @case ('meter-count') {
                         <app-question-meter-count [question]="questions[step]" (answer)="answer($event)"
@@ -72,7 +72,9 @@
 
                 </div>
                 }
-
+                @if (errors) {
+                  <p class="absolute text-center text-red-600" style="font-size: 12px;right:15px;bottom:50px;">{{errors}}</p>
+                }
                 <div class="mx-1 bottom-buttons" style="width: 98%;">
                     <div class="flex justify-content-between">
                         <div>

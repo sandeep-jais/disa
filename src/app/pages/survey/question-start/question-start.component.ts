@@ -15,7 +15,14 @@ export class QuestionStartComponent {
   @Input('question') question: any;
   @Output() answer = new EventEmitter<any>();
   @Output() openPreview = new EventEmitter<any>();
-
+  @Output() validation = new EventEmitter<any>();
+  
+  validators={
+    image: true
+  }
+  ngOnInit(){
+    this.validation.emit(this.validators);
+  }
   selectFile(type: string, event: any) {
     let file = event.files[0];
     let link = URL.createObjectURL(file);

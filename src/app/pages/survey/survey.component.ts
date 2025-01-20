@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import { ConfirmationService } from 'primeng/api';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { HeaderComponent } from '@components/common/header/header.component';
 import { BackButtonComponent } from '@components/common/back-button/back-button.component';
 import { CheckAnswerPipe } from '@pipes/checkAnswer.pipe';
@@ -28,16 +28,17 @@ import { QuestionMeterSecondComponent } from './question-meters-second/question-
 import { QuestionStartComponent } from './question-start/question-start.component';
 import { QuestionTextComponent } from './question-text/question-text.component';
 import { IUser } from 'types/user';
+import { Toast } from 'primeng/toast';
 
 @Component({
   selector: 'app-survey',
   standalone: true,
-  imports: [ButtonModule, HeaderComponent, BackButtonComponent, QuestionMeterComponent, CheckAnswerPipe, NextButtonComponent, QuestionStartComponent, QuestionTextComponent,
+  imports: [ButtonModule,HeaderComponent, BackButtonComponent, QuestionMeterComponent, CheckAnswerPipe, NextButtonComponent, QuestionStartComponent, QuestionTextComponent,
     QuestionMeterCountComponent, QuestionMeterImageComponent, QuestionImageComponent, AnswerLengthPipe, QuestionMeterSecondComponent,
     QuestionMultiSelectImageComponent, QuestionMultiSelectQuestionComponent, QuestionImageComponent, ImageLightBoxComponent,
     QuestionGondolaAndFSUComponent, ConfirmDialogModule, ReplaceWordsPipe, QuestionCompleteComponent,
     CustomProgressComponent, QuestionSingleYesNoComponent, QuestionInformationComponent],
-  providers: [ConfirmationService],
+  providers: [ConfirmationService, MessageService],
   templateUrl: './survey.component.html',
   styleUrl: './survey.component.scss'
 })
@@ -57,6 +58,8 @@ export class SurveyComponent {
   files: any = [];
   sectionName: string = "";
   userDetail!: IUser;
+  validation:any;
+  errors:any;
   ngOnInit() {
     this.getSurveyQuestions();
     this.userDetail = this.userService.getUserInfo();
@@ -73,6 +76,8 @@ export class SurveyComponent {
   }
 
   changeStep(event: any) {
+    const error= this.checkValidation();
+    if(error) return;
     if (this.questions[this.step]['question-master'].screenType == 'gondola-fsu-selection') {
       if (!this.questions[this.step].answer?.selection) {
         return this.confirm(event);
@@ -167,4 +172,21 @@ export class SurveyComponent {
     });
   }
 
+  setValidation(validators:any){
+    console.log(validators)
+    this.validation= validators;
+  }
+
+  checkValidation(){
+    const error={...this.validation}
+    this.errors= "";
+    if(error.sectionName){
+      this.errors= 'Section name is required.'
+    }else if(error.image){
+      this.errors= 'Image is required.'
+    }else if(error.selection){
+      this.errors= 'Selection is required.'
+    }
+    return this.errors ? true : false;
+  }
 }

@@ -21,9 +21,19 @@ export class QuestionMeterImageComponent {
   public imageService = inject(ImageService);
   public mediaService = inject(MediaService);
   value: string = "";
-
+  @Output() validation = new EventEmitter<any>();
+  
+  validators={
+    image: true,
+    sectionName: true
+  }
+  ngOnInit(){
+    this.validation.emit(this.validators);
+  }
   change(event:any) {
     this.answer.emit({ ...this.question, answer: {...this.question?.answer,sectionName:event?.target?.value} });
+    this.validators= {...this.validators, sectionName:event?.target?.value?.trim() ? false : true};
+    this.validation.emit(this.validators);
   }
 
   selectFile(type: string, event: any) {
@@ -40,6 +50,8 @@ export class QuestionMeterImageComponent {
           formdata.append('file', file);
           this.mediaService.uploadMedia(formdata).subscribe((data:any)=>{
             this.answer.emit({ ...this.question, answer:{...this.question?.answer,image: data?.file} });
+            this.validators= {...this.validators, image:false};
+            this.validation.emit(this.validators);
           })
         }
       }).catch((err) => {

@@ -19,12 +19,22 @@ export class QuestionSingleYesNoComponent {
   @Output() openPreview = new EventEmitter<any>();
   public imageService = inject(ImageService);
   public mediaService = inject(MediaService);
+  @Output() validation = new EventEmitter<any>();
+  
+  validators={
+    selection: true,
+  }
+  ngOnInit(){
+    this.validation.emit(this.validators);
+  }
   checked(type:string){
     if(type=='checked'){
       this.answer.emit({...this.question, answer:{...this.question?.answer, checked: true}});
     }else{
       this.answer.emit({...this.question, answer:{...this.question?.answer, checked: false}});
     }
+    this.validators= {...this.validators, selection: false};
+    this.validation.emit(this.validators);
   }
   selectFile(type:string, event:any){
     let file = event.files[0];
