@@ -36,7 +36,7 @@
             <input
             class="w-full"
             placeholder="Section Name"
-            [value]="question?.answer?.sectionName"
+            [value]="question?.surveyorResponse"
             (change)="change($event)"
             pInputText
              />
@@ -46,8 +46,8 @@
         <div class="w-4">
             <div class="flex justify-content-center align-items-center ">
                 <label for="file-2" class="cursor-pointer">
-                    @if(question.answer?.image){
-                        <img [src]="fileUrl + question?.answer?.image"  class="border-1 border-round p-2 shadow-1 border-gray-300" height="60" width="80" />
+                    @if(question?.surveyorImage){
+                        <img [src]="fileUrl + question?.surveyorImage"  class="border-1 border-round p-2 shadow-1 border-gray-300" height="60" width="80" />
                     }@else {
                         <img src="assets/images/camera.svg" class="border-1 border-round p-2 shadow-1 border-gray-300" height="40" width="60" />
                     }

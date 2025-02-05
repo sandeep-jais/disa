@@ -42,7 +42,7 @@
                         }
                         @case ('meter-count') {
                         <app-question-meter-count [question]="questions[step]" (answer)="answer($event)"
-                            (openPreview)="openPreview($event)"></app-question-meter-count>
+                            (openPreview)="openPreview($event)" (validation)="setValidation($event)"></app-question-meter-count>
                         }
                         @case ('multi-select-question') {
                         <app-question-multi-select-question [question]="questions[step]" (answer)="answer($event)"
@@ -67,25 +67,21 @@
                         @case ('question-complete') {
                         <app-question-complete></app-question-complete>
                         }
-                        }
+                    }
                     </div>
-
                 </div>
-                }
-                @if (errors) {
-                  <p class="absolute text-center text-red-600" style="font-size: 12px;right:15px;bottom:50px;">{{errors}}</p>
                 }
                 <div class="mx-1 bottom-buttons" style="width: 98%;">
                     <div class="flex justify-content-between">
                         <div>
                             @if (step>0) {
-                            <app-back-button [disabled]="questions|checkAnswer:step:images"
+                            <app-back-button 
                                 (click)="back()"></app-back-button>
                             }
                         </div>
                         <div>
                             @if (!isCompleted) {
-                            <app-next-button [disabled]="questions|checkAnswer:step:images"
+                            <app-next-button [disabled]="validation|checkAnswer"
                                 (click)="changeStep($event)"></app-next-button>
                             }
                         </div>

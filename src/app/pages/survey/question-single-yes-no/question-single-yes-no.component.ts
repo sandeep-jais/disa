@@ -23,15 +23,22 @@ export class QuestionSingleYesNoComponent {
   
   validators={
     selection: true,
+    image: true
   }
   ngOnInit(){
+    if(this.question?.surveyorImage){
+      this.validators.image= false;
+    }
+    if(this.question?.surveyorResponse){
+      this.validators.selection=false;
+    }
     this.validation.emit(this.validators);
   }
   checked(type:string){
     if(type=='checked'){
-      this.answer.emit({...this.question, answer:{...this.question?.answer, checked: true}});
+      this.answer.emit({...this.question, surveyorResponse:JSON.stringify({checked: true})});
     }else{
-      this.answer.emit({...this.question, answer:{...this.question?.answer, checked: false}});
+      this.answer.emit({...this.question, surveyorResponse:JSON.stringify({checked: false})});
     }
     this.validators= {...this.validators, selection: false};
     this.validation.emit(this.validators);
@@ -49,7 +56,8 @@ export class QuestionSingleYesNoComponent {
           const formdata= new FormData();
           formdata.append('file', file);
           this.mediaService.uploadMedia(formdata).subscribe((data:any)=>{
-            this.answer.emit({ ...this.question, answer:{...this.question?.answer,image: data?.file} });
+            this.answer.emit({ ...this.question, surveyorImage: data?.file });
+            this.validators= {...this.validators, image: false};
           })
         }
       }).catch((err) => {

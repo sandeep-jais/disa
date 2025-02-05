@@ -1,4 +1,4 @@
-import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output, SimpleChanges } from '@angular/core';
 import { ENV } from '../../../environments/environment';
 import { ImageService } from '@services/image.service';
 import { MediaService } from '@services/media/media.service';
@@ -18,13 +18,30 @@ export class QuestionMeterCountComponent {
   @Input('question') question: any;
   @Output() answer = new EventEmitter<any>();
   @Output() openPreview = new EventEmitter<any>();
+  @Output() validation = new EventEmitter<any>();
+  counts:any={counts:0};
+  validators={
+    image: true,
+  }
+  ngOnInit(){
+    this.counts={counts:0};
+    if(this.question?.surveyorImage){
+      this.validators= {...this.validators, image: false};
+    }
+    if(this.question?.surveyorResponse){
+      this.counts= JSON.parse(this.question?.surveyorResponse||"{counts:0}");
+    }
+    this.validation.emit(this.validators);
+  }
 
   pressPlus() {
-    this.answer.emit({ ...this.question, answer:{...this.question.answer,counts: Number(this.question?.answer?.counts||0)+1 } });
+    this.answer.emit({ ...this.question, surveyorResponse:JSON.stringify({counts: Number(this.counts.counts||0)+1 })});
+    this.counts.counts= Number(this.counts.counts||0)+1;
   }
 
   pressMinus() {
-    this.answer.emit({ ...this.question, answer:{...this.question.answer,counts: this.question?.answer?.counts == 0 ? 0 : this.question?.answer?.counts - 1 }});
+    this.answer.emit({ ...this.question, surveyorResponse:JSON.stringify({counts: this.counts.counts == 0 ? 0 : this.counts.counts - 1 })});
+    this.counts.counts= {counts: this.counts.counts == 0 ? 0 : this.counts.counts - 1 }
   }
 
   selectFile(event: any) {
@@ -40,7 +57,9 @@ export class QuestionMeterCountComponent {
           const formdata = new FormData();
           formdata.append('file', file);
           this.mediaService.uploadMedia(formdata).subscribe((data: any) => {
-            this.answer.emit({ ...this.question, answer: { ...this.question?.answer, image: data?.file } });
+            this.answer.emit({ ...this.question, surveyorImage: data?.file });
+            this.validators= {...this.validators, image: false};
+            this.validation.emit(this.validators);
           })
         }
       }).catch((err) => {

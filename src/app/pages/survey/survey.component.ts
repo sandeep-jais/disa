@@ -29,6 +29,7 @@ import { QuestionStartComponent } from './question-start/question-start.componen
 import { QuestionTextComponent } from './question-text/question-text.component';
 import { IUser } from 'types/user';
 import { Toast } from 'primeng/toast';
+import { JWT_TOKEN_EXPIRED } from '@constants/index';
 
 @Component({
   selector: 'app-survey',
@@ -76,30 +77,7 @@ export class SurveyComponent {
   }
 
   changeStep(event: any) {
-    const error= this.checkValidation();
-    if(error) return;
-    if (this.questions[this.step]['question-master'].screenType == 'gondola-fsu-selection') {
-      if (!this.questions[this.step].answer?.selection) {
-        return this.confirm(event);
-      } else if (this.questions[this.step].answer?.selection == 'fsu') {
-        this.questions = this.originalQuestions.filter((q) => q['question-master'].storeDisplayLocation !== 'gondola');
-        this.sectionName = this.questions[this.step].answer?.selection;
-      } else if (this.questions[this.step].answer?.selection == 'gondola') {
-        this.questions = this.originalQuestions.filter((q) => q['question-master'].storeDisplayLocation !== 'fsu');;
-        this.sectionName = this.questions[this.step].answer?.selection;
-      }
-    }
-
-    if (this.step == (this.questions.length - 2)) {
-      let index = this.originalQuestions.findIndex((q) => q['question-master'].screenType == 'gondola-fsu-selection')
-      this.step = index;
-      this.time = 0;
-      this.questions[this.step].answer = {};
-    } else {
-      this.step += 1;
-      this.questions[this.step].time = this.time;
-      this.time = 0;
-    }
+    this.checkValidation(event);
   }
 
   back() {
@@ -173,20 +151,48 @@ export class SurveyComponent {
   }
 
   setValidation(validators:any){
-    console.log(validators)
     this.validation= validators;
   }
 
-  checkValidation(){
-    const error={...this.validation}
-    this.errors= "";
-    if(error.sectionName){
-      this.errors= 'Section name is required.'
-    }else if(error.image){
-      this.errors= 'Image is required.'
-    }else if(error.selection){
-      this.errors= 'Selection is required.'
-    }
-    return this.errors ? true : false;
+  checkValidation(event:any){
+    this.surveyQuestionService.updateSurveyQuestion(this.questions[this.step]?.surveyQuestionId,this.questions[this.step])
+    .subscribe({
+      next:(value)=> {
+        console.log(value)
+        if (this.questions[this.step]['question-master'].screenType == 'gondola-fsu-selection') {
+          if (!this.questions[this.step].answer?.selection) {
+            return this.confirm(event);
+          } else if (this.questions[this.step].answer?.selection == 'fsu') {
+            this.questions = this.originalQuestions.filter((q) => q['question-master'].storeDisplayLocation !== 'gondola');
+            this.sectionName = this.questions[this.step].answer?.selection;
+          } else if (this.questions[this.step].answer?.selection == 'gondola') {
+            this.questions = this.originalQuestions.filter((q) => q['question-master'].storeDisplayLocation !== 'fsu');;
+            this.sectionName = this.questions[this.step].answer?.selection;
+          }
+        }
+    
+        if (this.step == (this.questions.length - 2)) {
+          let index = this.originalQuestions.findIndex((q) => q['question-master'].screenType == 'gondola-fsu-selection')
+          this.step = index;
+          this.time = 0;
+          this.questions[this.step].answer = {};
+        } else {
+          this.step += 1;
+          this.questions[this.step].time = this.time;
+          this.time = 0;
+        }
+        console.log(this.step)
+      },
+      error:(err) =>{
+        console.log(err)
+        if(err.error.responseMessage==JWT_TOKEN_EXPIRED){
+          alert("Session expired!")
+          localStorage.clear();
+          this.router.navigate(['/auth/login']);
+        }else{
+          alert("Error: " + err.error.responseMessage);
+        }
+      },
+    })
   }
 }

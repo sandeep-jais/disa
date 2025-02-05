@@ -28,10 +28,16 @@ export class QuestionMeterImageComponent {
     sectionName: true
   }
   ngOnInit(){
+    if(this.question?.surveyorImage){
+      this.validators.image= false;
+    }
+    if(this.question?.surveyorResponse){
+      this.validators.sectionName=false;
+    }
     this.validation.emit(this.validators);
   }
   change(event:any) {
-    this.answer.emit({ ...this.question, answer: {...this.question?.answer,sectionName:event?.target?.value} });
+    this.answer.emit({ ...this.question, surveyorResponse: event?.target?.value });
     this.validators= {...this.validators, sectionName:event?.target?.value?.trim() ? false : true};
     this.validation.emit(this.validators);
   }
@@ -49,7 +55,7 @@ export class QuestionMeterImageComponent {
           const formdata= new FormData();
           formdata.append('file', file);
           this.mediaService.uploadMedia(formdata).subscribe((data:any)=>{
-            this.answer.emit({ ...this.question, answer:{...this.question?.answer,image: data?.file} });
+            this.answer.emit({ ...this.question, surveyorImage:data?.file });
             this.validators= {...this.validators, image:false};
             this.validation.emit(this.validators);
           })

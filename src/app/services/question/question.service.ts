@@ -16,4 +16,8 @@ export class QuestionService {
     return this.http.post('survey-submission/create', payload)
   }
 
+  updateSurveyQuestion(questionSurveyId:any,payload:any){
+    return this.http.put(`survey-question/${questionSurveyId}`, payload)
+  }
+
 }

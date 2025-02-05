@@ -13,20 +13,28 @@ export class QuestionMeterSecondComponent {
   @Input('question') question:any;
   @Output() answer = new EventEmitter<any>();
   @Output() openPreview = new EventEmitter<any>();
+  response:any;
+  ngOnInit(){
+    this.response= JSON.parse(this.question.surveyorResponse||"{meters:0,centimeter:0}");
+  }
   pressPlus(type:string){
     console.log(this.question)
     if(type=='mtr'){
-      this.answer.emit({...this.question,answer:{...this.question.answer,meters: Number(this.question?.answer?.meters||0)+1 }});
+      this.answer.emit({...this.question,surveyorResponse:JSON.stringify({...this.response,meters: Number(this.response?.meters||0)+1 })});
+      this.response={...this.response,meters: Number(this.response?.meters||0)+1 }
     }else{
-      this.answer.emit({...this.question,answer:{...this.question.answer,centimeter: Number(this.question?.answer?.centimeter||0)+1 }});
+      this.answer.emit({...this.question,surveyorResponse:JSON.stringify({...this.response,centimeter: Number(this.response?.centimeter||0)+1 })});
+      this.response={...this.response,centimeter: Number(this.response?.centimeter||0)+1 }
     }
   }
 
   pressMinus(type:string){
     if(type=='mtr'){
-      this.answer.emit({...this.question,answer:{...this.question.answer,meters: Number(this.question?.answer?.meters==0?0:this.question?.answer?.meters-1)  }});
+      this.answer.emit({...this.question,surveyorResponse:JSON.stringify({...this.response,meters: Number(this.response?.meters==0?0:this.response?.meters-1)  })});
+      this.response={...this.response,meters: Number(this.response?.meters==0?0:this.response?.meters-1) }
     }else{
-      this.answer.emit({...this.question,answer:{...this.question.answer,centimeter: Number(this.question?.answer?.centimeter==0?0:this.question?.answer?.centimeter-1) }});
+      this.answer.emit({...this.question,surveyorResponse:JSON.stringify({...this.response,centimeter: Number(this.response?.centimeter==0?0:this.response?.centimeter-1) })});
+      this.response={...this.response,centimeter: Number(this.response?.centimeter==0?0:this.response?.centimeter-1) }
     }
   }
 }

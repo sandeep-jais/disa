@@ -6,12 +6,17 @@ import { Pipe, PipeTransform } from '@angular/core';
   pure: false
 })
 export class CheckAnswerPipe implements PipeTransform {
-  transform(questions:any[],step:number,images:any[]): unknown {
-    // if (questions[step].type == 'thumbsup') {
-    //   return images.includes('');
-    // } else if (questions[step]. == 'counter') {
-    //   return questions[step].answer>0 ? false : true;
-    // }
-    return false;
+  transform(validation:any): unknown {
+    const error={...validation};
+    let errors= null;
+    if(error.sectionName){
+      errors= 'Section name is required.'
+    }else if(error.image){
+      errors= 'Image is required.'
+    }else if(error.selection){
+      errors= 'Selection is required.'
+    }
+    console.log(errors)
+    return errors ? true : false;
   }
 }
