@@ -61,9 +61,11 @@ export class SurveyComponent {
   userDetail!: IUser;
   validation:any;
   errors:any;
+  startTime:any;
   ngOnInit() {
     this.getSurveyQuestions();
     this.userDetail = this.userService.getUserInfo();
+    this.startTime= new Date().getTime();
   }
   navigate(path: string) {
     this.router.navigate([path]);
@@ -155,7 +157,11 @@ export class SurveyComponent {
   }
 
   checkValidation(event:any){
-    this.surveyQuestionService.updateSurveyQuestion(this.questions[this.step]?.surveyQuestionId,this.questions[this.step])
+    this.surveyQuestionService
+    .updateSurveyQuestion(this.questions[this.step]?.surveyQuestionId,{
+      ...this.questions[this.step], startTime:this.startTime,
+      endTime:new Date().getTime()
+    })
     .subscribe({
       next:(value)=> {
         console.log(value)
@@ -170,18 +176,21 @@ export class SurveyComponent {
             this.sectionName = this.questions[this.step].answer?.selection;
           }
         }
-    
+        
         if (this.step == (this.questions.length - 2)) {
           let index = this.originalQuestions.findIndex((q) => q['question-master'].screenType == 'gondola-fsu-selection')
           this.step = index;
           this.time = 0;
           this.questions[this.step].answer = {};
+        }else if(this.questions[this.step]?.skipToSurveyQuestionId && JSON.parse(this.questions[this.step]?.surveyorResponse||"{}")?.checked==false){
+          let index = this.originalQuestions.findIndex((q) => q.surveyQuestionId == this.questions[this.step]?.skipToSurveyQuestionId)
+          this.step = index;
         } else {
           this.step += 1;
           this.questions[this.step].time = this.time;
           this.time = 0;
         }
-        console.log(this.step)
+        this.startTime= new Date().getTime();
       },
       error:(err) =>{
         console.log(err)
