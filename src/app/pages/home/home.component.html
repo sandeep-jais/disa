@@ -3,11 +3,11 @@
       <div class="container">
         <div class="flex align-items-center justify-content-between">
             <div>
-                <h3>Good Evening!</h3>
-                <div>John Morf</div>
+                <h3>{{greeting}}!</h3>
+                <div>{{userDetail?.firstName}} {{userDetail?.lastName}}</div>
             </div>
             <div>
-               <span class="text-green-600 font-bold">6:30 PM</span>
+               <span class="text-green-600 font-bold">{{date|date:"hh:mm a "}}</span>
             </div>
         </div>
 
@@ -27,40 +27,40 @@
                 <p-inputGroupAddon class="bg-transparent" styleClass="">
                     <i class="pi pi-search"></i>
                 </p-inputGroupAddon>
-                <input pInputText class="border-r-0" placeholder="Search Pharmacy" />
+                <input pInputText #search class="border-r-0" placeholder="Search Store ..." />
             </p-inputGroup>   
         </div>
-        <div class=" my-5">
-            <ul class="m-0 p-0 list-none border-1 surface-border border-round p-3 flex flex-column gap-2 w-full">
+        <div class=" my-3">
+            <ul class="m-0 p-0 list-none surface-border flex flex-column gap-2 w-full">
                 <li 
-                    *ngFor="let product of data" 
+                    *ngFor="let store of stores|arraySearchFilter:'storeName':search.value" 
                     class="w-full bg-white cursor-pointer shadow-2 border-round border-1 border-transparent transition-all transition-duration-200" 
-                    (contextmenu)="onContextMenu($event)" routerLink="/pharmacy-detail">
+                    (contextmenu)="onContextMenu($event)" routerLink="/product">
                         <div class="w-full flex flex-wrap p-2 align-items-center gap-3">
                             <div
                                 class="w-3rem text-center pt-3 bg-gray-300 flex-shrink-0 border-round" 
                                  style="height: 50px;width: 50px;">
                                 {{
-                                    product.name| nameSorter
+                                    store.storeName| nameSorter
                                 }}
                             </div>
                             <div class="flex-1 flex flex-column gap-1">
                                 <span class="font-bold">
-                                    {{ product.name }}
+                                    {{ store.storeName }}
                                 </span>
                                 <div class="flex align-items-center gap-2">
                                     <i class="pi pi-map-marker text-sm"></i>
                                     <span class="text-sm">
-                                        {{ product.description }}
+                                        {{ store.storeArea }}
                                     </span>
                                 </div>
-                                <div class="ml-4 text-sm">{{product.distance}} KM</div>
+                                <div class="ml-4 text-sm">{{store.distance||10}} KM</div>
                             </div>
                         </div>
                 </li>
             </ul>
             
-            <p-contextMenu #cm [model]="items" (onHide)="onHide()">
+            <!-- <p-contextMenu #cm [model]="items" (onHide)="onHide()">
                 <ng-template pTemplate="item" let-item>
                     <a pRipple class="flex align-items-center p-menuitem-link">
                         <span class="item.icon"></span>
@@ -72,7 +72,7 @@
                         <i *ngIf="item.items" class="pi pi-angle-right ml-auto"></i>
                     </a>
                 </ng-template>
-            </p-contextMenu>
+            </p-contextMenu> -->
         </div>
       </div>
 </div>

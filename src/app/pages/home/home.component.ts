@@ -19,49 +19,58 @@ import { BottomTabsComponent } from '@components/common/bottom-tabs/bottom-tabs.
 import { NameSorterPipe } from '@pipes/name-sorter.pipe';
 import { FooterComponent } from '@components/common/footer/footer.component';
 import { HeaderComponent } from '@components/common/header/header.component';
+import { UserService } from '@services/user.service';
+import { getGreetingTime } from 'helpers/greetings';
+import { StoreService } from '@services/store/store.service';
+import { ArraySearchFilterPipe } from '@pipes/arraySearchFilter.pipe';
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [StyleClassModule, InputOtpModule, ButtonModule, BadgeModule, FormsModule, ToolbarModule, AvatarModule,
-    InputGroupModule, InputGroupAddonModule, InputTextModule,BottomTabsComponent,
-    ContextMenuModule, CommonModule, RippleModule, KnobModule, NameSorterPipe, FooterComponent, HeaderComponent],
-  providers:[NameSorterPipe],   
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+    selector: 'app-home',
+    standalone: true,
+    imports: [StyleClassModule, InputOtpModule, ButtonModule, BadgeModule, FormsModule, ToolbarModule, AvatarModule,
+        InputGroupModule, InputGroupAddonModule, InputTextModule, BottomTabsComponent,ArraySearchFilterPipe,
+        ContextMenuModule, CommonModule, RippleModule, KnobModule, NameSorterPipe, FooterComponent, HeaderComponent],
+    providers: [NameSorterPipe,ArraySearchFilterPipe],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  router= inject(Router);
-  items: MenuItem[] | undefined;
-  pendingOutlets:number= 8;
+    router = inject(Router);
+    items: MenuItem[] | undefined;
+    pendingOutlets: number = 8;
+    date: Date = new Date();
+    greeting= getGreetingTime();
     @ViewChild('cm') cm!: ContextMenu;
 
-    selectedId!: string|undefined;
+    selectedId!: string | undefined;
 
     data = [
         {
             id: '1000',
             name: 'Sita Pharmacy',
             description: '3/5 Mohali punjab',
-            status:"pending",
+            status: "pending",
             distance: 65
         },
         {
             id: '1001',
             name: 'Go Site Pharmacy',
             description: '3/5 Mohali punjab',
-            status:"pending",
+            status: "pending",
             distance: 90
         },
         {
             id: '1002',
             name: 'Lala Pharmacy',
             description: '3/9 Mohali punjab',
-            status:"pending",
+            status: "pending",
             distance: 70
         },
-        
-    ];
 
+    ];
+  userService = inject(UserService);
+  storeService = inject(StoreService);
+  userDetail: any;
+  stores:any[]=[];
     ngOnInit() {
         this.items = [
             {
@@ -94,9 +103,13 @@ export class HomeComponent {
                 ]
             }
         ];
+        this.userDetail= this.userService.getUserInfo();
+        this.storeService.getAllStores({page:1,limit:100}).subscribe((resp:any) => {
+             this.stores= resp;
+        })
     }
 
-    onContextMenu(event:any) {
+    onContextMenu(event: any) {
         this.cm.target = event.currentTarget;
         this.cm.show(event);
     }
