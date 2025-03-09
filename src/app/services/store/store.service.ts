@@ -12,5 +12,8 @@ export class StoreService {
   getAllStores(payload:any){
     return this.http.get('store/getAllStores', payload)
   }
-
+  
+  getAllVisits(payload:any){
+    return this.http.get('visit/getAllVisits', payload)
+  }
 }

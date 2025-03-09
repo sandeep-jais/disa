@@ -66,6 +66,7 @@ export class SurveyComponent {
     this.getSurveyQuestions();
     this.userDetail = this.userService.getUserInfo();
     this.startTime= new Date().getTime();
+
   }
   navigate(path: string) {
     this.router.navigate([path]);
@@ -139,6 +140,9 @@ export class SurveyComponent {
     this.surveyQuestionService.getAllSurveyQuestions({}).subscribe((res: any) => {
       this.questions = res;
       this.originalQuestions = res;
+      const lastQuestionAttempted= this.questions.findIndex((q)=>!q.surveyorResponse);
+      console.log(lastQuestionAttempted)
+      this.step= lastQuestionAttempted>-1? lastQuestionAttempted: 0;
     });
   }
 
